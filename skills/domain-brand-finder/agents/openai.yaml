@@ -1,0 +1,3 @@
+display_name: Domain Brand Finder
+short_description: Find brandable available domains
+prompt: Find and validate project names and domains. Produce ranked recommendations with availability evidence, brand rationale, and next steps.

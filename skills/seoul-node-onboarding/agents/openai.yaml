@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seoul Node Onboarding"
+  short_description: "Add newly online FRP nodes to Seoul Caddy"
+  default_prompt: "Use $seoul-node-onboarding to add n08 as an online node on the Seoul server."

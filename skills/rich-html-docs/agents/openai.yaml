@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rich HTML Docs"
+  short_description: "Turn standard docs into shareable rich HTML"
+  default_prompt: "Use $rich-html-docs to create a polished, shareable HTML explanation document."

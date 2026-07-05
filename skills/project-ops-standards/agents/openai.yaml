@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Ops Standards"
+  short_description: "Standardize project docs and operations"
+  default_prompt: "Use $project-ops-standards to create or audit the minimum project management and operations docs for this repository."

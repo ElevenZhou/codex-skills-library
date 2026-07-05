@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Image Generator"
+  short_description: "Generate project images with local gpt-image-2 tool"
+  default_prompt: "Use $local-image-generator to generate a homepage hero background and place it in the current project's public/images/hero.png."

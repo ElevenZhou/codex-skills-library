@@ -1,0 +1,4 @@
+interface:
+  display_name: "Claude Daily Training"
+  short_description: "Run real daily Claude.ai creative training through Chrome."
+  default_prompt: "Run today's Claude daily training session."

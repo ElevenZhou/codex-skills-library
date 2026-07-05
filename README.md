@@ -51,11 +51,30 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | 技能 | 适合场景 | 推荐触发词 / 用法 | 建议 |
 | --- | --- | --- | --- |
 | `auto-loop` | 自动驾驶舱。适合复杂目标的全自动规划、执行、验证、优化。覆盖 PPT、PDF/文档、调研、网站/App、代码工程、量化交易等。 | `Use $auto-loop 自动驾驶舱模式...`、`全自动`、`强制执行`、`循环优化` | **全员推荐** |
-| `deck-studio-loop` | 高质量 PPT、商业计划书、公司介绍、产品介绍、路演材料。强调叙事、视觉差异化、渲染 QA、多角色评审。 | `Use $deck-studio-loop 做一套产品介绍 PPT...` | 做材料的人推荐 |
+| `claude-daily-training` | 通过 Codex 和 Chrome 执行 Claude.ai 每日创作训练。 | `Use $claude-daily-training...`、`Claude 每日训练` | 创作训练 |
 | `cli-creator` | 从 API 文档、OpenAPI、curl、SDK、本地脚本创建可复用 CLI，并配套 skill。 | `Use $cli-creator 基于这个 API 创建 CLI...` | 开发/自动化推荐 |
+| `cloudflare-deploy` | 部署应用和基础设施到 Cloudflare Workers、Pages 等平台。 | `Use $cloudflare-deploy 部署...` | 部署推荐 |
+| `deck-studio-loop` | 高质量 PPT、商业计划书、公司介绍、产品介绍、路演材料。强调叙事、视觉差异化、渲染 QA、多角色评审。 | `Use $deck-studio-loop 做一套产品介绍 PPT...` | 做材料的人推荐 |
+| `doc` | 读取、创建、编辑 `.docx` 文档，尤其适合需要格式和版式控制的交付物。 | `Use $doc 编辑这个 Word...` | 文档推荐 |
+| `domain-brand-finder` | 项目命名、品牌域名策略和域名可用性工作流。 | `Use $domain-brand-finder 给项目起名...` | 品牌/命名 |
+| `flaios-content-submit` | 将网站、工具、项目、Agent、Skill、workflow 或个人记忆提交到 FlaiOS。 | `Use $flaios-content-submit 提交...` | FlaiOS 内容入库 |
+| `gmail-mail` | 通过 Gmail API 管理邮件：搜索、阅读、草稿、发送、回复、转发。 | `Use $gmail-mail 查一下邮件...` | 邮件工作流 |
+| `local-grok-video-generator-2-0` | 通过本地 FlaioS Grok video API 生成 Grok Imagine 视频。 | `Use $local-grok-video-generator-2-0 生成视频...` | 视频生成 |
+| `local-image-generator` | 本地静态图像生成器的旧别名。 | `Use $local-image-generator 生成图片...` | 兼容旧流程 |
+| `local-image-generator-1-0` | 使用本地图片生成工具创建静态图片，支持网页素材、插画等。 | `Use $local-image-generator-1-0 生成图片...` | 图片生成 |
+| `pdf` | 读取、创建、审阅 PDF，尤其适合需要渲染和版式检查的任务。 | `Use $pdf 看这个 PDF...` | PDF 推荐 |
+| `personal-workbench` | 更新、审查、总结或补充个人 workbench 状态。 | `Use $personal-workbench 更新工作台...` | 个人资产管理 |
 | `playwright` | 用命令行驱动真实浏览器，做网页操作、截图、表单、UI 流程验证。 | `Use $playwright 自动测试这个页面...` | 前端/网页任务推荐 |
 | `playwright-interactive` | 持久浏览器/Electron 调试，适合连续 UI QA 和本地 Web/App 调试。 | `Use $playwright-interactive 调试这个本地应用...` | 前端高级用户 |
+| `post-wechat-moments` | 创建可直接发布的微信朋友圈图文内容。 | `Use $post-wechat-moments 发朋友圈...` | 社交内容 |
+| `project-ops-standards` | 创建、审计或改进软件项目的项目管理与运营文档。 | `Use $project-ops-standards 检查项目文档...` | 项目运营 |
+| `rich-html-docs` | 创建精美、可分享的单文件 HTML 文档，替代普通 Markdown 说明。 | `Use $rich-html-docs 做一份 HTML 文档...` | 高级文档 |
 | `screenshot` | 桌面/系统截图，适合浏览器工具拿不到的窗口、全屏、区域截图。 | `Use $screenshot 截取这个窗口...` | 按需安装 |
+| `seoul-node-onboarding` | 配置新上线的 FRP sub2api 国家节点到 Seoul 服务器。 | `Use $seoul-node-onboarding 配置节点...` | Seoul 节点运维 |
+| `seoul-server-status-check` | 只读检查 Seoul 服务器健康状态并发送飞书通知。 | `Use $seoul-server-status-check 检查首尔服务器...` | Seoul 运维 |
+| `submit-results-to-workbench` | 将已完成项目成果提交到个人 workbench / FlaiOS 枢纽仓库。 | `Use $submit-results-to-workbench 提交成果...` | 成果归档 |
+| `t0-work-session` | T0-SemiAuto 工作会话交接和 Git 同步工作流。 | `Use $t0-work-session 结束工作...` | T0 项目 |
+| `vercel-deploy` | 部署应用和网站到 Vercel。 | `Use $vercel-deploy 部署...` | 部署推荐 |
 
 ## 推荐组合
 
@@ -75,6 +94,14 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 ./scripts/install-skills.sh auto-loop deck-studio-loop screenshot
 ```
 
+### 文档 / 内容组合
+
+适合 Word、PDF、HTML 文档、朋友圈内容、项目资料沉淀：
+
+```bash
+./scripts/install-skills.sh auto-loop doc pdf rich-html-docs post-wechat-moments project-ops-standards
+```
+
 ### Web / App 开发组合
 
 适合网页、管理后台、产品 Demo、UI QA：
@@ -91,6 +118,30 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 ./scripts/install-skills.sh auto-loop cli-creator playwright
 ```
 
+### 部署组合
+
+适合 Cloudflare / Vercel 发布和上线检查：
+
+```bash
+./scripts/install-skills.sh auto-loop cloudflare-deploy vercel-deploy playwright screenshot
+```
+
+### 本地生成 / FlaiOS 组合
+
+适合本地图像、视频生成，以及结果提交到个人工作台：
+
+```bash
+./scripts/install-skills.sh auto-loop local-image-generator-1-0 local-grok-video-generator-2-0 flaios-content-submit submit-results-to-workbench personal-workbench
+```
+
+### Seoul / T0 运维组合
+
+适合 Seoul 节点、服务器状态检查和 T0 工作会话交接：
+
+```bash
+./scripts/install-skills.sh auto-loop seoul-node-onboarding seoul-server-status-check t0-work-session
+```
+
 ## 查看可用技能
 
 ```bash
@@ -102,7 +153,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 当你在本机新增或修改 `~/.codex/skills` 后：
 
 ```bash
-cd /Users/shenji/Projects/codex-skills-library
+cd codex-skills-library
 ./scripts/pull-from-local-codex.sh
 ./scripts/check-no-secrets.sh
 git status

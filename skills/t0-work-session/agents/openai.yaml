@@ -1,0 +1,7 @@
+interface:
+  display_name: "T0 Work Session"
+  short_description: "Start pulls Git; stop writes handoff and commits."
+  default_prompt: "Use $t0-work-session when I say 开工 or 下班了."
+
+policy:
+  allow_implicit_invocation: true

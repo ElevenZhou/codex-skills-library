@@ -1,0 +1,4 @@
+interface:
+  display_name: "提交成果到工作台"
+  short_description: "把任意项目成果登记到个人工作台，并可选沉淀到飞流AI枢纽。"
+  default_prompt: "把当前项目这次成果提交到我的工作台；工作台仓库在 I:\\Dev\\通用性agent开发。"
