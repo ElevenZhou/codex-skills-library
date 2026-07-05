@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deck Studio Loop"
+  short_description: "Premium deck creation with loops and expert review"
+  default_prompt: "Use $deck-studio-loop to create a polished business presentation with autonomous planning, visual differentiation, QA, and revision."

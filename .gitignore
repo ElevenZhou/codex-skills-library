@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+*.log
+*.tmp
+tmp/
+dist/
+build/
+node_modules/
+
+# Do not commit secrets or local Codex runtime/cache state.
+*.key
+*.pem
+*.p12
+*.mobileprovision
+secrets/
+credentials/
+tokens/
+
+# Generated archives.
+*.zip
+*.tar
+*.tar.gz
+

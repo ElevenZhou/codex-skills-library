@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto Loop Autopilot"
+  short_description: "Autonomous cockpit for high-quality deliverables"
+  default_prompt: "Use $auto-loop to run an autonomous cockpit: plan, delegate or role-review, build, validate, revise, and deliver the finished result."
