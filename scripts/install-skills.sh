@@ -7,12 +7,30 @@ TARGET="$CODEX_HOME_DIR/skills"
 
 mkdir -p "$TARGET"
 
-rsync -a --delete \
-  --exclude '.system' \
-  --exclude '.DS_Store' \
-  --exclude '__pycache__' \
-  --exclude '*.pyc' \
-  "$REPO_ROOT/skills/" "$TARGET/"
+if [[ "$#" -eq 0 || "${1:-}" == "--all" ]]; then
+  rsync -a --delete \
+    --exclude '.system' \
+    --exclude '.DS_Store' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    "$REPO_ROOT/skills/" "$TARGET/"
+  echo "Installed all skills to $TARGET"
+  exit 0
+fi
 
-echo "Installed skills to $TARGET"
+for skill in "$@"; do
+  if [[ ! -d "$REPO_ROOT/skills/$skill" ]]; then
+    echo "Skill not found: $skill" >&2
+    echo "Available skills:" >&2
+    find "$REPO_ROOT/skills" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort >&2
+    exit 1
+  fi
+  rsync -a --delete \
+    --exclude '.DS_Store' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    "$REPO_ROOT/skills/$skill/" "$TARGET/$skill/"
+  echo "Installed skill: $skill"
+done
 
+echo "Target: $TARGET"
