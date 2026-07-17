@@ -1,0 +1,8 @@
+Roles / lanes:
+- Planner:
+- Researcher:
+- Architect:
+- Builder:
+- Verifier:
+- Critic:
+- Integrator:

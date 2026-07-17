@@ -1,0 +1,12 @@
+Auto Loop Contract: overseas-ad-autopilot
+Created: 2026-07-06T03:21:59
+
+Objective:
+Audience/user:
+Inputs:
+Deliverables:
+Constraints:
+Assumptions:
+Acceptance checks:
+Fallbacks:
+Stop condition:

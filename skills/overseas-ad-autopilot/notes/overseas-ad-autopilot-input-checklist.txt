@@ -1,0 +1,16 @@
+Auto Loop Input Checklist: overseas-ad-autopilot
+
+Completeness:
+- [ ] goal
+- [ ] artifact type
+- [ ] audience/user
+- [ ] inputs/source paths
+- [ ] output format/path
+- [ ] constraints
+- [ ] quality bar
+- [ ] autonomy level
+- [ ] risks/sensitive boundaries
+
+Missing items:
+
+Autofill assumptions:

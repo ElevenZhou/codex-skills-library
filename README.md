@@ -62,6 +62,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | `local-grok-video-generator-2-0` | 通过本地 FlaioS Grok video API 生成 Grok Imagine 视频。 | `Use $local-grok-video-generator-2-0 生成视频...` | 视频生成 |
 | `local-image-generator` | 本地静态图像生成器的旧别名。 | `Use $local-image-generator 生成图片...` | 兼容旧流程 |
 | `local-image-generator-1-0` | 使用本地图片生成工具创建静态图片，支持网页素材、插画等。 | `Use $local-image-generator-1-0 生成图片...` | 图片生成 |
+| `overseas-ad-autopilot` | 海外广告自动驾驶舱工作区，用于梳理投放目标、输入、角色分工、QA 和交付检查。 | `Use $overseas-ad-autopilot 规划海外广告自动化...` | 广告/增长 |
 | `pdf` | 读取、创建、审阅 PDF，尤其适合需要渲染和版式检查的任务。 | `Use $pdf 看这个 PDF...` | PDF 推荐 |
 | `personal-workbench` | 更新、审查、总结或补充个人 workbench 状态。 | `Use $personal-workbench 更新工作台...` | 个人资产管理 |
 | `playwright` | 用命令行驱动真实浏览器，做网页操作、截图、表单、UI 流程验证。 | `Use $playwright 自动测试这个页面...` | 前端/网页任务推荐 |

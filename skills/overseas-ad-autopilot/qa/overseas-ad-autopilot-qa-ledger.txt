@@ -1,0 +1,12 @@
+Auto Loop QA Ledger: overseas-ad-autopilot
+
+Universal checks:
+- [ ] deliverable exists
+- [ ] explicit requirements covered
+- [ ] relevant specialist skills/tools used
+- [ ] artifact-specific QA run
+- [ ] role review or multi-agent review completed
+- [ ] improvement pass completed
+- [ ] final handoff includes paths and validation
+
+Findings:
