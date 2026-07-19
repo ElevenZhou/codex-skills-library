@@ -50,6 +50,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 | 技能 | 适合场景 | 推荐触发词 / 用法 | 建议 |
 | --- | --- | --- | --- |
+| `advanced-frontend-design` | 生产级前端设计与实现工作流，适合落地高辨识度界面、复杂状态和浏览器验证。 | `Use $advanced-frontend-design 做一个前端页面...` | 前端/设计推荐 |
 | `auto-loop` | 自动驾驶舱。适合复杂目标的全自动规划、执行、验证、优化。覆盖 PPT、PDF/文档、调研、网站/App、代码工程、量化交易等。 | `Use $auto-loop 自动驾驶舱模式...`、`全自动`、`强制执行`、`循环优化` | **全员推荐** |
 | `claude-daily-training` | 通过 Codex 和 Chrome 执行 Claude.ai 每日创作训练。 | `Use $claude-daily-training...`、`Claude 每日训练` | 创作训练 |
 | `cli-creator` | 从 API 文档、OpenAPI、curl、SDK、本地脚本创建可复用 CLI，并配套 skill。 | `Use $cli-creator 基于这个 API 创建 CLI...` | 开发/自动化推荐 |
@@ -58,6 +59,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | `doc` | 读取、创建、编辑 `.docx` 文档，尤其适合需要格式和版式控制的交付物。 | `Use $doc 编辑这个 Word...` | 文档推荐 |
 | `domain-brand-finder` | 项目命名、品牌域名策略和域名可用性工作流。 | `Use $domain-brand-finder 给项目起名...` | 品牌/命名 |
 | `flaios-content-submit` | 将网站、工具、项目、Agent、Skill、workflow 或个人记忆提交到 FlaiOS。 | `Use $flaios-content-submit 提交...` | FlaiOS 内容入库 |
+| `frontend-design-lab` | 多方案前端设计实验室，在固定产品约束下产出并对比不同视觉方向，再选定方向继续精修。 | `Use $frontend-design-lab 做几个前端风格方案...` | 前端/设计实验 |
 | `gmail-mail` | 通过 Gmail API 管理邮件：搜索、阅读、草稿、发送、回复、转发。 | `Use $gmail-mail 查一下邮件...` | 邮件工作流 |
 | `local-grok-video-generator-2-0` | 通过本地 FlaioS Grok video API 生成 Grok Imagine 视频。 | `Use $local-grok-video-generator-2-0 生成视频...` | 视频生成 |
 | `local-image-generator` | 本地静态图像生成器的旧别名。 | `Use $local-image-generator 生成图片...` | 兼容旧流程 |

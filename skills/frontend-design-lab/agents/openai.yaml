@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interface Prism"
+  short_description: "Controlled frontend design variants and browser comparison"
+  default_prompt: "Use $frontend-design-lab to create three mutually exclusive frontend directions for the same product contract, compare them side by side, and verify desktop and mobile behavior."

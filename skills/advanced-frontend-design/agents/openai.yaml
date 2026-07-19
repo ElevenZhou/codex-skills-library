@@ -1,0 +1,4 @@
+interface:
+  display_name: "Advanced Frontend Design"
+  short_description: "Free-first distinctive frontend design and browser QA"
+  default_prompt: "Use $advanced-frontend-design to inspect the current project, define a domain-specific visual thesis, build with free/open-source resources only, avoid generic AI/Codex patterns, and verify and refine the result in desktop and mobile browsers."
