@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Channel Onboarding"
+  short_description: "新视频渠道接入、测试、上线与文档交付流程。"
+  default_prompt: "Use $video-channel-onboarding to onboard a new video generation channel end to end, including docs, adapter work, deployment, smoke tests, and handoff notes."

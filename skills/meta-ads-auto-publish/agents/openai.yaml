@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meta Ads 自动发布"
+  short_description: "通过 Codex Chrome 有限发布已准备的 Meta 广告草稿"
+  default_prompt: "Use $meta-ads-auto-publish with Codex-native Chrome control to publish only the authorized prepared Meta Ads drafts and verify their final statuses."

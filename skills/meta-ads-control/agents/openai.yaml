@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meta Ads Control"
+  short_description: "Analyze and safely manage Meta Ads via API"
+  default_prompt: "Use $meta-ads-control to inspect campaign performance and safely manage delivery status."

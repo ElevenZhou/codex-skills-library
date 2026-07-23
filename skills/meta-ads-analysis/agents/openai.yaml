@@ -1,0 +1,5 @@
+interface:
+  display_name: "Meta Ads Analysis"
+  short_description: "Analyze Meta Ads performance, funnels, tests, and risks"
+  default_prompt: "Use $meta-ads-analysis to analyze this Meta Ads account and deliver evidence-backed actions."
+

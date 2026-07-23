@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Memory"
+  short_description: "Turn work conversations into Obsidian memory"
+  default_prompt: "Use $obsidian-memory to extract durable memory and project knowledge into my Obsidian vault."
