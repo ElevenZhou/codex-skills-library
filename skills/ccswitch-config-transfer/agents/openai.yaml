@@ -1,0 +1,4 @@
+interface:
+  display_name: "CCSwitch Config Transfer"
+  short_description: "Back up and copy CCSwitch config to Salt-managed nodes."
+  default_prompt: "Back up this machine's CCSwitch configuration and restore it onto a target Salt node, preserving a target-side rollback backup and verifying the result."

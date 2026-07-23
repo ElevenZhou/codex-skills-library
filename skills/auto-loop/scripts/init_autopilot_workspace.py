@@ -39,6 +39,8 @@ def main() -> None:
                 "Assumptions:",
                 "Acceptance checks:",
                 "Fallbacks:",
+                "Artifact manifest: artifacts/" + f"{args.slug}-manifest.txt",
+                "Decision points:",
                 "Stop condition:",
             ]
         ),
@@ -82,11 +84,33 @@ def main() -> None:
                 "- [ ] artifact-specific QA run",
                 "- [ ] role review or multi-agent review completed",
                 "- [ ] improvement pass completed",
+                "- [ ] requested artifacts saved in project-owned paths",
+                "- [ ] artifact manifest reconciled with files and documentation",
                 "- [ ] final handoff includes paths and validation",
                 "",
                 "Findings:",
             ]
         ),
+        encoding="utf-8",
+    )
+
+    (root / "artifacts" / f"{args.slug}-manifest.txt").write_text(
+        "\n".join(
+            [
+                f"Auto Loop Artifact Manifest: {args.slug}",
+                "",
+                "Artifact:",
+                "Purpose:",
+                "Final path:",
+                "Source/tool:",
+                "Prompt/specification:",
+                "Consumed by:",
+                "Validation:",
+                "Checksum/version:",
+                "Status: final / superseded / reference-only",
+            ]
+        )
+        + "\n",
         encoding="utf-8",
     )
 
