@@ -5,6 +5,8 @@ description: Premium autonomous presentation creation for business introductions
 
 # Deck Studio Loop
 
+Skill version: `2026.07.24`
+
 ## Purpose
 
 Create high-quality, non-generic decks through a studio workflow: clarify the communication job, build a narrative, design distinctive visual systems, produce real editable slides, render and inspect them, run role-based critique, revise, and deliver usable files.

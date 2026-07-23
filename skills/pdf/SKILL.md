@@ -6,6 +6,8 @@ description: "Use when tasks involve reading, creating, or reviewing PDF files w
 
 # PDF Skill
 
+Skill version: `2026.07.24`
+
 ## When to use
 - Read or review PDF content where layout and visuals matter.
 - Create PDFs programmatically with reliable formatting.

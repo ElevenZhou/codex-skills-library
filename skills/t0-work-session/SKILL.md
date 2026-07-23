@@ -5,6 +5,8 @@ description: T0-SemiAuto work-session handoff and Git synchronization workflow. 
 
 # T0 Work Session
 
+Skill version: `2026.07.24`
+
 Use this skill to keep `T0-SemiAuto` recoverable across computers, Codex threads, and other AI assistants.
 
 ## Start-Of-Work Workflow

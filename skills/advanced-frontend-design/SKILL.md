@@ -5,6 +5,8 @@ description: Design, build, critique, and refine distinctive production-grade fr
 
 # Advanced Frontend Design
 
+Skill version: `2026.07.24`
+
 Create frontend work with a clear point of view, complete product behavior, and browser-verified polish. Act as a design director, UX reviewer, and senior frontend engineer in one workflow.
 
 ## Non-Negotiable Defaults

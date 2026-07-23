@@ -6,6 +6,8 @@ description: "Use when the user explicitly asks for a desktop or system screensh
 
 # Screenshot Capture
 
+Skill version: `2026.07.24`
+
 Follow these save-location rules every time:
 
 1) If the user specifies a path, save there.

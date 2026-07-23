@@ -5,6 +5,8 @@ description: Autonomous autopilot/cockpit execution system for turning broad goa
 
 # Auto Loop Autopilot
 
+Skill version: `2026.07.24`
+
 ## Core Rule
 
 Drive the user's goal to a concrete, validated deliverable without waiting for step-by-step confirmation. Operate like an execution cockpit: clarify the target, route work to the right specialist skills/tools, use agents or role reviews when allowed and useful, maintain a visible quality loop, validate the artifact, improve it, and deliver usable files or code.

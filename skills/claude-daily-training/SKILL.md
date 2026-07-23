@@ -5,6 +5,8 @@ description: Run real daily Claude.ai creative training sessions through Codex a
 
 # Claude Daily Training
 
+Skill version: `2026.07.24`
+
 ## Purpose
 
 Run a daily Claude.ai session that produces a useful artifact. This skill is for legitimate creative and engineering practice, not account-warming filler.

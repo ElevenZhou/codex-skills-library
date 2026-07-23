@@ -5,6 +5,8 @@ description: Use when the user wants to submit a website, tool, project, Agent, 
 
 # FlaiOS Content Submit
 
+Skill version: `2026.07.24`
+
 Turn a one-line user request into a structured contribution for 飞流AI枢纽.
 
 ## Quick Trigger Examples

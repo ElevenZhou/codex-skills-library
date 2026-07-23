@@ -5,6 +5,8 @@ description: Legacy alias for the user's local still-image generator. Use for im
 
 # Local Image Generator
 
+Skill version: `2026.07.24`
+
 This is the legacy still-image entrypoint. For the versioned image workflow, prefer `local-image-generator-1-0`. For Grok video, use `local-grok-video-generator-2-0`.
 
 ## Tool Location

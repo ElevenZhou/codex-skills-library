@@ -5,6 +5,8 @@ description: Create controlled frontend design experiments that hold one product
 
 # Interface Prism
 
+Skill version: `2026.07.24`
+
 Treat one product as a controlled design experiment. Keep its users, content, data, behavior, stack, and acceptance criteria fixed; vary only the design strategy, composition, material language, typography, and motion grammar.
 
 ## Core Rule

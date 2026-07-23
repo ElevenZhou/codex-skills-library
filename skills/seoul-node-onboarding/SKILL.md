@@ -5,6 +5,8 @@ description: Configure newly online FRP sub2api nodes on the Seoul server. Use w
 
 # Seoul Node Onboarding
 
+Skill version: `2026.07.24`
+
 ## Scope
 
 Use this skill only for the Seoul server `150.109.233.152`.

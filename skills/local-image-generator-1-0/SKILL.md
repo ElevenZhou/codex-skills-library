@@ -5,6 +5,8 @@ description: Use the user's local image-generation tool to create still images o
 
 # Local Image Generator 1.0
 
+Skill version: `2026.07.24`
+
 ## Scope
 
 This skill generates still images only. For Grok video, use `local-grok-video-generator-2-0`.

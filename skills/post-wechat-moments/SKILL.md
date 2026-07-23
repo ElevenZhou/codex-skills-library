@@ -5,6 +5,8 @@ description: Create ready-to-post WeChat Moments text-and-image posts. Use when 
 
 # Post WeChat Moments
 
+Skill version: `2026.07.24`
+
 ## Goal
 
 Turn a rough intent into a natural WeChat Moments post with an image plan and publish-ready assets. Optimize for "像真人发的朋友圈": clear, warm, lightly persuasive, and not too much like an ad.

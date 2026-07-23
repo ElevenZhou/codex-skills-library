@@ -5,6 +5,8 @@ description: Create, audit, or improve the minimum project management and operat
 
 # Project Ops Standards
 
+Skill version: `2026.07.24`
+
 Use this skill to make a repository manageable by Codex and humans across development, deployment, and production operations.
 
 ## Workflow

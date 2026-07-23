@@ -5,6 +5,8 @@ description: Generate Grok Imagine videos through the user's FlaioS Grok video A
 
 # Local Grok Video Generator 2.0
 
+Skill version: `2026.07.24`
+
 ## Scope
 
 This skill handles Grok video only.

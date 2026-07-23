@@ -5,6 +5,8 @@ description: Overseas advertising autopilot workspace for structuring campaign g
 
 # Overseas Ad Autopilot
 
+Skill version: `2026.07.24`
+
 Use this skill when the user wants to plan, structure, review, or operate an overseas advertising autopilot workflow.
 
 ## Workflow

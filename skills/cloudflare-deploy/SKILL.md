@@ -5,6 +5,8 @@ description: Deploy applications and infrastructure to Cloudflare using Workers,
 
 # Cloudflare Deploy
 
+Skill version: `2026.07.24`
+
 Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.
 
 ## Prerequisites

@@ -5,6 +5,8 @@ description: Project naming, brand-domain strategy, and domain availability work
 
 # Domain Brand Finder
 
+Skill version: `2026.07.24`
+
 ## Workflow
 
 1. **Understand the product**

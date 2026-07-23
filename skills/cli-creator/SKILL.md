@@ -5,6 +5,8 @@ description: Build a composable CLI for Codex from API docs, an OpenAPI spec, ex
 
 # CLI Creator
 
+Skill version: `2026.07.24`
+
 Create a real CLI that future Codex threads can run by command name from any working directory.
 
 This skill is for durable tools, not one-off scripts. If a short script in the current repo solves the task, write the script there instead.

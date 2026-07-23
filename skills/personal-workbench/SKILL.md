@@ -5,6 +5,8 @@ description: Use when the user wants to update, review, summarize, or add struct
 
 # Personal Workbench
 
+Skill version: `2026.07.24`
+
 Maintain the `workbench/` state layer for 飞流AI枢纽.
 
 ## Scope

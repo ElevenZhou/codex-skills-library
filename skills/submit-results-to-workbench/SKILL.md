@@ -5,6 +5,8 @@ description: Submit finished work from any project into the user's personal work
 
 # 提交成果到工作台
 
+Skill version: `2026.07.24`
+
 把任意项目里的阶段性成果沉淀回飞流AI枢纽的个人工作台。默认只更新工作台状态文件；如果成果适合展示或复用，再可选提交到飞流AI枢纽内容库。
 
 ## Default Target

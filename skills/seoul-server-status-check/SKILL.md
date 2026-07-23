@@ -5,6 +5,8 @@ description: Read-only Seoul server health inspection and Feishu notification wo
 
 # Seoul Server Status Check
 
+Skill version: `2026.07.24`
+
 Use this skill to perform a read-only health check of the Seoul server and optionally send the result to the company Feishu reminder webhook. This skill must not restart services, rebuild Docker images, or modify production code.
 
 ## Workflow

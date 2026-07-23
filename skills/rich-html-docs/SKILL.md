@@ -5,6 +5,8 @@ description: Create polished, shareable single-file HTML documents instead of or
 
 # Rich HTML Docs
 
+Skill version: `2026.07.24`
+
 ## Core Rule
 
 When the user asks for a standard explanatory Markdown document, create a polished `.html` document instead of `.md` by default. The HTML must be self-contained, visually organized, easy to share, and readable by opening the file directly in a browser.

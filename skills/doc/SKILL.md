@@ -6,6 +6,8 @@ description: "Use when the task involves reading, creating, or editing `.docx` d
 
 # DOCX Skill
 
+Skill version: `2026.07.24`
+
 ## When to use
 - Read or review DOCX content where layout matters (tables, diagrams, pagination).
 - Create or edit DOCX files with professional formatting.

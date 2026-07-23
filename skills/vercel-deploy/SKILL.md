@@ -5,6 +5,8 @@ description: Deploy applications and websites to Vercel. Use when the user reque
 
 # Vercel Deploy
 
+Skill version: `2026.07.24`
+
 Deploy any project to Vercel instantly. **Always deploy as preview** (not production) unless the user explicitly asks for production.
 
 ## Prerequisites
