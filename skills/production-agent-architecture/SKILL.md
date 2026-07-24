@@ -4,6 +4,8 @@ description: Design production-ready AI agents using a loop-based architecture w
 ---
 # Production Agent Architecture
 
+Skill version: `2026.07.25`
+
 ## When To Use This Skill
 Use this skill when the task is to:
 - design a new AI agent

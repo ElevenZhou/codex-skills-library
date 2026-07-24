@@ -4,6 +4,8 @@ description: Generate a runnable Python project from an Agent Build Spec. Turns 
 ---
 # Agent Scaffolder
 
+Skill version: `2026.07.25`
+
 ## When To Use This Skill
 Use this skill when:
 - You have an Agent Build Spec (from the production agent architecture skill or written by hand).

@@ -5,7 +5,7 @@ description: Premium autonomous presentation creation for business introductions
 
 # Deck Studio Loop
 
-Skill version: `2026.07.24`
+Skill version: `2026.07.25`
 
 ## Purpose
 

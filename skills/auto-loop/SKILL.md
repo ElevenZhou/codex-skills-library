@@ -5,6 +5,8 @@ description: Autonomous autopilot/cockpit execution system for turning broad goa
 
 # Auto Loop Autopilot
 
+Skill version: `2026.07.25`
+
 ## Core Rule
 
 Drive the user's goal to a concrete, validated deliverable without waiting for step-by-step confirmation. Operate like an execution cockpit: clarify the target, route work to the right specialist skills/tools, use agents or role reviews when allowed and useful, maintain a visible quality loop, validate the artifact, improve it, and deliver usable files or code.
@@ -18,7 +20,7 @@ For complex tasks, read:
 - `references/autopilot-modes.md` for routing PPT, PDF/docs, research, web/app, code, and quant tasks.
 - `references/multi-agent-orchestration.md` for role review and subagent patterns.
 - `references/qa-gates.md` for artifact-specific validation gates.
-- `references/artifact-custody.md` for durable asset saving, manifests, cross-file reconciliation, and reusable-learning absorption.
+- `references/staged-development.md` for Spike, Demo, MVP, Pilot, Production, migrations, and other gated engineering programs.
 
 Use `scripts/init_autopilot_workspace.py` to create a durable workspace for notes, agent tasks, QA, artifacts, and status.
 
@@ -32,12 +34,12 @@ When triggered by words such as `全自动`, `自动执行`, `Loop`, `循环优�
 4. If the user says `强制执行`, `不用问`, `自动补充`, `我去睡觉`, or similar, fill missing fields with reasonable defaults, label assumptions, and proceed.
 5. Classify the work mode and expected artifact: deck, PDF/doc, research, web/app, backend/code, data/quant, automation, or hybrid.
 6. Build a contract: deliverables, sources, assumptions, risks, acceptance checks, and fallback paths.
+   - For staged development, first verify the current stage entry gate and inherited evidence using `references/staged-development.md`. Do not silently build a later stage on unverified earlier-stage assumptions.
 7. Create a plan with one active critical path and optional parallel lanes.
 8. Execute using relevant specialist skills and tools.
 9. Validate against artifact-specific QA gates.
 10. Run an improvement pass and role review; use subagents only when allowed by current instructions and useful.
-11. Reconcile the artifact manifest, documentation, QA ledger, code references, and actual files using `references/artifact-custody.md`.
-12. Deliver final paths, commands, URLs, screenshots, citations, commits, or summaries needed for the user to use the result.
+11. Deliver final paths, commands, URLs, screenshots, citations, commits, or summaries needed for the user to use the result.
 
 ## Loop Protocol
 
@@ -63,13 +65,11 @@ Use this loop until the goal is achieved or a true blocker is reached:
    - Make the artifact real: code, document, deck, spreadsheet, image, analysis, workflow, or configuration.
    - Use specialized skills when they match the artifact type.
    - Create durable files in an appropriate workspace path rather than leaving only chat text.
-   - Move or copy requested generated assets out of tool-owned storage into project-owned paths and record them in an artifact manifest.
    - Keep sensitive values out of files unless the user explicitly asks to store them.
 
 5. **Verify**
    - Run tests, linters, render checks, file-open checks, screenshots, data validations, or manual inspections appropriate to the artifact.
    - Compare against the acceptance checklist, not only against tool success.
-   - Verify every reported path exists and opens; a successful preview or embedded tool result is not durable delivery.
    - For visual deliverables, inspect actual rendered output.
    - For research/financial/quant deliverables, verify sources, assumptions, leakage, and risk statements.
 
@@ -77,8 +77,6 @@ Use this loop until the goal is achieved or a true blocker is reached:
    - Fix issues found during verification.
    - Tighten wording, layout, structure, naming, edge cases, and usability.
    - Repeat the build-verify-improve loop when a revision is likely to materially improve usefulness.
-   - Reconcile late changes across docs, prompts, QA ledgers, screenshots, manifests, and runtime references so no stale claim remains.
-   - When the user explicitly asks to absorb lessons, generalize the reusable process improvement into the relevant skill or checklist and validate it; do not overfit a one-off preference.
 
 7. **Deliver**
    - Report what was produced, where it is, how it was validated, and any remaining risks.
@@ -120,7 +118,6 @@ When actual subagent tools are unavailable or not allowed, run the same roles in
 Before finishing, check:
 
 - The deliverable exists and is accessible.
-- Every requested final artifact is stored in a durable user/project path and listed in the artifact manifest.
 - The output matches the user's actual goal, not just the first guessed interpretation.
 - Claims are supportable by source material or clearly labeled as assumptions.
 - Content is concise, readable, and useful to the target audience.
@@ -128,7 +125,6 @@ Before finishing, check:
 - Code or automation has been run or tested when feasible.
 - Multi-role review or equivalent critique has happened for strategic/high-value work.
 - A revision pass has been completed unless the first result already clearly passes all gates.
-- Documentation, QA records, prompts, code references, screenshots, and actual files agree about the final state.
 - The final response names the concrete artifacts and validation performed.
 
 ## Communication

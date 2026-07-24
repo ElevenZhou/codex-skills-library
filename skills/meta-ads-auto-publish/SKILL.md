@@ -5,6 +5,8 @@ description: "Publish already-prepared Meta/Facebook Ads drafts through the user
 
 # Meta Ads Auto Publish
 
+Skill version: `2026.07.25`
+
 Publish existing, prepared ads only. Treat the live Meta Ads Manager selection and the user's explicit publish request as the source of authorization.
 
 ## Browser control

@@ -5,6 +5,8 @@ description: Analyze Meta Ads accounts with the installed meta-ads CLI and Marke
 
 # Meta Ads Analysis
 
+Skill version: `2026.07.25`
+
 Use `meta-ads` for authenticated reads and `scripts/analyze_report.py` for deterministic aggregation. Never print or persist access tokens.
 
 ## Workflow

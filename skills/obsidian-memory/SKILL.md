@@ -5,6 +5,8 @@ description: Extract, organize, and maintain durable personal memory, project kn
 
 # Obsidian Memory
 
+Skill version: `2026.07.25`
+
 Create and maintain an Obsidian-based memory system from work conversations and raw notes. Treat the vault as durable external memory: concise, linked, source-aware, and safe to update repeatedly.
 
 ## Core Workflow

@@ -5,7 +5,7 @@ description: Build a composable CLI for Codex from API docs, an OpenAPI spec, ex
 
 # CLI Creator
 
-Skill version: `2026.07.24`
+Skill version: `2026.07.25`
 
 Create a real CLI that future Codex threads can run by command name from any working directory.
 

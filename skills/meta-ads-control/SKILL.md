@@ -5,6 +5,8 @@ description: Analyze Meta Ads performance, inspect campaigns/ad sets/ads, export
 
 # Meta Ads Control
 
+Skill version: `2026.07.25`
+
 Use the installed `meta-ads` command. Return structured JSON for analysis.
 
 ## Start

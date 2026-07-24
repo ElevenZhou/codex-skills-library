@@ -5,6 +5,8 @@ description: Back up and copy CCSwitch / CC-Switch user configuration from the c
 
 # CCSwitch Config Transfer
 
+Skill version: `2026.07.25`
+
 Use this skill to clone CCSwitch configuration while preserving rollback backups and avoiding WebView/cache noise.
 
 ## What To Copy

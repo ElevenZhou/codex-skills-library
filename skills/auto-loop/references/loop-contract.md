@@ -14,8 +14,6 @@ Create a working contract with these fields:
 - **Acceptance checks:** observable tests that prove the deliverable is good enough.
 - **Fallbacks:** what to try if the preferred tool or data source fails.
 - **Roles/lanes:** planner, researcher, builder, verifier, critic, integrator; specify which are real subagents vs internal roles.
-- **Artifact manifest:** where final files, generated assets, prompts/specifications, validation, and status will be recorded.
-- **Decision points:** objective gates that can be resolved autonomously and subjective choices that should preserve alternatives for user preference.
 - **Stop condition:** exact condition for "done enough" and what still requires user preference.
 
 ## Loop Ledger
@@ -33,8 +31,6 @@ Findings:
 Fixes applied:
 Residual risks:
 Final artifacts:
-Artifact reconciliation:
-Reusable learnings absorbed:
 ```
 
 Do not over-document. The ledger is for continuity and quality, not ceremony.

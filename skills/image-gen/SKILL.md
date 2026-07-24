@@ -5,6 +5,8 @@ description: "Generate images from text prompts via the flaios image API using t
 
 # Image Generation (作图)
 
+Skill version: `2026.07.25`
+
 Generate images from a text prompt using the flaios image API. Runs a single
 `curl` call, decodes the returned base64 image, and writes it to disk.
 

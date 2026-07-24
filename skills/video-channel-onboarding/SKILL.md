@@ -5,6 +5,8 @@ description: End-to-end workflow for onboarding new video generation channels in
 
 # Video Channel Onboarding
 
+Skill version: `2026.07.25`
+
 Use this skill to handle a new video generation provider from first document intake through production smoke validation and handoff documentation.
 
 ## Core Rule
