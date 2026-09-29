@@ -1,0 +1,4 @@
+interface:
+  display_name: "Xiaowu Contract Review"
+  short_description: "业务+法务双视角合同审查：问题对照表、许可门禁、修订自检"
+  default_prompt: "Use $xiaowu-contract-review 审查这份合同，小五按七步流程来：读、审、报、批、改、查、验。"
