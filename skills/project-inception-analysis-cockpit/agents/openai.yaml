@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Inception Analysis Cockpit"
+  short_description: "通用项目立项分析、行业动态研究、多角色审评与推行计划驾驶舱"
+  default_prompt: "Use $project-inception-analysis-cockpit to analyze my project topic and goals, adapt research modules, conduct role reviews, and deliver an evidence-based inception report."

@@ -41,6 +41,8 @@ Read `references/usage.md` when deciding how a user invokes the team without nam
 
 The default phase order is: pre-initiation, early, middle, late-middle, late delivery, initial launch, early promotion, mid promotion, iterative loop, late operations, and closeout. A project may move backward when evidence invalidates an assumption.
 
+For a deep go/no-go analysis in the pre-initiation phase (market, competitors, open-source options, ten-role scoring, inception report), hand off to `project-inception-analysis-cockpit` and import its decision, risks, and rollout plan into the project brief. This skill owns everything after the go decision.
+
 ## Minimum execution loop
 
 1. Project manager creates the brief, phase, objective, decision owner, and acceptance checks.

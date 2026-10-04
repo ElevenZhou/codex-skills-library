@@ -8,14 +8,11 @@ TARGET="$CODEX_HOME_DIR/skills"
 mkdir -p "$TARGET"
 
 if [[ "$#" -eq 0 || "${1:-}" == "--all" ]]; then
-  rsync -a --delete \
-    --exclude '.system' \
-    --exclude '.DS_Store' \
-    --exclude '__pycache__' \
-    --exclude '*.pyc' \
-    "$REPO_ROOT/skills/" "$TARGET/"
-  echo "Installed all skills to $TARGET"
-  exit 0
+  # Sync each skill separately so local-only skills in $TARGET are left alone.
+  set --
+  for skill_dir in "$REPO_ROOT"/skills/*/; do
+    set -- "$@" "$(basename "$skill_dir")"
+  done
 fi
 
 for skill in "$@"; do
