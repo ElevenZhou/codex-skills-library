@@ -58,6 +58,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | --- | --- | --- | --- | --- |
 | `advanced-frontend-design` | `2026.07.24` | 生产级前端设计与实现工作流，适合落地高辨识度界面、复杂状态和浏览器验证。 | `Use $advanced-frontend-design 做一个前端页面...` | 前端/设计推荐 |
 | `agent-scaffolder` | `2026.07.25` | 从 Agent Build Spec 生成可运行 Python agent 项目，包含 controller loop、工具桩、状态、权限和观测。 | `Use $agent-scaffolder 基于这份 spec 生成 agent 项目...` | Agent 开发 |
+| `project-employee-agents` | `2026.10.05` | 自动调度 CEO、COO、产品、市场、设计、技术、测试、客户、增长、财务等岗位的虚拟项目团队，并按全生命周期产出可验收管理成果。 | `启动项目员工团队...`、`项目员工开工...`、`继续推进项目...` | 项目团队推荐 |
 | `auto-loop` | `2026.07.25` | 自动驾驶舱。适合复杂目标的全自动规划、执行、验证、优化。覆盖 PPT、PDF/文档、调研、网站/App、代码工程、量化交易等。 | `Use $auto-loop 自动驾驶舱模式...`、`全自动`、`强制执行`、`循环优化` | **全员推荐** |
 | `ccswitch-config-transfer` | `2026.07.25` | 备份并迁移 CCSwitch / CC-Switch 用户配置，尤其适合同步到 Salt 管理的 CRS 节点。 | `Use $ccswitch-config-transfer 同步 ccswitch 配置到 TS08...` | 配置迁移 |
 | `claude-daily-training` | `2026.07.24` | 通过 Codex 和 Chrome 执行 Claude.ai 每日创作训练。 | `Use $claude-daily-training...`、`Claude 每日训练` | 创作训练 |

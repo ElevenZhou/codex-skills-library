@@ -1,0 +1,7 @@
+interface:
+  display_name: "项目员工 Agent 团队"
+  short_description: "构建全周期虚拟项目公司与岗位协作"
+  brand_color: "#0F766E"
+  default_prompt: "用项目员工团队启动这个项目，自动判断阶段、选择岗位并产出可验收成果。"
+policy:
+  allow_implicit_invocation: true
