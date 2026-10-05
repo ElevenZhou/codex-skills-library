@@ -1,6 +1,28 @@
 # Codex Skills Library
 
-这个仓库用于集中管理、版本化和共享个人/团队 Codex skills。适合多设备同步，也适合同事之间复用成熟工作流。
+集中管理、版本化和共享个人/团队 AI 技能（skills）。同一套技能在本机的 Claude Code、Codex、WorkBuddy、Trae CN、OpenCode 中通用，适合多设备同步，也适合同事之间复用成熟工作流。
+
+## 30 秒上手
+
+直接对 AI 说中文别名或任务，不用记技能名：
+
+| 你说 | 谁来做 |
+| --- | --- |
+| "老大，帮我做个产品介绍 PPT" | 老大 `auto-loop`：总调度，按技能表派给 PPT 技能并验收 |
+| "小二，看看这个项目值不值得做" | 小二 `project-inception-analysis-cockpit`：立项调研 |
+| "三哥，继续推进项目" | 老三 `project-employee-agents`：项目团队推进 |
+| "小五看下这份合同" | 小五 `xiaowu-contract-review`：合同审阅 |
+| "画一张网站首图" | `local-image-generator`：gpt-image-2.5 高画质出图 |
+
+完整别名见下文「别名与总调度」；更多写法见 [`docs/usage-examples.md`](docs/usage-examples.md)。
+
+## 文档索引
+
+| 文档 | 内容 |
+| --- | --- |
+| [`docs/usage-examples.md`](docs/usage-examples.md) | 调用案例：一句话、带上下文、组合调用、会停下来问你的情况 |
+| [`docs/install-prompt.md`](docs/install-prompt.md) | 给本机各 AI 的安装提示词和技能目录路径 |
+| [`skills/auto-loop/references/skill-registry.md`](skills/auto-loop/references/skill-registry.md) | 老大的技能表：能调用哪些技能、别名、组合 |
 
 仓库地址：
 
@@ -45,6 +67,8 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 ```
 
 安装后重新打开 Codex / 新开线程，让技能列表刷新。
+
+> `install-skills.sh` 和 `pull-from-local-codex.sh` 依赖 `rsync`。本机 Windows 的 Git Bash 没有 `rsync`，在 Windows 上请按「在本机各 AI 中安装」一节复制目录，或把提示词发给对应 AI 让它自己装。
 
 ## 版本对齐
 
@@ -160,36 +184,32 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | 小五 | `xiaowu-contract-review` | 合同审阅与修订 |
 | 老四 | （预留） | 复刻微创新综合工作组（skill 组合），技能未建，暂不可调用 |
 
-调用案例：
-
-| 你说 | 调用的技能 |
-| --- | --- |
-| "老大，帮我做个产品介绍 PPT" | `auto-loop`（再交给 `deck-studio-loop`） |
-| "小二，看看这个项目值不值得做" | `project-inception-analysis-cockpit` |
-| "三哥，继续推进项目" | `project-employee-agents` |
-| "小五看下这份合同" | `xiaowu-contract-review` |
-| "画一张网站首图" | `local-image-generator` |
-
-更多写法（带上下文、组合调用、哪些情况会停下来问你）见 [`docs/usage-examples.md`](docs/usage-examples.md)。
+调用案例见开头「30 秒上手」；更多写法（带上下文、组合调用、哪些情况会停下来问你）见 [`docs/usage-examples.md`](docs/usage-examples.md)。
 
 老大调度时会查 `skills/auto-loop/references/skill-registry.md`（技能表）：里面列出了它能调用的技能、别名、调用方式和常见组合。被调用技能自己的门禁（例如小五"未经许可不改合同"、广告技能"启停投放需授权"）优先于老大的"免打扰"原则。
 
 **新增或下线技能时**，要同步更新技能表和本 README；别名必须同时写进该技能 `SKILL.md` 的 `description`，否则在老大之外说别名不会触发。
 
-## 在 Claude Code 中安装
+## 在本机各 AI 中安装
+
+| AI | 技能目录 | 安装方式 |
+| --- | --- | --- |
+| Claude Code | `C:\Users\AprilWu\.claude\skills` | 下方命令 |
+| OpenCode | 不单独安装 | 自动读取 Claude 的技能目录，不要再复制一份 |
+| Codex | `E:\AI_Dev\Codex\home\skills` | 发 [`docs/install-prompt.md`](docs/install-prompt.md) 里的提示词 |
+| WorkBuddy | `C:\Users\AprilWu\.workbuddy\skills` | 同上 |
+| Trae CN | `C:\Users\AprilWu\.trae-cn\skills` | 同上 |
 
 Claude Code 从 `~/.claude/skills/<技能名>/` 读取技能，不需要 `agents/openai.yaml`（Codex 专用）：
 
 ```bash
-for s in auto-loop project-inception-analysis-cockpit project-employee-agents; do
+for s in auto-loop project-inception-analysis-cockpit project-employee-agents xiaowu-contract-review local-image-generator; do
   rm -rf ~/.claude/skills/$s && mkdir -p ~/.claude/skills/$s
   cp -r skills/$s/* ~/.claude/skills/$s/ && rm -rf ~/.claude/skills/$s/agents
 done
 ```
 
-安装后新开会话，技能列表会刷新。
-
-给本机 Codex、WorkBuddy、Trae CN、OpenCode 统一安装（含各自技能目录；OpenCode 直接共用 `~/.claude/skills`）：把 [`docs/install-prompt.md`](docs/install-prompt.md) 里的提示词整段发给对方即可。
+安装后新开会话，技能列表会刷新。每个 AI 装完后都应回报 `Skill version`，并用「30 秒上手」里的 5 句话做别名自测。
 
 ## 推荐组合
 
@@ -337,4 +357,4 @@ git diff --cached
 
 - 不包含 `~/.codex/skills/.system` 系统技能。
 - 不包含插件缓存、运行时缓存、API key、客户资料。
-- 不包含每台机器自己的 Codex 配置文件。
+- 不包含每台机器自己的 Codex / Claude / WorkBuddy / Trae / OpenCode 配置文件。
