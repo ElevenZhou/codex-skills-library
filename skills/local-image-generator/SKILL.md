@@ -26,9 +26,17 @@ Y:\服务器管理\腾讯云-首尔-Ubunut-150.109.233.152\dev\image-generator
 ## 模型与渠道
 
 - **默认模型由工具的 `.env.local` 决定**（`OPENAI_IMAGE_MODEL`），渠道由 `OPENAI_BASE_URL` 决定；主渠道失败时工具会自动走 `OPENAI_FALLBACK_BASE_URL`。
-- 主力模型是用户单独提供的 gpt-image-2.5 渠道。切换或更新模型时只改 `.env.local`，不要在本技能或命令里硬编码模型 ID。
-- **用户没有点名模型时，不传 `--model`**，让 `.env.local` 的默认值生效。
-- 用户点名了模型时才传 `--model <id>`。不确定某个模型是否可用，先查渠道的 `GET /v1/models`，不要猜测或编造模型 ID。
+- 主力模型是 GPT Image 2.5。官方**没有**裸的 `gpt-image-2.5`，只有两个带后缀的模型，ID 必须完全一致：
+
+| 模型 ID | 定位 | 何时用 |
+| --- | --- | --- |
+| `gpt-image-2.5-flare` | 快速、高质量日常出图（约快 50%） | 默认：网页素材、配图、草稿、批量出图 |
+| `gpt-image-2.5-sunburst` | 精细创作与编辑精度，生成更慢 | 用户要求精细/高质量终稿、复杂构图、文字排版、局部编辑 |
+| `gpt-image-2` | 上一代 | 2.5 渠道不可用时的后备 |
+
+- `.env.local` 的 `OPENAI_IMAGE_MODEL` 应设为 `gpt-image-2.5-flare`。**用户没有点名模型时，不传 `--model`**；用户要精细/高质量终稿时传 `--model gpt-image-2.5-sunburst`。
+- 2.5 的 `--quality` 额外支持 `xhigh`、`max`（旧模型最高 `high`）；`--size` 支持推荐尺寸或自定义 `宽x高`（边长为 16 的倍数，比例 1:3 到 3:1，单边不超过 3840）。
+- 不确定某个模型是否可用，先查渠道的 `GET /v1/models`，不要猜测或编造模型 ID。返回 `This token has no access to model ...` 表示当前 key 没开通该模型，需要用户提供有权限的 key / 渠道，不要自行降级后假装成功；如果改用 `gpt-image-2` 出图，必须向用户写明。
 - 不要用 `/chat/completions` 调图片模型；工具走的是 `/v1/images/generations`。
 
 ## 工作流
