@@ -22,7 +22,7 @@ When available, combine:
 - `advanced-frontend-design` for the product contract, anti-template audit, implementation, and browser quality gate
 - `frontend-design` for visual authorship and memorable composition
 - `ui-ux-pro-max` for states, accessibility, information architecture, and UX critique
-- `imagegen` or `local-image-generator-1-0` only when a bitmap asset materially improves one direction
+- `imagegen` or `local-image-generator` only when a bitmap asset materially improves one direction
 - Playwright or available browser tooling for the controlled comparison
 
 Remain free-first. Do not depend on paid builders, premium templates, or paid component tiers. Do not trigger a quota-consuming image API unless the user requested generated imagery or has authorized that local tool workflow.

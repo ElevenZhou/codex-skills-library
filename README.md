@@ -54,7 +54,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 ## 技能目录
 
-共 41 个技能，按用途分 9 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
+共 39 个技能，按用途分 9 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
 
 ### 1. 自动驾驶与项目管理
 
@@ -124,9 +124,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 | 技能 | 版本 | 适合场景 | 推荐触发词 / 用法 |
 | --- | --- | --- | --- |
-| ★ `image-gen` | `2026.07.25` | 通过 FlaioS 图片 API 和用户自己的 key 生成静态图片，支持 Grok Imagine 和 gpt-image-2。 | `Use $image-gen 生成一张图...`、`作图`、`画图` |
-| `local-image-generator-1-0` | `2026.07.24` | 使用本地图片生成工具创建静态图片（网页素材、插画、产品图等）。 | `Use $local-image-generator-1-0 生成图片...` |
-| `local-image-generator` | `2026.07.24` | `local-image-generator-1-0` 的旧别名，仅为兼容旧流程保留。 | 新任务不要使用 |
+| ★ `local-image-generator` | `2026.10.05` | 唯一的静态出图技能（已合并原 `image-gen` 和 `local-image-generator-1-0`）：调用本地图片工具，模型和渠道由工具 `.env.local` 统一配置，主力为单独提供的 gpt-image-2.5 渠道。适合网页素材、插画、产品图、社交配图。 | `Use $local-image-generator 生成一张图...`、`作图`、`画图` |
 | `local-grok-video-generator-2-0` | `2026.07.24` | 通过本地 FlaioS Grok video API 生成 Grok Imagine 视频。 | `Use $local-grok-video-generator-2-0 生成视频...` |
 | `video-channel-onboarding` | `2026.07.25` | 新视频生成渠道接入：资料归档、适配、部署、冒烟测试、文档和交接。 | `Use $video-channel-onboarding 接入这个视频渠道...` |
 
@@ -213,7 +211,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 适合本地图像、视频生成，以及结果提交到个人工作台：
 
 ```bash
-./scripts/install-skills.sh auto-loop local-image-generator-1-0 local-grok-video-generator-2-0 flaios-content-submit submit-results-to-workbench personal-workbench
+./scripts/install-skills.sh auto-loop local-image-generator local-grok-video-generator-2-0 flaios-content-submit submit-results-to-workbench personal-workbench
 ```
 
 ### Seoul / T0 运维组合

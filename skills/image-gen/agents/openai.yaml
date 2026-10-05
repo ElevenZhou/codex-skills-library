@@ -1,4 +1,0 @@
-interface:
-  display_name: "Image Generation (flaios)"
-  short_description: "Generate images via flaios API (grok / gpt-image-2)"
-  default_prompt: "Generate an image from a text prompt using the flaios image API."

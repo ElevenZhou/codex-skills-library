@@ -11,7 +11,7 @@ Prefer, in order:
 3. freely licensed source assets with verified terms
 4. generated bitmaps when a direction materially needs unique cartography, texture, photography, or illustration
 
-Use `imagegen` for built-in generation or `local-image-generator-1-0` when the user has requested the local project-bound workflow. Ask before using an API that may consume quota when generation was not explicitly requested.
+Use `imagegen` for built-in generation or `local-image-generator` when the user has requested the local project-bound workflow. Ask before using an API that may consume quota when generation was not explicitly requested.
 
 ## Generated Asset Contract
 

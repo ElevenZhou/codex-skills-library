@@ -1,6 +1,6 @@
 ---
 name: local-grok-video-generator-2-0
-description: Generate Grok Imagine videos through the user's FlaioS Grok video API. Use when the user asks to make, test, poll, download, or save videos with grok-imagine-video. This skill is for video only; use local-image-generator-1-0 for still images.
+description: Generate Grok Imagine videos through the user's FlaioS Grok video API. Use when the user asks to make, test, poll, download, or save videos with grok-imagine-video. This skill is for video only; use local-image-generator for still images.
 ---
 
 # Local Grok Video Generator 2.0
