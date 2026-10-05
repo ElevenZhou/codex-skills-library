@@ -1,4 +1,4 @@
-# 本机 AI 技能安装提示词（Codex / WorkBuddy / Trae CN）
+# 本机 AI 技能安装提示词（Codex / WorkBuddy / Trae CN / OpenCode）
 
 本机这几个 AI 都使用"每个技能一个目录 + `SKILL.md`"的格式，只是技能目录不同。把对应那段整段发给它即可。
 
@@ -56,6 +56,24 @@
 
 ```text
 请从我的技能库安装技能：源目录 Y:\Skills\codex-skills-library\skills，目标目录 C:\Users\AprilWu\.trae-cn\skills。其余步骤按 Y:\Skills\codex-skills-library\docs\install-prompt.md 的「通用提示词」执行，做完按第 6 步汇报。
+```
+
+## OpenCode：不用安装，直接共用 Claude 的技能
+
+OpenCode（本机 1.18.21）会自动加载 `~/.claude/skills` 和 `~/.agents/skills` 里的技能。2026-10-05 用 `opencode debug skill` 实测：5 个技能都已识别，路径都在 `C:\Users\AprilWu\.claude\skills`，版本与仓库一致，没有重复。
+
+**不要**再往 `~/.config/opencode/skills` 复制一份，否则同名技能会重复。以后只需更新 `~/.claude/skills`，OpenCode 自动跟上。
+
+发给 OpenCode 做验收：
+
+```text
+请验证你已加载我的技能库技能，不要安装或复制任何文件。
+1. 运行 opencode debug skill，确认以下 5 个技能各出现一次，且来源是 C:\Users\AprilWu\.claude\skills：
+   auto-loop、project-inception-analysis-cockpit、project-employee-agents、xiaowu-contract-review、local-image-generator
+2. 回报每个技能 SKILL.md 里的 Skill version，应为：auto-loop 2026.10.05、project-inception-analysis-cockpit 2026.10.05、project-employee-agents 2026.10.05、xiaowu-contract-review 2026.09.29、local-image-generator 2026.10.05。
+3. 别名路由自测（只回答会调用哪个技能，不要真正执行）：
+   “老大，帮我做个产品介绍 PPT” / “小二，看看这个项目值不值得做” / “三哥，继续推进项目” / “小五看下这份合同” / “画一张网站首图”
+4. 如果某个技能缺失，检查是否设置了环境变量 OPENCODE_DISABLE_CLAUDE_CODE、OPENCODE_DISABLE_CLAUDE_CODE_SKILLS 或 OPENCODE_DISABLE_EXTERNAL_SKILLS，告诉我结果，不要自行改配置。
 ```
 
 ## 以后同步

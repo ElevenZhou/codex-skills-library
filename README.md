@@ -176,7 +176,7 @@ done
 
 安装后新开会话，技能列表会刷新。
 
-给 本机 Codex、WorkBuddy、Trae CN 统一安装（含各自技能目录）：把 [`docs/install-prompt.md`](docs/install-prompt.md) 里的提示词整段发给对方即可。
+给 本机 Codex、WorkBuddy、Trae CN、OpenCode 统一安装（含各自技能目录；OpenCode 直接共用 `~/.claude/skills`）：把 [`docs/install-prompt.md`](docs/install-prompt.md) 里的提示词整段发给对方即可。
 
 ## 推荐组合
 
