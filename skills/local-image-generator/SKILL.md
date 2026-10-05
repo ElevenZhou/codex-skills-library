@@ -50,6 +50,13 @@ Set-Location '\\192.168.31.121\projects\服务器管理\腾讯云-首尔-Ubunut-
 node scripts\generate-image.mjs --size 1536x1024 --quality high --output output\hero.png "prompt"
 ```
 
+Git Bash（如 Claude Code on Windows）下：
+
+```bash
+cd "/y/服务器管理/腾讯云-首尔-Ubunut-150.109.233.152/dev/image-generator"
+node scripts/generate-image.mjs --size 1536x1024 --quality high --output output/hero.png "prompt"
+```
+
 3. 工具会成对保存产物，保持这个结构：
 
 ```text
