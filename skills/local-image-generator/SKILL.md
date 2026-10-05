@@ -34,7 +34,8 @@ Y:\服务器管理\腾讯云-首尔-Ubunut-150.109.233.152\dev\image-generator
 | `gpt-image-2.5-sunburst` | 精细创作与编辑精度，生成更慢 | 用户要求精细/高质量终稿、复杂构图、文字排版、局部编辑 |
 | `gpt-image-2` | 上一代 | 2.5 渠道不可用时的后备 |
 
-- `.env.local` 的 `OPENAI_IMAGE_MODEL` 应设为 `gpt-image-2.5-flare`。**用户没有点名模型时，不传 `--model`**；用户要精细/高质量终稿时传 `--model gpt-image-2.5-sunburst`。
+- `.env.local` 的 `OPENAI_IMAGE_MODEL` 已设为 `gpt-image-2.5-flare`（2026-10-05 实测 flare / sunburst 均可出图）。**用户没有点名模型时，不传 `--model`**；用户要精细/高质量终稿时传 `--model gpt-image-2.5-sunburst`。
+- 工具的 `OPENAI_API_KEY` 使用 flaios「全能key」（来源：`E:\Dev-2\本地大模型调用\自用大模型apikey.txt` 中标注「全能key」的 JSON，说明见同目录 `全能key使用说明.md`）。其他 key 可能没有 2.5 权限。flaios 网关还列出裸名 `gpt-image-2.5`，但它不是官方 ID，不要使用。
 - 2.5 的 `--quality` 额外支持 `xhigh`、`max`（旧模型最高 `high`）；`--size` 支持推荐尺寸或自定义 `宽x高`（边长为 16 的倍数，比例 1:3 到 3:1，单边不超过 3840）。
 - 不确定某个模型是否可用，先查渠道的 `GET /v1/models`，不要猜测或编造模型 ID。返回 `This token has no access to model ...` 表示当前 key 没开通该模型，需要用户提供有权限的 key / 渠道，不要自行降级后假装成功；如果改用 `gpt-image-2` 出图，必须向用户写明。
 - 不要用 `/chat/completions` 调图片模型；工具走的是 `/v1/images/generations`。
