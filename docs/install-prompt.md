@@ -8,6 +8,7 @@
 | WorkBuddy | `C:\Users\AprilWu\.workbuddy\skills` |
 | Trae CN | `C:\Users\AprilWu\.trae-cn\skills` |
 | Claude Code（已装好，供对照） | `C:\Users\AprilWu\.claude\skills` |
+| OpenCode | 不单独安装，自动读取 `C:\Users\AprilWu\.claude\skills` |
 
 技能源：`Y:\Skills\codex-skills-library\skills`（NAS 不可用时改用 `\\192.168.31.121\projects\Skills\codex-skills-library\skills`）。
 
