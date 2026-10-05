@@ -1,16 +1,18 @@
 ---
 name: project-inception-analysis-cockpit
-description: 通用项目立项分析驾驶舱。根据项目命题、行业、目标用户、阶段和约束，自动补全研究问题，动态选择或裁剪市场、竞品、开源项目、用户痛点、产品、UI/UX、技术、测试、商业、财务、品牌与运营分析模块，并组织产品经理、设计经理、策划经理、技术经理、测试经理、客户经理、CEO、COO、财务经理和品牌经理进行多角度评审。用于反复进行项目立项、创业想法验证、产品机会分析、MVP规划、开源项目选型和推行路线设计。
+description: 通用项目立项分析驾驶舱（别名：小二、老二、二哥、二当家；用户说"小二""老二""让二哥看看这个项目"即调用本技能）。根据项目命题、行业、目标用户、阶段和约束，自动补全研究问题，动态选择或裁剪市场、竞品、开源项目、用户痛点、产品、UI/UX、技术、测试、商业、财务、品牌与运营分析模块，并组织产品经理、设计经理、策划经理、技术经理、测试经理、客户经理、CEO、COO、财务经理和品牌经理进行多角度评审。用于反复进行项目立项、创业想法验证、产品机会分析、MVP规划、开源项目选型和推行路线设计。
 ---
 
-# Project Inception Analysis Cockpit
+# Project Inception Analysis Cockpit（小二 / 老二）
 
 Skill version: `2026.10.05`
+
+别名：**小二**、老二、二哥、二当家。三兄弟分工：老大 = `auto-loop` 总调度；老二（本技能）= 立项调研，回答"该不该做"；老三 = `project-employee-agents`，负责立项后的推进。
 
 将一个模糊项目想法转化为有证据、有评分、有争议记录、可执行的立项决策。默认采用研究优先、假设透明、动态裁剪、角色评审和迭代整合，而不是机械执行固定清单。
 
 ## 组合与边界
-- 与 `project-employee-agents` 分工：本技能只回答「这个项目该不该做、以什么条件做」，产出一次性立项报告；立项后的计划、执行、上线和运营交给 `project-employee-agents` 持续推进。用户说「继续推进项目」「项目员工开工」时不使用本技能。
+- 与 `project-employee-agents` 分工：本技能只回答「这个项目该不该做、以什么条件做」，产出一次性立项报告；立项后的计划、执行、上线和运营交给老三（`project-employee-agents`）持续推进。用户说「继续推进项目」「项目员工开工」时不使用本技能。
 - 复杂任务优先组合 `auto-loop`，使用 Sense → Frame → Orchestrate → Build → Verify → Improve → Deliver 循环。
 - 需要设计 Agent 本身时组合 `production-agent-architecture`；需要生成运行时代码时组合 `agent-scaffolder`。
 - 需要 UI/UX 或原型审查时组合 `advanced-frontend-design`。

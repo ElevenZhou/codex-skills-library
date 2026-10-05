@@ -53,11 +53,13 @@ Minimum loop:
 
 1. Inspect project structure and existing patterns.
 2. Define user flow and acceptance tests.
-3. Implement in small disjoint changes.
-4. Run install/build/test/typecheck/lint where available.
-5. Use browser screenshots for frontend QA.
-6. Review accessibility, responsiveness, error states, and logs.
-7. Summarize files changed and validation.
+3. If visual taste is unsettled, route to `frontend-design-lab` for a bounded comparison; otherwise use `advanced-frontend-design` to define one direction.
+4. Persist generated concepts and record how the selected direction translates into tokens, layout, states, and motion.
+5. Implement in small disjoint changes.
+6. Run install/build/test/typecheck/lint where available.
+7. Use browser screenshots for frontend QA.
+8. Review accessibility, responsiveness, error states, and logs.
+9. Reconcile design docs, QA records, screenshots, and actual runtime files before handoff.
 
 ## Engineering / Code System Mode
 

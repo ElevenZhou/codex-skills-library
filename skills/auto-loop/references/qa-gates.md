@@ -5,10 +5,12 @@ Use the gate that matches the deliverable. Passing tool execution is not enough;
 ## Universal Gate
 
 - Deliverable exists in a durable path.
+- Every requested final file appears in an artifact manifest or equivalent handoff list.
 - User's explicit requirements are covered.
 - Old brand names, placeholders, TODOs, and internal notes are removed.
 - Assumptions and risks are labeled.
 - A revision pass or reason to skip revision is recorded.
+- Documentation, QA records, prompts, links, screenshots, and files are reconciled after the last revision.
 
 ## PPT / Slides Gate
 
@@ -43,6 +45,8 @@ Use the gate that matches the deliverable. Passing tool execution is not enough;
 - Browser screenshot or DOM inspection confirms UI.
 - Mobile/responsive state is considered for frontend.
 - Error states and logs are checked.
+- When visual direction was unsettled, alternatives were compared under a shared product contract and the selected concept was translated into implementable tokens and behavior.
+- Generated visual references are saved with prompts/specifications and clearly labeled as runtime, reference-only, or superseded.
 
 ## Code / Automation Gate
 

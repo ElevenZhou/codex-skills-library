@@ -1,13 +1,15 @@
 ---
 name: project-employee-agents
-description: Build and operate a reusable virtual project company with executive, product, market, design, delivery, growth, customer, finance, procurement, and partnership roles across the full project lifecycle. Automatically apply when the user says 启动项目团队、项目员工开工、项目全周期管理、组建岗位团队, or describes a project goal that needs multiple business roles; do not require the user to name a specific role.
+description: (Aliases 小三 / 老三 / 三哥 / 三神 / 三当家) Build and operate a reusable virtual project company with executive, product, market, design, delivery, growth, customer, finance, procurement, and partnership roles across the full project lifecycle. Automatically apply when the user says 小三, 老三, 三哥, 三神, 三当家, 启动项目团队、项目员工开工、项目全周期管理、组建岗位团队, or describes a project goal that needs multiple business roles; do not require the user to name a specific role.
 metadata:
   short-description: 项目员工 Agent 团队与全周期管理
 ---
 
-# Project Employee Agents
+# Project Employee Agents（小三 / 老三）
 
 Skill version: `2026.10.05`
+
+别名：**小三**、老三、三哥、三神、三当家。三兄弟分工：老大 = `auto-loop` 总调度；老二 = `project-inception-analysis-cockpit` 立项调研；老三（本技能）= 项目团队，负责立项后的计划、执行、上线和运营。
 
 把 Agent 当作岗位员工管理：每个角色有职责边界、经验判断、工作行为、技能包、输入、输出、验收标准和交接规则。角色文件是行为契约，不是人物设定。
 
@@ -41,7 +43,7 @@ Read `references/usage.md` when deciding how a user invokes the team without nam
 
 The default phase order is: pre-initiation, early, middle, late-middle, late delivery, initial launch, early promotion, mid promotion, iterative loop, late operations, and closeout. A project may move backward when evidence invalidates an assumption.
 
-For a deep go/no-go analysis in the pre-initiation phase (market, competitors, open-source options, ten-role scoring, inception report), hand off to `project-inception-analysis-cockpit` and import its decision, risks, and rollout plan into the project brief. This skill owns everything after the go decision.
+For a deep go/no-go analysis in the pre-initiation phase (market, competitors, open-source options, ten-role scoring, inception report), hand off to 老二 (`project-inception-analysis-cockpit`) and import its decision, risks, and rollout plan into the project brief. This skill owns everything after the go decision.
 
 ## Minimum execution loop
 

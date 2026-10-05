@@ -60,12 +60,12 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 | 技能 | 版本 | 适合场景 | 推荐触发词 / 用法 |
 | --- | --- | --- | --- |
-| ★ `auto-loop` | `2026.07.25` | 自动驾驶舱。复杂目标的全自动规划、执行、验证、优化，覆盖 PPT、PDF/文档、调研、网站/App、代码工程、量化交易等。**全员推荐。** | `Use $auto-loop 自动驾驶舱模式...`、`全自动`、`强制执行`、`循环优化` |
-| `project-inception-analysis-cockpit` | `2026.10.05` | 立项分析驾驶舱：动态裁剪市场、竞品、开源、用户、技术、财务等研究模块，十角色评审加权评分，给出立项/有条件立项/先验证/暂缓/否决结论和四阶段推行计划。 | `Use $project-inception-analysis-cockpit 分析这个项目值不值得做...` |
-| `project-employee-agents` | `2026.10.05` | 虚拟项目团队：自动调度 CEO、COO、产品、市场、设计、技术、测试、客户、投放、财务等 15 个岗位，按 12 个生命周期阶段产出可验收管理成果。 | `启动项目员工团队...`、`项目员工开工...`、`继续推进项目...` |
+| ★ `auto-loop`（老大） | `2026.10.05` | 自动驾驶舱 / 总调度，按内置技能表调用其他技能（见 `references/skill-registry.md`）。复杂目标的全自动规划、执行、验证、优化，覆盖 PPT、PDF/文档、调研、网站/App、代码工程、量化交易等。**全员推荐。** | `老大`、`大哥`、`Use $auto-loop 自动驾驶舱模式...`、`全自动`、`强制执行`、`循环优化` |
+| `project-inception-analysis-cockpit`（小二） | `2026.10.05` | 立项分析驾驶舱：动态裁剪市场、竞品、开源、用户、技术、财务等研究模块，十角色评审加权评分，给出立项/有条件立项/先验证/暂缓/否决结论和四阶段推行计划。 | `小二`、`老二`、`二哥`、`Use $project-inception-analysis-cockpit 分析这个项目值不值得做...` |
+| `project-employee-agents`（小三） | `2026.10.05` | 虚拟项目团队：自动调度 CEO、COO、产品、市场、设计、技术、测试、客户、投放、财务等 15 个岗位，按 12 个生命周期阶段产出可验收管理成果。 | `小三`、`老三`、`三哥`、`三神`、`启动项目员工团队...`、`项目员工开工...`、`继续推进项目...` |
 | `project-ops-standards` | `2026.07.24` | 创建、审计或改进软件项目的项目管理与运营文档。 | `Use $project-ops-standards 检查项目文档...` |
 
-怎么选：**该不该做**用立项驾驶舱（一次性报告）；**决定做了之后持续推进**用项目员工团队（立项前阶段需要深度分析时，它会转交立项驾驶舱）；只需要补齐项目文档用 `project-ops-standards`；不属于以上的复杂交付用 `auto-loop`。
+怎么选：老大总调度；**该不该做**找老二（一次性立项报告）；**决定做了之后持续推进**找老三（立项前需要深度分析时，老三会转交老二）；只需要补齐项目文档用 `project-ops-standards`；不属于以上的复杂交付用 `auto-loop`。
 
 ### 2. Agent 与工具开发
 
@@ -105,7 +105,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | `doc` | `2026.07.24` | 读取、创建、编辑 `.docx`，适合需要格式和版式控制的交付物。 | `Use $doc 编辑这个 Word...` |
 | `pdf` | `2026.07.24` | 读取、创建、审阅 PDF，适合需要渲染和版式检查的任务。 | `Use $pdf 看这个 PDF...` |
 | `rich-html-docs` | `2026.07.24` | 精美、可分享的单文件 HTML 文档，替代普通 Markdown 说明。 | `Use $rich-html-docs 做一份 HTML 文档...` |
-| `xiaowu-contract-review` | `2026.09.29` | 合同审阅与修订（Agent 身份"小五"）：业务+法务双视角，七步流程（读审报批改查验），P0/P1/P2 问题对照表 + 对外话术，未经许可不改正文。 | `Use $xiaowu-contract-review 审查这份合同...`、`小五看合同` |
+| `xiaowu-contract-review`（小五） | `2026.09.29` | 合同审阅与修订（Agent 身份"小五"）：业务+法务双视角，七步流程（读审报批改查验），P0/P1/P2 问题对照表 + 对外话术，未经许可不改正文。 | `Use $xiaowu-contract-review 审查这份合同...`、`小五看合同` |
 | `domain-brand-finder` | `2026.07.24` | 项目命名、品牌域名策略和域名可用性。 | `Use $domain-brand-finder 给项目起名...` |
 | `post-wechat-moments` | `2026.07.24` | 可直接发布的微信朋友圈图文内容。 | `Use $post-wechat-moments 发朋友圈...` |
 
@@ -147,6 +147,34 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | `seoul-server-status-check` | `2026.07.24` | 只读检查 Seoul 服务器健康状态并发送飞书通知。 | `Use $seoul-server-status-check 检查首尔服务器...` |
 | `ccswitch-config-transfer` | `2026.07.25` | 备份并迁移 CCSwitch / CC-Switch 用户配置，尤其适合同步到 Salt 管理的 CRS 节点。 | `Use $ccswitch-config-transfer 同步 ccswitch 配置到 TS08...` |
 | `t0-work-session` | `2026.07.24` | T0-SemiAuto 工作会话交接和 Git 同步。 | `Use $t0-work-session 结束工作...` |
+
+## 别名与总调度
+
+常用技能可以直接用中文别名点名，说别名和说技能名效果一样：
+
+| 别名 | 技能 | 角色 |
+| --- | --- | --- |
+| 老大、大哥、老大哥、大当家、头儿 | `auto-loop` | 总调度：拆目标、按技能表调用其他技能、QA、交付 |
+| 小二、老二、二哥、二当家 | `project-inception-analysis-cockpit` | 立项调研：回答"这个项目该不该做" |
+| 小三、老三、三哥、三神、三当家 | `project-employee-agents` | 项目团队：立项后的计划、执行、上线、运营 |
+| 小五 | `xiaowu-contract-review` | 合同审阅与修订 |
+
+老大调度时会查 `skills/auto-loop/references/skill-registry.md`（技能表）：里面列出了它能调用的技能、别名、调用方式和常见组合。被调用技能自己的门禁（例如小五"未经许可不改合同"、广告技能"启停投放需授权"）优先于老大的"免打扰"原则。
+
+**新增或下线技能时**，要同步更新技能表和本 README；别名必须同时写进该技能 `SKILL.md` 的 `description`，否则在老大之外说别名不会触发。
+
+## 在 Claude Code 中安装
+
+Claude Code 从 `~/.claude/skills/<技能名>/` 读取技能，不需要 `agents/openai.yaml`（Codex 专用）：
+
+```bash
+for s in auto-loop project-inception-analysis-cockpit project-employee-agents; do
+  rm -rf ~/.claude/skills/$s && mkdir -p ~/.claude/skills/$s
+  cp -r skills/$s/* ~/.claude/skills/$s/ && rm -rf ~/.claude/skills/$s/agents
+done
+```
+
+安装后新开会话，技能列表会刷新。
 
 ## 推荐组合
 

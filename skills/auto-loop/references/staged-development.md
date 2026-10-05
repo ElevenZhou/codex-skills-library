@@ -14,8 +14,8 @@ Before starting a stage, identify:
 - **Objective:** the observable outcome for this stage only.
 - **Entry gate:** evidence required from previous stages.
 - **Inherited artifacts:** exact files, schemas, APIs, fixtures, decisions, and known defects.
-- **User-only prerequisites:** credentials, accounts, approvals, paid services, legal choices, or production access that Codex cannot synthesize.
-- **Discoverable prerequisites:** repository state, tools, dependencies, local files, and documentation Codex should inspect itself.
+- **User-only prerequisites:** credentials, accounts, approvals, paid services, legal choices, or production access that the agent cannot synthesize.
+- **Discoverable prerequisites:** repository state, tools, dependencies, local files, and documentation the agent should inspect itself.
 - **Assumptions:** defaults that may be filled without changing business intent.
 - **Authorized side effects:** local writes, test-account writes, production writes, deployments, messages, purchases, and deletions.
 - **Deliverables:** exact paths, commands, services, migrations, reports, and evidence.

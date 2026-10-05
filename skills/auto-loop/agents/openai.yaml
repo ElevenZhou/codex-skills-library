@@ -1,4 +1,4 @@
 interface:
-  display_name: "Auto Loop Autopilot"
-  short_description: "Autonomous cockpit for high-quality deliverables"
-  default_prompt: "Use $auto-loop to run an autonomous cockpit: plan, delegate or role-review, build, validate, revise, and deliver the finished result."
+  display_name: "Auto Loop（老大）"
+  short_description: "总调度驾驶舱：按技能表调用小二、小三、小五等技能，闭环交付"
+  default_prompt: "Use $auto-loop（老大）to run an autonomous cockpit: contract, pick registered skills, plan, build, persist artifacts, validate, revise, reconcile, and deliver the finished result."
