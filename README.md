@@ -158,6 +158,19 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | 小二、老二、二哥、二当家 | `project-inception-analysis-cockpit` | 立项调研：回答"这个项目该不该做" |
 | 小三、老三、三哥、三神、三当家 | `project-employee-agents` | 项目团队：立项后的计划、执行、上线、运营 |
 | 小五 | `xiaowu-contract-review` | 合同审阅与修订 |
+| 老四 | （预留） | 复刻微创新综合工作组（skill 组合），技能未建，暂不可调用 |
+
+调用案例：
+
+| 你说 | 调用的技能 |
+| --- | --- |
+| "老大，帮我做个产品介绍 PPT" | `auto-loop`（再交给 `deck-studio-loop`） |
+| "小二，看看这个项目值不值得做" | `project-inception-analysis-cockpit` |
+| "三哥，继续推进项目" | `project-employee-agents` |
+| "小五看下这份合同" | `xiaowu-contract-review` |
+| "画一张网站首图" | `local-image-generator` |
+
+更多写法（带上下文、组合调用、哪些情况会停下来问你）见 [`docs/usage-examples.md`](docs/usage-examples.md)。
 
 老大调度时会查 `skills/auto-loop/references/skill-registry.md`（技能表）：里面列出了它能调用的技能、别名、调用方式和常见组合。被调用技能自己的门禁（例如小五"未经许可不改合同"、广告技能"启停投放需授权"）优先于老大的"免打扰"原则。
 
