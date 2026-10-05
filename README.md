@@ -176,6 +176,8 @@ done
 
 安装后新开会话，技能列表会刷新。
 
+给 Codex、WorkBuddy、Trae 等其他 AI 统一安装：把 [`docs/install-prompt.md`](docs/install-prompt.md) 里的提示词整段发给对方即可。
+
 ## 推荐组合
 
 ### 自动驾驶舱基础组合
