@@ -151,6 +151,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | ★ `local-image-generator` | `2026.10.05` | 唯一的静态出图技能（已合并原 `image-gen` 和 `local-image-generator-1-0`）：调用本地图片工具，模型和渠道由工具 `.env.local` 统一配置，主力为 GPT Image 2.5（`gpt-image-2.5-flare` 日常 / `gpt-image-2.5-sunburst` 精细）。适合网页素材、插画、产品图、社交配图。 | `Use $local-image-generator 生成一张图...`、`作图`、`画图` |
 | `local-grok-video-generator-2-0` | `2026.07.24` | 通过本地 FlaioS Grok video API 生成 Grok Imagine 视频。 | `Use $local-grok-video-generator-2-0 生成视频...` |
 | `video-channel-onboarding` | `2026.07.25` | 新视频生成渠道接入：资料归档、适配、部署、冒烟测试、文档和交接。 | `Use $video-channel-onboarding 接入这个视频渠道...` |
+| `video-compute-reconciliation` | `2026.10.12` | 视频双站（Flaios-Video / VideoAi-New）与渠道账单的只读对账：锁定渠道范围和金额口径（原价 vs 折后），用只读 SQL 导出，脚本输出四组汇总、逐日对照、毛利和差异清单；差距低于 1% 时不做逐笔核对，否则按上游任务 ID 逐笔匹配。已有智算谷基线。 | `Use $video-compute-reconciliation 对一下智算谷 9 月账单`、`视频对账` |
 
 ### 8. 个人工作台、知识与邮件
 

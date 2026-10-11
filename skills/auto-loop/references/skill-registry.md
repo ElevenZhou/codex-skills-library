@@ -32,6 +32,7 @@ auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总�
 | 静态图片 | `local-image-generator` | | 一切出图需求；默认 gpt-image-2.5-flare，high 画质 |
 | 视频生成 | `local-grok-video-generator-2-0` | | Grok 视频 |
 | 视频渠道接入 | `video-channel-onboarding` | | 新视频生成渠道的接入 |
+| 视频算力对账 | `video-compute-reconciliation` | | 视频双站与渠道账单的只读对账（智算谷等）；先读其 site-profiles 锁定渠道和金额口径；可接 `video-channel-onboarding` 的新渠道 |
 | 前端实现 | `advanced-frontend-design` | | 设计方向已定，做生产级界面 |
 | 前端比稿 | `frontend-design-lab` | | 设计方向未定，先出多个方案对比 |
 | 落地页审美 | `taste-skill`（触发名 `design-taste-frontend`） | | 落地页、作品集、改版 |
