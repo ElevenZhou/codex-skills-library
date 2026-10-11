@@ -1,0 +1,59 @@
+██████ QR banner ██████
+请使用微信扫码安全登录。
+Please use WeChat to scan the QR code
+
+SET
+Output format is unaligned.
+Field separator is "	".
+d	model	status	n	tok	list_yuan	cust_yuan
+2026-09-29	doubao-seedance-2-0-260128	failed	8	0	0.0000	0.0000
+2026-09-29	doubao-seedance-2-0-260128	succeeded	60	14569200	666.2790	666.2790
+2026-09-29	doubao-seedance-2-0-mini-260615	succeeded	3	121782	2.8010	2.8010
+2026-09-29	doubao-seedance-2-5-260628	failed	8	0	0.0000	0.0000
+2026-09-29	doubao-seedance-2-5-260628	succeeded	31	9800984	675.9275	675.9275
+2026-09-30	doubao-seedance-2-0-260128	failed	38	0	0.0000	0.0000
+2026-09-30	doubao-seedance-2-0-260128	succeeded	107	27301105	1235.2091	1235.2091
+2026-09-30	doubao-seedance-2-5-260628	failed	37	0	0.0000	0.0000
+2026-09-30	doubao-seedance-2-5-260628	succeeded	108	35602959	2343.1696	2343.1696
+2026-10-01	doubao-seedance-2-0-260128	failed	2	0	0.0000	0.0000
+2026-10-01	doubao-seedance-2-5-260628	succeeded	7	2235072	156.4550	156.4550
+2026-10-02	doubao-seedance-2-5-260628	failed	1	0	0.0000	0.0000
+2026-10-02	doubao-seedance-2-5-260628	succeeded	1	648900	45.4230	45.4230
+2026-10-03	doubao-seedance-2-0-260128	failed	1	0	0.0000	0.0000
+2026-10-03	doubao-seedance-2-0-260128	succeeded	33	9620100	442.5246	442.5246
+2026-10-03	doubao-seedance-2-5-260628	succeeded	6	1366200	95.6340	95.6340
+2026-10-04	doubao-seedance-2-0-260128	failed	1	0	0.0000	0.0000
+2026-10-04	doubao-seedance-2-0-260128	succeeded	69	20970900	964.6614	964.6614
+2026-10-04	doubao-seedance-2-5-260628	succeeded	6	1841400	128.8980	128.8980
+2026-10-05	doubao-seedance-2-5-260628	succeeded	2	269810	18.8867	18.8867
+2026-10-06	doubao-seedance-2-5-260628	succeeded	1	648900	45.4230	45.4230
+2026-10-07	doubao-seedance-2-0-260128	failed	72	0	0.0000	0.0000
+2026-10-07	doubao-seedance-2-0-260128	succeeded	115	31142718	1311.6120	1311.6120
+2026-10-07	doubao-seedance-2-0-fast-260128	succeeded	1	40594	1.5020	1.5020
+2026-10-07	doubao-seedance-2-0-mini-260615	failed	291	0	0.0000	0.0000
+2026-10-07	doubao-seedance-2-0-mini-260615	succeeded	6	790576	18.1832	18.1832
+2026-10-07	doubao-seedance-2-5-260628	failed	67	0	0.0000	0.0000
+2026-10-07	doubao-seedance-2-5-260628	succeeded	102	23882466	1599.0026	1599.0026
+2026-10-08	doubao-seedance-2-0-260128	failed	185	0	0.0000	0.0000
+2026-10-08	doubao-seedance-2-0-260128	succeeded	801	208810356	9064.7860	9064.7860
+2026-10-08	doubao-seedance-2-0-fast-260128	succeeded	10	875508	29.3743	29.3743
+2026-10-08	doubao-seedance-2-0-mini-260615	failed	1	0	0.0000	0.0000
+2026-10-08	doubao-seedance-2-0-mini-260615	succeeded	16	2550596	58.6637	58.6637
+2026-10-08	doubao-seedance-2-5-260628	failed	213	0	0.0000	0.0000
+2026-10-08	doubao-seedance-2-5-260628	succeeded	1324	317733992	21007.2840	21007.2840
+2026-10-09	doubao-seedance-2-0-260128	failed	1286	0	0.0000	0.0000
+2026-10-09	doubao-seedance-2-0-260128	succeeded	2336	631202442	26318.0963	26318.0963
+2026-10-09	doubao-seedance-2-0-fast-260128	failed	17	0	0.0000	0.0000
+2026-10-09	doubao-seedance-2-0-fast-260128	succeeded	134	20377076	685.7976	685.7976
+2026-10-09	doubao-seedance-2-0-mini-260615	failed	23	0	0.0000	0.0000
+2026-10-09	doubao-seedance-2-0-mini-260615	succeeded	75	9211094	207.9591	207.9591
+2026-10-09	doubao-seedance-2-5-260628	failed	1865	0	0.0000	0.0000
+2026-10-09	doubao-seedance-2-5-260628	succeeded	4652	997482732	66490.4503	66490.4503
+(43 rows)
+type	sign	count
+settle	0	13021
+settle	-1	29
+hold	-1	23869
+settle	1	4540
+refund	1	6263
+(5 rows)

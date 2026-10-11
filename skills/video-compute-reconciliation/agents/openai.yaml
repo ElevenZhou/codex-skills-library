@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频算力对账"
+  short_description: "双站及未来渠道的只读算力、任务、账务和渠道账单对账"
+  default_prompt: "使用 $video-compute-reconciliation 做视频双站或多渠道只读对账：先读 references/site-profiles.md 锁定渠道和金额口径，按北京时间每日 00:00 切日，用 scripts/reconcile.py 输出四组汇总、逐日对照和差异清单。"
