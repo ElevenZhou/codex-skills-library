@@ -1,6 +1,7 @@
 -- 老站（NewAPI / MySQL）日 × 模型 × 状态聚合。会话时区 +08:00。
 -- 替换 {CHANNEL_IDS}、{START}、{END}（半开区间，北京时间 'YYYY-MM-DD'）。
 START TRANSACTION READ ONLY;
+SET time_zone = '+08:00';
 SELECT DATE(FROM_UNIXTIME(finish_time)) AS bill_day,
        JSON_UNQUOTE(JSON_EXTRACT(properties,'$.origin_model_name')) AS model,
        status,

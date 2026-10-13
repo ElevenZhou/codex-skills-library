@@ -1,5 +1,6 @@
 -- 老站逐笔导出（仅在需要逐笔匹配时用）。private_data 只取叶子字段，不要整列导出（里面有上游密钥）。
 START TRANSACTION READ ONLY;
+SET time_zone = '+08:00';
 SELECT task_id AS our_task_id, upstream_task_id, channel_id, user_id,
        JSON_UNQUOTE(JSON_EXTRACT(properties,'$.origin_model_name')) AS model,
        status, billing_status, total_tokens AS tokens,
