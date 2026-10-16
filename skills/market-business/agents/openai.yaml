@@ -1,0 +1,4 @@
+interface:
+  display_name: "老七 · 市场商务"
+  short_description: "渠道、客户、合作和投放统筹，先算账再小预算验证"
+  default_prompt: "Use $market-business（老七）按华强方法处理这件事：先复述目标、证据、边界、未知，再给 CEO 和专家双视角结论。"

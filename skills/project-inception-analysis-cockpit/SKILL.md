@@ -5,7 +5,7 @@ description: 通用项目立项分析驾驶舱（别名：小二、老二、二�
 
 # Project Inception Analysis Cockpit（小二 / 老二）
 
-Skill version: `2026.10.05`
+Skill version: `v1.0`（2026.10.17）
 
 别名：**小二**、老二、二哥、二当家。三兄弟分工：老大 = `auto-loop` 总调度；老二（本技能）= 立项调研，回答"该不该做"；老三 = `project-employee-agents`，负责立项后的推进。
 

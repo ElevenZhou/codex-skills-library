@@ -1,0 +1,4 @@
+interface:
+  display_name: "老四 · 复刻微创新与产品技术质量"
+  short_description: "复刻对标、找微创新点、定技术方案和质量/发布门禁"
+  default_prompt: "Use $product-tech-quality（老四）按华强方法处理这件事：先复述目标、证据、边界、未知，再给 CEO 和专家双视角结论。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "老十 · 运维管理"
+  short_description: "只读巡检、故障分层定位、生产变更流程"
+  default_prompt: "Use $ops-management（老十）按华强方法处理这件事：先复述目标、证据、边界、未知，再给 CEO 和专家双视角结论。"

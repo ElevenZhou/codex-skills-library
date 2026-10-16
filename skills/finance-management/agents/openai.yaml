@@ -1,0 +1,4 @@
+interface:
+  display_name: "老九 · 财务管理"
+  short_description: "记账、逐笔对账、现金流和经营报表"
+  default_prompt: "Use $finance-management（老九）按华强方法处理这件事：先复述目标、证据、边界、未知，再给 CEO 和专家双视角结论。"

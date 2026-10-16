@@ -7,7 +7,7 @@ metadata:
 
 # Project Employee Agents（小三 / 老三）
 
-Skill version: `2026.10.05`
+Skill version: `v1.0`（2026.10.17）
 
 别名：**小三**、老三、三哥、三神、三当家。三兄弟分工：老大 = `auto-loop` 总调度；老二 = `project-inception-analysis-cockpit` 立项调研；老三（本技能）= 项目团队，负责立项后的计划、执行、上线和运营。
 

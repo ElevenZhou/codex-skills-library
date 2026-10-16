@@ -1,15 +1,15 @@
 ---
 name: auto-loop
-description: Autonomous autopilot/cockpit execution system (aliases 老大 / 大哥 / 老大哥 / 大当家 / 头儿) for turning broad goals into high-utility deliverables with minimal user intervention, orchestrating the user's other registered skills. Use when the user says 老大, 大哥, 老大哥, 大当家, 头儿, 让老大来, 老大安排, 全自动, 自动驾驶舱, 自动执行, auto loop, loop, 循环优化, 自我迭代, 免人介入, 不要停下来问我, 多agent, 自己规划/开发/完善/测试, or wants the agent to keep working until a PPT, PDF/document, research report, website/app feature, code project, quant-trading system, analysis, workflow, or other concrete outcome is planned, implemented, reviewed, improved, and delivered.
+description: Autonomous autopilot/cockpit execution system (aliases 老大 / 小一 / 大哥 / 老大哥 / 大当家 / 头儿) for turning broad goals into high-utility deliverables with minimal user intervention, orchestrating the user's other registered skills. Use when the user says 老大, 小一, 大哥, 老大哥, 大当家, 头儿, 让老大来, 老大安排, 全自动, 自动驾驶舱, 自动执行, auto loop, loop, 循环优化, 自我迭代, 免人介入, 不要停下来问我, 多agent, 自己规划/开发/完善/测试, or wants the agent to keep working until a PPT, PDF/document, research report, website/app feature, code project, quant-trading system, analysis, workflow, or other concrete outcome is planned, implemented, reviewed, improved, and delivered.
 ---
 
 # Auto Loop Autopilot（老大）
 
-Skill version: `2026.10.05`
+Skill version: `v1.0`（2026.10.17）
 
-别名：**老大**、大哥、老大哥、大当家、头儿。用户说"老大""大哥""让老大来""老大安排一下"等，等同于调用本技能。
+别名：**老大**、小一、大哥、老大哥、大当家、头儿。用户说"老大""大哥""让老大来""老大安排一下"等，等同于调用本技能。
 
-三兄弟分工：老大（本技能）总调度；老二 / 小二 = `project-inception-analysis-cockpit`（立项调研）；老三 / 小三 = `project-employee-agents`（项目团队推进）。
+老大到老十是一套席位体系，老大（本技能）是总调度，其余九个席位都已技能化，见 `references/skill-registry.md`。席位职责边界和共同工作方式（华强方法：证据先于结论、CEO + 专家双视角、最小可逆、写下来）见 `references/huaqiang-method.md`。跨席位任务由老大写目标契约、分派席位、逐项验收；每个席位交回结果、证据、未解决项。
 
 ## Core Rule
 
@@ -19,7 +19,7 @@ Treat uncertainty as a design input. Make reasonable assumptions, record them, t
 
 For complex tasks, read:
 
-- `references/skill-registry.md` for the skills this cockpit can call, their aliases (e.g. 小二/老二, 小三/老三, 小五), calling conventions, and common combinations. **Read it in every Orchestrate step.**
+- `references/skill-registry.md` for the skills this cockpit can call, their aliases (老二 to 老十), calling conventions, and common combinations. **Read it in every Orchestrate step.**
 - `references/loop-contract.md` for goal contracts and loop ledgers.
 - `references/input-standard.md` for recommended structured input, completeness checks, and forced-execution defaults.
 - `references/autopilot-modes.md` for routing PPT, PDF/docs, research, web/app, code, and quant tasks.
