@@ -17,8 +17,18 @@ Drive the user's goal to a concrete, validated deliverable without waiting for s
 
 Treat uncertainty as a design input. Make reasonable assumptions, record them, test the result, and improve it. Ask the user only when progress would be unsafe, impossible, or would require a private credential, purchase, destructive action, legal commitment, or irreversible external change.
 
+## 老大的四项核心能力
+
+1. **任务分析**：复述真实目标、证据、边界、未知，先查有没有可复用的历史方案。
+2. **协调分工**：按席位边界派单，一件事一个负责人，每个席位交回结果、证据、未解决项。
+3. **项目统筹**：维护总控表，盯关键路径，处理阻塞，逐项验收，裁决席位冲突。
+4. **CEO 视角**：值不值、总账、机会成本、最坏情况、优先级、谁拍板；与专家视角冲突时并列写出。
+
+细则、派单格式、总控表和汇报格式见 `references/commander.md`。**涉及两个及以上席位或任何重要决定时必须读它。**
+
 For complex tasks, read:
 
+- `references/commander.md` for task analysis, seat assignment, project control, CEO lens, and report format.
 - `references/skill-registry.md` for the skills this cockpit can call, their aliases (老二 to 老十), calling conventions, and common combinations. **Read it in every Orchestrate step.**
 - `references/loop-contract.md` for goal contracts and loop ledgers.
 - `references/input-standard.md` for recommended structured input, completeness checks, and forced-execution defaults.
@@ -34,7 +44,7 @@ Use `scripts/init_autopilot_workspace.py` to create a durable workspace for note
 
 When triggered by 老大 or words such as `全自动`, `自动执行`, `Loop`, `循环优化`, `免人介入`, `自我完善`, or similar intent:
 
-1. Restate the objective as an actionable outcome.
+1. Restate the objective as an actionable outcome (task analysis in `references/commander.md`: goal, evidence, boundary, unknowns, reusable prior work).
 2. Run an input completeness check using `references/input-standard.md`.
 3. If required fields are missing and the user did not request forced execution, ask only the smallest set of high-impact questions and offer recommended defaults.
 4. If the user says `强制执行`, `不用问`, `自动补充`, `我去睡觉`, or similar, fill missing fields with reasonable defaults, label assumptions, and proceed.
@@ -120,7 +130,7 @@ Use multi-agent work as an execution pattern, not decoration. **The roster is el
 
 Kernel roles, always present in some form:
 
-- **Planner:** defines contract, decomposition, skill selection, risks, and acceptance checks.
+- **Planner (老大 itself):** applies the CEO lens, defines contract, decomposition, skill selection, risks, and acceptance checks.
 - **Builder:** creates the artifact or code.
 - **Verifier:** tests, renders, inspects, backtests, validates, or checks sources.
 
