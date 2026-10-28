@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Model Registry"
+  short_description: "从 E:\Dev-2\本地大模型调用 选模型、选渠道，并维护这个注册表"
+  default_prompt: "Use $llm-model-registry to pick the right model and endpoint for this task, verify it responds, and tell me which key alias and base URL you used."

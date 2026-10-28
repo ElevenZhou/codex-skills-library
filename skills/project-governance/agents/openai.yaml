@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Governance"
+  short_description: "Standardize project docs and Git checkpoints"
+  default_prompt: "Apply the project governance standard to initialize or audit this project."

@@ -1,6 +1,6 @@
 # Skill Registry（可被 auto-loop 调度的技能）
 
-auto-loop（别名：老大、小一、大哥、老大哥、大当家、头儿）是总调度。下表声明它可以组织和调用的技能。在 Orchestrate 阶段按任务类型查表，选出要用的技能，并把选择写进 loop ledger。
+auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总调度。下表声明它可以组织和调用的技能。在 Orchestrate 阶段按任务类型查表，选出要用的技能，并把选择写进 loop ledger。
 
 ## 调用约定
 
@@ -20,14 +20,11 @@ auto-loop（别名：老大、小一、大哥、老大哥、大当家、头儿�
 | --- | --- | --- | --- |
 | 项目立项 / 可行性 | `project-inception-analysis-cockpit` | 小二、老二、二哥、二当家 | 判断项目该不该做：市场、竞品、开源选型、十角色评审、立项结论 |
 | 项目持续推进 | `project-employee-agents` | 小三、老三、三哥、三神、三当家 | 立项后的计划、执行、上线、运营；按岗位和阶段交付管理成果 |
+| APK/游戏逆向重建 | `rebuild-workflow` + `rebuild-recon` + `rebuild-device-evidence` + `rebuild-product-design` + `rebuild-dev-milestones` + `rebuild-build-release` | 老大统筹；老三项目执行；技术经理/产品经理/设计经理/测试经理按阶段参与 | 仅对自有或明确授权目标执行；REA 负责静态/ADB Evidence，rebuild 技能负责 S0-S7、R1/R2/R3、D1-D9、重写和交付 |
+| 项目治理 / 新项目规范 | `project-governance` | | 统一项目骨架、文档节点更新、日终 Git checkpoint；底层运维文档仍由 `project-ops-standards` 承担 |
 | 项目文档规范 | `project-ops-standards` | | 补齐或审计项目管理与运维文档 |
-| 复刻微创新 / 产品技术质量 | `product-tech-quality` | 老四、小四、四哥、四当家 | 拆解对标产品做复刻微创新；产品技术方案评审；质量门禁和发布门禁 |
-| 合同审阅 | `xiaowu-contract-review` | 老五、小五、五哥、五当家 | 采购、SaaS、服务、合作类合同的审查与修订 |
-| 公司管理 | `company-management` | 老六、小六、六哥、六当家 | 证照、合同台账、签章、资产、权限、到期提醒和归档（不审条款） |
-| 市场商务 | `market-business` | 老七、小七、七哥、七当家 | 渠道、客户、合作、投放统筹；先算单位经济和止损线，再小预算验证 |
-| 金融增值 | `capital-growth` | 老八、小八、八哥、八当家 | 自有资金投资判断、仓位、止盈止损、复盘（不代下单、不记账） |
-| 财务管理 | `finance-management` | 老九、小九、九哥、九当家 | 记账、逐笔对账、现金流、经营报表；视频双站对账转 `video-compute-reconciliation` |
-| 运维管理 | `ops-management` | 老十、小十、十哥、十当家 | 只读巡检、故障分层定位、生产变更（盘点→备份→canary→验证→放量），写操作需授权 |
+| （预留）复刻微创新综合工作组 | 未建 | 老四 | 别名已预留，技能未建。用户说"老四"时告知尚未上线，不要临时拼凑替代 |
+| 合同审阅 | `xiaowu-contract-review` | 小五 | 采购、SaaS、服务、合作类合同的审查与修订 |
 | PPT / 路演材料 | `deck-studio-loop` | | 商业计划书、公司或产品介绍、路演 |
 | Word 文档 | `doc` | | `.docx` 读写与排版 |
 | PDF | `pdf` | | PDF 读取、生成、审阅 |
@@ -35,6 +32,7 @@ auto-loop（别名：老大、小一、大哥、老大哥、大当家、头儿�
 | 命名 / 域名 | `domain-brand-finder` | | 项目命名、品牌域名 |
 | 朋友圈 | `post-wechat-moments` | | 朋友圈图文 |
 | 静态图片 | `local-image-generator` | | 一切出图需求；默认 gpt-image-2.5-flare，high 画质 |
+| 模型选型 / 注册表 | `llm-model-registry` | | 从本地模型注册表选择渠道、查询模型和执行调用前检查 |
 | 视频生成 | `local-grok-video-generator-2-0` | | Grok 视频 |
 | 视频渠道接入 | `video-channel-onboarding` | | 新视频生成渠道的接入 |
 | 视频算力对账 | `video-compute-reconciliation` | | 视频双站与渠道账单的只读对账（智算谷等）；先读其 site-profiles 锁定渠道和金额口径；可接 `video-channel-onboarding` 的新渠道 |
@@ -60,11 +58,8 @@ auto-loop（别名：老大、小一、大哥、老大哥、大当家、头儿�
 
 ## 常见组合
 
-- **复刻一个产品：** 老二（值不值得做）→ 老四（拆对标、复刻微创新、技术方案）→ 老三（推进）→ 老四（发布门禁）→ 老十（上线运维）。
-- **线上出故障：** 老十（取证、分层定位、最小处置）→ 老九（受影响请求逐笔核对扣费）→ 老四（预防性质量门禁）。
-- **月度经营复盘：** 老九（对账、现金流、经营报表）→ 老七（渠道单位经济）→ 老八（闲置资金配置）→ 老大汇总给本人。
-- **合同全流程：** 老五（审条款）→ 本人批准 → 老六（签章、归档、到期提醒）→ 老九（付款 / 回款节点）。
 - **新项目从零到可执行：** 老二（立项）→ 老三（推进）→ `deck-studio-loop`（汇报材料）。
+- **APK/游戏重建：** 老大（总调度）→ `rebuild-workflow` S0 → `rebuild-recon` + REA（S1/S2）→ 老三/项目经理推进 `rebuild-product-design`、`rebuild-dev-milestones` → `rebuild-device-evidence` 真机验收 → `rebuild-build-release` 交付。
 - **做网站：** `frontend-design-lab` 或 `advanced-frontend-design` → `local-image-generator`（素材）→ `playwright`（验收）→ 部署技能。
 - **合同进来：** 小五审查；涉及项目取舍时，把结论交给老三（`project-employee-agents`）的风险台账。
 - **广告：** `overseas-ad-autopilot`（规划）→ `local-image-generator`（素材）→ `meta-ads-auto-publish`（发布）→ `meta-ads-analysis`（复盘）。

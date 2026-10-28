@@ -1,24 +1,19 @@
 ---
 name: local-grok-video-generator-2-0
-description: Generate Grok Imagine videos through the user's FlaioS Grok video API. Use when the user asks to make, test, poll, download, or save videos with grok-imagine-video or grok-imagine-video-1.5 (Grok 视频 / 生成视频). This skill is for video only; use local-image-generator for still images.
+description: Generate Grok Imagine videos through the user's FlaioS Grok video API. Use when the user asks to make, test, poll, download, or save videos with grok-imagine-video. This skill is for video only; use local-image-generator for still images.
 ---
 
 # Local Grok Video Generator 2.0
 
-Skill version: `2026.10.23`
+Skill version: `2026.07.24`
 
 ## Scope
 
 This skill handles Grok video only.
 
-Supported models (both verified 2026-10-23 on sg01, 6s 1280x720):
+Supported model:
 
-| Model | Cost (6s) | When |
-| --- | --- | --- |
-| `grok-imagine-video` | ~$0.30 | Default |
-| `grok-imagine-video-1.5` | ~$0.48 | User asks for Grok video 1.5 / newer / higher quality |
-
-sg01 also lists `grok-imagine-video-1.5-lite` and `-1.5-preview`; they are untested, so check with the user before relying on them. Pass the model with `--model` or `GROK_VIDEO_MODEL`.
+- `grok-imagine-video`
 
 Do not send `grok-imagine-video` to `/v1/images/generations` or `/v1/images/edits`; those are image endpoints.
 
@@ -37,8 +32,6 @@ POST /v1/videos
 GET /v1/videos/{id}
 ```
 
-As of 2026-10-23, `POST /v1/videos` answers in xAI-native shape: only `{ "request_id": "..." }`. The helper accepts `request_id`, `id`, or `task_id`. Poll with `GET /v1/videos/{request_id}`; status ends as `done`.
-
 The completed video URL is returned by `GET /v1/videos/{id}` at:
 
 ```text
@@ -53,8 +46,6 @@ GET /v1/videos/{id}/result
 ```
 
 They returned `404` in testing.
-
-The video URL is on `vidgen.x.ai`, which is not reachable without the system proxy. Node `fetch` ignores `HTTPS_PROXY`, so the helper falls back to `curl` for the download; this is expected, not an error.
 
 ## Parameters
 
@@ -83,19 +74,18 @@ The UI may show 2:3, 3:2, and 1:1 options, but this `/v1/videos` API did not acc
    - Default duration: `6`.
    - Default size: `1280x720` unless the user asks for vertical/social video.
    - Vertical social video: `720x1280`.
-3. Use the bundled helper script from this skill (the same script ships in `~/.claude/skills/` and `~/.codex/skills/`):
+3. Use the bundled helper script from this skill:
 
-```bash
-node ~/.claude/skills/local-grok-video-generator-2-0/scripts/generate-grok-video.mjs --seconds 6 --size 1280x720 --output output/grok-video.mp4 "prompt"
-node ~/.claude/skills/local-grok-video-generator-2-0/scripts/generate-grok-video.mjs --model grok-imagine-video-1.5 --seconds 6 --size 1280x720 --output output/grok-video.mp4 "prompt"
+```powershell
+node C:\Users\AprilWu\.codex\skills\local-grok-video-generator-2-0\scripts\generate-grok-video.mjs --base-url https://sg01-cli.api.flaios.com/ --api-key $env:GROK_VIDEO_API_KEY --seconds 6 --size 1280x720 --output output\grok-video.mp4 "prompt"
 ```
 
-Key resolution, in order: `--api-key`, `GROK_VIDEO_API_KEY`, then `K_NODE` from `E:/Dev-2/本地大模型调用/config/providers.json` (override the path with `GROK_VIDEO_PROVIDERS_JSON`). Normally nothing needs to be set. If `K_NODE` fails with 401, the registry also has `K_SG01_ALT` for sg01; pass it via `GROK_VIDEO_API_KEY` without printing it.
+Prefer environment variables for secrets:
 
-If a run is interrupted after the task was created (download failed, poll timed out), resume it instead of paying for a new video:
-
-```bash
-node .../generate-grok-video.mjs --model <same model> --task <request_id> --output output/grok-video.mp4 "same prompt"
+```powershell
+$env:GROK_VIDEO_BASE_URL='https://sg01-cli.api.flaios.com/'
+$env:GROK_VIDEO_API_KEY='...'
+node C:\Users\AprilWu\.codex\skills\local-grok-video-generator-2-0\scripts\generate-grok-video.mjs --seconds 6 --size 1280x720 --output output\grok-video.mp4 "prompt"
 ```
 
 4. Save the resulting `.mp4`, a paired prompt `.txt`, and a metadata `.json`.
@@ -115,9 +105,7 @@ The JSON contains task id, model, status, progress, size, duration, source video
 
 ## Failure Handling
 
-- `401 Invalid API key`: the key is missing, inactive, or not valid for the selected base URL; try `K_SG01_ALT`.
-- `Video API returned no task id`: the response shape changed again; read the printed JSON and update the helper rather than resubmitting.
-- Download `fetch failed` followed by a curl error: the proxy is down; resume later with `--task`.
+- `401 Invalid API key`: the key is missing, inactive, or not valid for the selected base URL.
 - `400 unsupported model on /v1/images/...`: the video model was sent to an image endpoint; use `/v1/videos`.
 - `size must be one of ...`: map the user's requested ratio/resolution to one of the accepted `size` values.
 - `status=failed` or `FAILURE`: report the provider response and do not claim a video was generated.

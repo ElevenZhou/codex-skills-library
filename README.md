@@ -13,6 +13,7 @@
 | "三哥，继续推进项目" | 老三 `project-employee-agents`：项目团队推进 |
 | "小五看下这份合同" | 小五 `xiaowu-contract-review`：合同审阅 |
 | "画一张网站首图" | `local-image-generator`：gpt-image-2.5 高画质出图 |
+| "这个用 Gemini / GPT-6 / seedance 跑一下" | `llm-model-registry`：从本地大模型注册表选模型和渠道 |
 
 完整别名见下文「别名与总调度」；更多写法见 [`docs/usage-examples.md`](docs/usage-examples.md)。
 
@@ -78,7 +79,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 ## 技能目录
 
-共 46 个技能，按用途分 10 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
+共 48 个技能，按用途分 10 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
 
 ### 1. 自动驾驶与项目管理
 
@@ -88,6 +89,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | `project-inception-analysis-cockpit`（老二） | `v1.0` | 立项分析驾驶舱：动态裁剪市场、竞品、开源、用户、技术、财务等研究模块，十角色评审加权评分，给出立项/有条件立项/先验证/暂缓/否决结论和四阶段推行计划。 | `小二`、`老二`、`二哥`、`Use $project-inception-analysis-cockpit 分析这个项目值不值得做...` |
 | `project-employee-agents`（老三） | `v1.0` | 虚拟项目团队：自动调度 CEO、COO、产品、市场、设计、技术、测试、客户、投放、财务等 15 个岗位，按 12 个生命周期阶段产出可验收管理成果。 | `小三`、`老三`、`三哥`、`三神`、`启动项目员工团队...`、`项目员工开工...`、`继续推进项目...` |
 | `project-ops-standards` | `2026.07.24` | 创建、审计或改进软件项目的项目管理与运营文档。 | `Use $project-ops-standards 检查项目文档...` |
+| `project-governance` | `2026.10.28` | 统一项目骨架、里程碑文档和可追溯 Git checkpoint。 | `Use $project-governance 规范这个项目...` |
 
 怎么选：老大总调度；**该不该做**找老二（一次性立项报告）；**决定做了之后持续推进**找老三（立项前需要深度分析时，老三会转交老二）；只需要补齐项目文档用 `project-ops-standards`；不属于以上的复杂交付用 `auto-loop`。
 
@@ -148,8 +150,9 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 | 技能 | 版本 | 适合场景 | 推荐触发词 / 用法 |
 | --- | --- | --- | --- |
-| ★ `local-image-generator` | `2026.10.05` | 唯一的静态出图技能（已合并原 `image-gen` 和 `local-image-generator-1-0`）：调用本地图片工具，模型和渠道由工具 `.env.local` 统一配置，主力为 GPT Image 2.5（`gpt-image-2.5-flare` 日常 / `gpt-image-2.5-sunburst` 精细）。适合网页素材、插画、产品图、社交配图。 | `Use $local-image-generator 生成一张图...`、`作图`、`画图` |
-| `local-grok-video-generator-2-0` | `2026.07.24` | 通过本地 FlaioS Grok video API 生成 Grok Imagine 视频。 | `Use $local-grok-video-generator-2-0 生成视频...` |
+| ★ `llm-model-registry` | `2026.10.23` | 大模型选型与注册表维护：从 `E:\Dev-2\本地大模型调用` 选模型和端点（主站 / sg01 / n09 Claude / n10 Gemini / n12 GPT），自带 `registry.py`（查模型、实时列表、零成本视频通道探测、注入 key 运行），并负责新增 key/节点、复测和更新清单。出图、Grok 视频之外的所有模型调用都先走它。 | `Use $llm-model-registry 用 Gemini 跑一下...`、`选个模型`、`加一个 key` |
+| ★ `local-image-generator` | `2026.10.23` | 唯一的静态出图技能（已合并原 `image-gen` 和 `local-image-generator-1-0`）：调用本地图片工具，模型和渠道由工具 `.env.local` 统一配置，主力为 GPT Image 2.5（`gpt-image-2.5-flare` 日常 / `gpt-image-2.5-sunburst` 精细），也可点名 `grok-imagine-image-2.0`、`nano-banana-2`、`gemini-3.1-flash-image`。适合网页素材、插画、产品图、社交配图。 | `Use $local-image-generator 生成一张图...`、`作图`、`画图` |
+| `local-grok-video-generator-2-0` | `2026.10.23` | 通过 sg01 节点生成 Grok Imagine 视频（`grok-imagine-video` / `grok-imagine-video-1.5`），支持 `--task` 续接已提交任务。 | `Use $local-grok-video-generator-2-0 生成视频...` |
 | `video-channel-onboarding` | `2026.07.25` | 新视频生成渠道接入：资料归档、适配、部署、冒烟测试、文档和交接。 | `Use $video-channel-onboarding 接入这个视频渠道...` |
 | `video-compute-reconciliation` | `2026.10.12` | 视频双站（Flaios-Video / VideoAi-New）与渠道账单的只读对账：锁定渠道范围和金额口径（原价 vs 折后），用只读 SQL 导出，脚本输出四组汇总、逐日对照、毛利和差异清单；差距低于 1% 时不做逐笔核对，否则按上游任务 ID 逐笔匹配。已有智算谷基线。 | `Use $video-compute-reconciliation 对一下智算谷 9 月账单`、`视频对账` |
 

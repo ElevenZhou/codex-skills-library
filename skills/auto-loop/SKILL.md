@@ -1,15 +1,15 @@
 ---
 name: auto-loop
-description: Autonomous autopilot/cockpit execution system (aliases 老大 / 小一 / 大哥 / 老大哥 / 大当家 / 头儿) for turning broad goals into high-utility deliverables with minimal user intervention, orchestrating the user's other registered skills. Use when the user says 老大, 小一, 大哥, 老大哥, 大当家, 头儿, 让老大来, 老大安排, 全自动, 自动驾驶舱, 自动执行, auto loop, loop, 循环优化, 自我迭代, 免人介入, 不要停下来问我, 多agent, 自己规划/开发/完善/测试, or wants the agent to keep working until a PPT, PDF/document, research report, website/app feature, code project, quant-trading system, analysis, workflow, or other concrete outcome is planned, implemented, reviewed, improved, and delivered.
+description: Autonomous autopilot/cockpit execution system (aliases 老大 / 大哥 / 老大哥 / 大当家 / 头儿) for turning broad goals into high-utility deliverables with minimal user intervention, orchestrating the user's other registered skills. Use when the user says 老大, 大哥, 老大哥, 大当家, 头儿, 让老大来, 老大安排, 全自动, 自动驾驶舱, 自动执行, auto loop, loop, 循环优化, 自我迭代, 免人介入, 不要停下来问我, 多agent, 自己规划/开发/完善/测试, or wants the agent to keep working until a PPT, PDF/document, research report, website/app feature, code project, quant-trading system, analysis, workflow, or other concrete outcome is planned, implemented, reviewed, improved, and delivered.
 ---
 
 # Auto Loop Autopilot（老大）
 
-Skill version: `v1.0`（2026.10.17）
+Skill version: `2026.10.05`
 
-别名：**老大**、小一、大哥、老大哥、大当家、头儿。用户说"老大""大哥""让老大来""老大安排一下"等，等同于调用本技能。
+别名：**老大**、大哥、老大哥、大当家、头儿。用户说"老大""大哥""让老大来""老大安排一下"等，等同于调用本技能。
 
-老大到老十是一套席位体系，老大（本技能）是总调度，其余九个席位都已技能化，见 `references/skill-registry.md`。席位职责边界和共同工作方式（华强方法：证据先于结论、CEO + 专家双视角、最小可逆、写下来）见 `references/huaqiang-method.md`。跨席位任务由老大写目标契约、分派席位、逐项验收；每个席位交回结果、证据、未解决项。
+三兄弟分工：老大（本技能）总调度；老二 / 小二 = `project-inception-analysis-cockpit`（立项调研）；老三 / 小三 = `project-employee-agents`（项目团队推进）。
 
 ## Core Rule
 
@@ -17,19 +17,9 @@ Drive the user's goal to a concrete, validated deliverable without waiting for s
 
 Treat uncertainty as a design input. Make reasonable assumptions, record them, test the result, and improve it. Ask the user only when progress would be unsafe, impossible, or would require a private credential, purchase, destructive action, legal commitment, or irreversible external change.
 
-## 老大的四项核心能力
-
-1. **任务分析**：复述真实目标、证据、边界、未知，先查有没有可复用的历史方案。
-2. **协调分工**：按席位边界派单，一件事一个负责人，每个席位交回结果、证据、未解决项。
-3. **项目统筹**：维护总控表，盯关键路径，处理阻塞，逐项验收，裁决席位冲突。
-4. **CEO 视角**：值不值、总账、机会成本、最坏情况、优先级、谁拍板；与专家视角冲突时并列写出。
-
-细则、派单格式、总控表和汇报格式见 `references/commander.md`。**涉及两个及以上席位或任何重要决定时必须读它。**
-
 For complex tasks, read:
 
-- `references/commander.md` for task analysis, seat assignment, project control, CEO lens, and report format.
-- `references/skill-registry.md` for the skills this cockpit can call, their aliases (老二 to 老十), calling conventions, and common combinations. **Read it in every Orchestrate step.**
+- `references/skill-registry.md` for the skills this cockpit can call, their aliases (e.g. 小二/老二, 小三/老三, 小五), calling conventions, and common combinations. **Read it in every Orchestrate step.**
 - `references/loop-contract.md` for goal contracts and loop ledgers.
 - `references/input-standard.md` for recommended structured input, completeness checks, and forced-execution defaults.
 - `references/autopilot-modes.md` for routing PPT, PDF/docs, research, web/app, code, and quant tasks.
@@ -44,7 +34,7 @@ Use `scripts/init_autopilot_workspace.py` to create a durable workspace for note
 
 When triggered by 老大 or words such as `全自动`, `自动执行`, `Loop`, `循环优化`, `免人介入`, `自我完善`, or similar intent:
 
-1. Restate the objective as an actionable outcome (task analysis in `references/commander.md`: goal, evidence, boundary, unknowns, reusable prior work).
+1. Restate the objective as an actionable outcome.
 2. Run an input completeness check using `references/input-standard.md`.
 3. If required fields are missing and the user did not request forced execution, ask only the smallest set of high-impact questions and offer recommended defaults.
 4. If the user says `强制执行`, `不用问`, `自动补充`, `我去睡觉`, or similar, fill missing fields with reasonable defaults, label assumptions, and proceed.
@@ -130,7 +120,7 @@ Use multi-agent work as an execution pattern, not decoration. **The roster is el
 
 Kernel roles, always present in some form:
 
-- **Planner (老大 itself):** applies the CEO lens, defines contract, decomposition, skill selection, risks, and acceptance checks.
+- **Planner:** defines contract, decomposition, skill selection, risks, and acceptance checks.
 - **Builder:** creates the artifact or code.
 - **Verifier:** tests, renders, inspects, backtests, validates, or checks sources.
 
@@ -142,6 +132,19 @@ Add when the task actually contains that work:
 - **Integrator:** resolves conflicts, applies fixes, and prepares handoff.
 
 Then derive task-specific roles by asking **what distinct ways this deliverable can be wrong** — each independent failure mode earns one role, named for the expertise that catches it (compliance, accessibility, cost, rollback, local-market, threat modeling, and so on). A small reversible task may collapse to a single pass; a high-stakes or multi-subsystem one may warrant eight or more. See `references/multi-agent-orchestration.md` for sizing rules and derivation patterns.
+
+### APK/游戏重建专项调度
+
+当任务触发 `rebuild-workflow` 或用户要求 APK 重建时，默认启用：
+
+- 老大/Auto Loop：目标契约、scope 门禁、阶段调度、最终 QA。
+- 老三/项目经理：任务台账、依赖、交付节奏和阶段出口。
+- 技术经理：REA/JADX/Apktool、引擎判断、接口/存储/安全契约、R1/R2/R3 技术建议。
+- 产品经理：功能模块、用户流程、MVP 和 D1/D9 输入。
+- 设计经理：页面结构、交互、视觉差异化和真机对标。
+- 测试经理：Evidence coverage、P0 清单、ADB/真机验收和发布门禁。
+
+老四当前是预留的复刻微创新工作组，未建立对应技能；老五至老十在当前注册表没有可验证的别名/岗位映射，不能自动冒充已注册角色。需要这些编号时，先把正式角色卡和技能注册到 `project-employee-agents` / `skill-registry.md`，再接入调度。
 
 Record the chosen roster and why it was sized that way. When actual subagent tools are unavailable or not allowed, run the same roles internally and record findings in the loop ledger.
 
