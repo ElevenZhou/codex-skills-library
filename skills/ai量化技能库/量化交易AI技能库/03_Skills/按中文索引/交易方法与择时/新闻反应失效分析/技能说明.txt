@@ -1,0 +1,11 @@
+技能名称：新闻反应失效分析（news-reaction-failure-analyzer）
+分类：交易方法与择时
+能做什么：判断拥挤市场是否对利多/利空消息失效反应并给出确认裁决
+你提供什么：FMP 数据源账号（价格数据）、Python 3.9+；cot 检测JSON（--detector-json）或直接给 --symbol + --direction；还需用 WebSearch 整理的事件JSON
+你会得到什么：JSON与Markdown：symbol/direction/expected_direction、actual_reaction（FAILED_TO_RALLY/FAILED_TO_SELL_OFF/RALLIED/SOLD_OFF/MIXED_REACTION/NO_DATA）、verdict（CONFIRMED / NOT_CONFIRMED / INSUFFICIENT_EVIDENCE）、confidence、聚合统计（mean_z3/drift_stat/responded_ratio）、逐事件证据表与 dropped_events（含原因）
+触发说法示例：「这个市场明明挤满了多头，怎么出了利好还不涨？帮我确认下是不是失效了」
+依赖条件：需要联网取数；需本机运行技能自带脚本
+备注：属Shapiro五步中的第2步；原文强调 CONFIRMED 不等于交易信号，第3-5步仍需人工。行情取数有期货优先、ETF 替代标的的回退链
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

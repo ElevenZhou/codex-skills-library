@@ -1,0 +1,11 @@
+技能名称：盘前纪律闸门（pre-trade-discipline-gate）
+分类：交易心理与复盘
+能做什么：下单前按本地清单与上游闸门判定放行并记日志
+你提供什么：本地清单 JSON/YAML（候选、下单意图、计划与实际风险金额等勾选项）；可选交易记忆状态目录、敞口决议 JSON、熔断决议 JSON
+你会得到什么：JSON 与 Markdown 决议（GO/REVIEW_REQUIRED/NO_GO/NO_ACTIONABLE_ORDERS），并写 JSONL 日志；含 thesis_id 时可回链到交易记忆
+触发说法示例：「我准备买 AAPL 了，先帮我过一遍下单前的纪律检查」
+依赖条件：可纯离线使用；需本机运行技能自带脚本
+备注：纯离线，不接券商、不下单、不拉行情；缺上游工件时对可操作单返回 REVIEW_REQUIRED
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

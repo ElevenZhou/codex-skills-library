@@ -1,0 +1,11 @@
+技能名称：基本面数据（fundamentals）
+分类：交易数据与工具
+能做什么：抓取股票财务基本面数据，并计算皮氏F评分评估财务强度
+你提供什么：股票代码；可选数据类型：all、financials、earnings、info（默认all）
+你会得到什么：JSON：info 关键指标（市值、PE、EPS、股息等）、financials 季度/年度利润表、earnings 历史与预期收益；另附皮氏F评分（score 0-9、9项通过明细、解读文本）
+触发说法示例：「看看苹果的财务和盈利情况，再帮我打个财务健康分」
+依赖条件：需要联网取数；需本机运行技能自带脚本
+备注：数据来自 Yahoo Finance；皮氏F评分需 pandas 与 yfinance
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

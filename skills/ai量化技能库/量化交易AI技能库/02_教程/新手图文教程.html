@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>量化交易AI技能库 · 新手图文教程</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:900px;margin:0 auto;padding:40px 22px 80px;color:#1f2937;line-height:1.75;background:#fff}
+h1{font-size:30px;margin:0 0 6px}
+.sub{color:#6b7280;margin:0 0 26px}
+h2{font-size:21px;margin:38px 0 10px;padding-left:12px;border-left:5px solid #2563eb}
+h3{font-size:16px;margin:20px 0 6px}
+p,li{font-size:15px}
+code{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:5px;padding:2px 6px;font-size:13.5px;color:#b91c1c}
+.box{border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;margin:14px 0;background:#fafafa}
+.box.tip{background:#eff6ff;border-color:#bfdbfe}
+.box.warn{background:#fef3c7;border-color:#fde68a}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+th,td{border:1px solid #e5e7eb;padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f9fafb}
+ol,ul{padding-left:22px}
+.step{border-left:3px solid #2563eb;padding:2px 0 2px 16px;margin:18px 0}
+.step b{color:#1d4ed8}
+.foot{margin-top:44px;padding-top:16px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:13px}
+</style>
+</head>
+<body>
+<h1>量化交易AI技能库 · 新手图文教程</h1>
+<p class="sub">本包共 131 个技能。跟着下面六步走，半小时内就能用起来。</p>
+
+<h2>一、先搞清楚：技能是什么</h2>
+<p>技能（Skill）就是一份写好的「干活说明书」。里面有这个行当的固定流程：该先问什么、该查什么、按什么格式交活儿。</p>
+<table>
+<tr><th style="width:34%">不装技能</th><th>装了技能</th></tr>
+<tr><td>每次都要从头描述背景，AI 每次答得都不一样</td><td>直接说场景，AI 按固定流程办事，输出稳定</td></tr>
+<tr><td>要自己想清楚该分几步、该注意什么</td><td>步骤和检查项都写在技能里，照着走就行</td></tr>
+<tr><td>输出格式靠你临时要求</td><td>输出格式固定，能直接拿去用</td></tr>
+</table>
+<div class="box tip"><b>一句话：</b>技能决定了 AI 在某个专业场景下「像不像个老手」。</div>
+
+<h2>二、先看目录：每个技能能做什么、你要给什么、会得到什么</h2>
+<p>打开 <code>01_目录/量化交易AI技能库-离线目录.html</code>（双击，不用联网），不用一个个点开文件夹猜。<b>表格里每个技能都写清了三件事</b>：</p>
+<table>
+<tr><th style="width:22%">表里的位置</th><th>含义</th><th style="width:34%">举个例子</th></tr>
+<tr><td><b>技能 · 它做什么</b></td><td>这个技能解决的场景。先看这一句，判断跟你手头的事对不对得上</td><td>「个股技术面分析」——给一个代码或贴出 K 线，输出趋势判断、关键价位与形态解读</td></tr>
+<tr><td><b>你提供什么</b>（黄字）</td><td>用之前你要准备的东西：股票代码或 K 线数据 / 选股或策略条件 / 交易记录</td><td>给一个代码或贴出 K 线，输出趋势与关键价位</td></tr>
+<tr><td><b>你会得到什么</b>（绿字）</td><td>技能最终产出什么：技术面判断与关键价位、候选清单、回测绩效与复盘。看这两列就知道值不值得装</td><td>给出策略规则，回测历史表现并评估稳健性</td></tr>
+</table>
+<div class="box tip"><b>点表格里的任意一行</b>，会展开这个技能的<b>触发说法示例</b>（照着这句话跟 AI 说就行）和<b>依赖条件</b>（要不要联网、要不要本机跑脚本）。右上角「全部展开」可以一次摊开所有技能。</div>
+<p>同一个技能的这几行说明，也随技能一起放在 <code>03_Skills/按中文索引/&lt;分类&gt;/&lt;技能&gt;/技能说明.txt</code> 里；<code>01_目录/分类索引/</code> 下每个分类的 <code>skills.json</code> 同样带这些字段，方便你批量筛。</p>
+
+<h2>三、装技能：拖给 AI，一句话装好</h2>
+<p>每个技能在包里都是一个文件夹，里面有一个 <code>SKILL.md</code>。安装不用自己找技能目录——把文件夹发给 AI，让它装就行。</p>
+<div class="step"><b>第 1 步：</b>在 <code>01_目录/量化交易AI技能库-离线目录.html</code> 里搜你关心的问题，比如「个股技术面分析」，找到合适的技能，记住它的中文名。</div>
+<div class="step"><b>第 2 步：</b>到 <code>03_Skills/按中文索引/</code> 下对应的分类文件夹里，找到同名文件夹。</div>
+<div class="step"><b>第 3 步：</b>把这个文件夹直接拖进 AI 对话框（WorkBuddy 等支持拖拽的工具都行；不方便拖就点输入框旁的「+」上传），然后发一句话：<b>帮我把这个技能装上，装好告诉我</b>。</div>
+<div class="step"><b>第 4 步：</b>AI 回你「装好了」之后，把工具关掉重开一次——技能是启动时加载的，不重启不生效。</div>
+<div class="box tip"><b>全程不用你动手找地方：</b>AI 会自己读文件夹、自己放到该放的位置，你不需要翻目录、复制路径，也不用知道技能目录在哪。</div><div class="box"><b>你的工具不支持拖拽安装？</b>走官方入口：WorkBuddy 左侧栏「专家 · 技能 · 连接器」→「添加技能」→「上传技能」；豆包电脑版「技能」→「我的技能」→「新建」→「上传技能」。</div>
+<div class="box warn"><b>别改文件名。</b>技能文件夹里的 <code>SKILL.md</code> 保持原名，改了有可能加载不到。</div>
+
+<h2>四、验证：一句话试试水</h2>
+<p>装好后，在对话里直接说场景，不用提技能名字。技能会根据描述自动匹配。例如：</p>
+<ul><li><b>个股技术面分析</b>：给一个代码或贴出 K 线，输出趋势判断、关键价位与形态解读</li><li><b>选股条件筛选</b>：描述你的选股条件，生成筛选框架与候选清单</li><li><b>交易策略回测</b>：给出策略规则，回测历史表现并评估稳健性</li><li><b>交易复盘与风控</b>：贴出交易记录，做绩效复盘、纪律检查与风险敞口评估</li></ul>
+<p>如果 AI 的回答明显分成了固定步骤、还带输出模板，说明技能生效了。</p>
+<div class="box tip">本包已抽样实测：<b>技术分析</b>、<b>综合分析总控</b>、<b>期权策略顾问</b> 等技能已在本机装入 AI 工具并实际触发，以真实行情数据驱动，输出按技能里写好的结构（评分表 + 支撑阻力表 + 分节结论）生成。</div>
+
+<h2>五、怎么用得好：把背景写清楚</h2>
+<p>技能负责流程，你负责事实。输入的时候尽量带上这四样东西，输出质量差别很大：</p>
+<ol>
+<li><b>对象</b>：哪个产品 / 哪个客户 / 哪份文件，具体一点；</li>
+<li><b>目标</b>：你要的是一个结论、一份文档，还是一个清单；</li>
+<li><b>约束</b>：预算、时限、合规要求、格式要求；</li>
+<li><b>已有材料</b>：把原始数据、原文、报表贴进去，别让 AI 猜。</li>
+</ol>
+<div class="box tip"><b>示例：</b>「个股技术面分析：给一个代码或贴出 K 线，输出趋势判断、关键价位与形态解读。我的情况是……（补上上面的四样东西）」</div>
+
+<h2>六、找不到合适的技能怎么办</h2>
+<ul>
+<li>换关键词搜：同一个意思多试几个词，比如「选股 / 筛选 / 回测 / 择时」；</li>
+<li>按分类浏览：目录页顶部有分类筛选，先看大类再挑；</li>
+<li>组合使用：一个技能出初稿，另一个技能做检查，比如先「生成」再「审计」；</li>
+<li>看分类索引：<code>01_目录/分类索引/</code> 下每个分类有一份 <code>skills.json</code>，含中文说明与「你提供什么 / 你会得到什么」。</li>
+</ul>
+
+<h2>七、常见问题</h2>
+<h3>技能需要联网吗？</h3>
+<p>技能本身是本地文本，不需要联网。但部分技能会引导 AI 去查资料，那种情况下需要你的工具处于可联网状态。</p>
+<h3>可以改技能内容吗？</h3>
+<p>可以。复制出你自己的版本再改，原来的留着备份。改坏了换回来就行。</p>
+<h3>装太多会不会互相干扰？</h3>
+<p>一般不会。但同一场景装了多个技能时，建议把最常用的那几个留着，其余按需装进装出。</p>
+<h3>技能里的数据和结论能直接对外用吗？</h3>
+<p>不能直接当结论用。技能是辅助工具，专业判断要由你把关。涉及具体数字、条款、申报口径的，务必人工复核。</p>
+<div class="foot">
+本教程为交付包的一部分。技能正文取自原作者原文，中文名称与说明为本包整理。
+</div>
+</body>
+</html>

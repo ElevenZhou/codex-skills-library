@@ -1,0 +1,11 @@
+技能名称：个股分析报告（report-stock）
+分类：交易日志与绩效
+能做什么：为个股生成趋势、PMCC可行性与基本面综合分析报告（Markdown/PDF）
+你提供什么：股票代码（单个，或多个空格分隔）
+你会得到什么：Markdown 或 PDF 报告：买入/持有/回避推荐与优劣势、公司概况、趋势分析、基本面、Piotroski F 分数、内部人交易、PMCC 可行性、期权价差策略、投资总结，报告存 sandbox/
+触发说法示例：「帮我出一份特斯拉的分析报告，要 PDF」
+依赖条件：需要联网取数；需本机运行技能自带脚本
+备注：数据聚合自 scanner-bullish、scanner-pmcc、fundamentals 等技能，PDF 需调用 markdown-to-pdf 技能
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

@@ -1,0 +1,123 @@
+{
+  "category": "期权与衍生品",
+  "count": 9,
+  "skills": [
+    {
+      "name_zh": "期权策略顾问",
+      "name": "options-strategy-advisor",
+      "description_zh": "用布莱克-舒尔斯定价、希腊值与盈亏模拟分析期权策略。",
+      "func": "模拟各期权策略的盈亏与希腊值，并给出风险管理与财报策略建议",
+      "how": "帮我分析一下在苹果上做备兑看涨的风险收益，顺便对比保护性看跌",
+      "input": "标的代码、策略类型、各腿行权价与到期日、合约数量；IV 可选（不提供则用历史波动率）；可选 FMP 数据源账号 拉现价与历史波动率",
+      "output": "一份 Markdown 策略分析报告：策略腿明细、净权利金、最大盈亏、盈亏平衡、ASCII 盈亏图、组合希腊值、风险评估、建仓/止盈/止损/调整规则、适用时机与备选策略对比表",
+      "need_net": "可选",
+      "need_python": "是",
+      "note": "有 数据源账号 可拉实时数据，无 key 时手动输入现价与波动率；仅支持单标的、单腿/多腿组合模拟",
+      "description_en": "Options trading strategy analysis and simulation tool. Provides theoretical pricing using Black-Scholes model, Greeks calculation, strategy P/L simulation, and risk management guidance. Use when user requests options strategy analysis, covered calls, protective puts, spreads, iron condors, earnings plays, or options risk management. Includes volatility analysis, position sizing, and earnings-based strategy recommendations. Educational focus with practical trade simulation."
+    },
+    {
+      "name_zh": "期权希腊值",
+      "name": "greeks",
+      "description_zh": "计算指定期权的德尔塔、伽马、西塔、维加与隐含波动率。",
+      "func": "用Black-Scholes算指定期权的希腊值与隐含波动率",
+      "how": "帮我算一下行权价600、还有30天到期的看涨期权希腊值和IV",
+      "input": "标的现价、行权价、期权类型（call/put）、到期日或剩余天数，期权市价（用于反算 IV，可选）、计算基准日、波动率与无风险利率",
+      "output": "JSON：标的现价、行权价、剩余天数、隐含波动率，以及 delta/gamma/theta/vega/rho 各希腊值，并说明每个希腊值对该持仓的含义",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "本地纯计算，依赖 scipy，不需要联网",
+      "description_en": "Calculate option Greeks (delta, gamma, theta, vega) and implied volatility for specific options. Use when user asks about Greeks, delta, gamma, theta, vega, IV, or option sensitivity analysis."
+    },
+    {
+      "name_zh": "领口策略报告",
+      "name": "ib-collar",
+      "description_zh": "为保护长期期权仓位生成战术性领口策略报告。",
+      "func": "为PMCC持仓生成领口保护方案，测算事件前后看跌保护成本与情景",
+      "how": "帮我给英伟达的长期期权持仓做一份财报前的领口保护方案",
+      "input": "标的代码（须在组合中持有）；本地需运行 TWS 或 IB Gateway；可选账户",
+      "output": "JSON 与 Markdown 报告：持仓概览、PMCC结构健康检查（是否短腿高于长腿）、财报风险、看跌期权久期分析（短/中/长期对比）、领口情景（跳空高开/持平/跳空低开）、成本收益分析、实施时间表、最优行权价与到期日建议，报告存 sandbox/",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 IBKR 本地连接；专为保护 PMCC 持仓设计",
+      "description_en": "Generate tactical collar strategy reports for protecting PMCC positions through earnings or high-risk events. Requires TWS or IB Gateway running locally."
+    },
+    {
+      "name_zh": "空头滚仓查询",
+      "name": "ib-find-short-roll",
+      "description_zh": "为现有空头仓位寻找滚仓选择，或为多头股票寻找备兑开仓机会。",
+      "func": "为空头期权找滚仓候选，或对正股与多头期权找最优备兑开仓",
+      "how": "帮我看看现在持有的谷歌空头看涨期权有哪些滚仓选择",
+      "input": "标的代码；行权价/到期日/看涨看跌类型可选（不填自动从持仓识别）；本地需运行 TWS 或 IB Gateway；可选账户与预期波动乘数",
+      "output": "JSON（含 mode 字段：roll 滚仓 / spread 垂直价差 / new_short 备兑新开）与 Markdown 报告：当前持仓（含IV、delta）、买回成本、各到期日的滚仓或开仓候选，报告存 sandbox/",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 IBKR 本地连接与 yfinance 拉财报日期",
+      "description_en": "Find roll options for existing short positions OR find best covered call/put to open against long stock. Use when user asks about rolling shorts, finding roll candidates, writing covered calls, or managing option positions. Requires TWS or IB Gateway running locally."
+    },
+    {
+      "name_zh": "期权链数据",
+      "name": "ib-option-chain",
+      "description_zh": "获取股票、ETF 与期货的期权链，含各行权价的买卖价与隐含波动率。",
+      "func": "从券商实时拉取指定到期日的期权链，含报价、IV与希腊值",
+      "how": "帮我拉一下苹果下个月到期的期权链数据",
+      "input": "标的代码（股票/ETF/期货）、到期日（YYYYMMDD，可先列全部到期日）；本地需运行 TWS 或 IB Gateway",
+      "output": "JSON：看涨与看跌期权数组（行权价、买价、卖价、最新价、成交量、持仓量、隐含波动率、模型希腊值、期货乘数）、标的现价、资产类型（股票/期货）与数据来源，并以表格呈现、标注高成交量行权价与异常 IV",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 IBKR 本地连接；期货期权只返回至主力连续合约到期日",
+      "description_en": "Get option chain data from Interactive Brokers for equities, ETFs, and futures (FOP), including calls and puts with strikes, bids, asks, volume, implied volatility, and model Greeks. Use when user asks about options using IBKR data, futures options (NQ/ES/CL/GC...), or needs real-time option quotes from their broker. Requires TWS or IB Gateway running locally."
+    },
+    {
+      "name_zh": "长期期权备兑顾问",
+      "name": "ib-pmcc-advisor",
+      "description_zh": "分析长期期权备兑（对角价差）仓位：短腿风险、指派概率与调整建议。",
+      "func": "分析组合内的PMCC对角线价差持仓，评估短腿风险并给出滚仓建议",
+      "how": "帮我体检一下我组合里那几个长期期权对角线价差，短腿要不要滚",
+      "input": "本地需运行 TWS 或 IB Gateway；可选账户、最小滚仓DTE、价格模式（mid/last）、指定标的",
+      "output": "默认返回简洁内联摘要（每个价差的短腿行权价、delta、指派概率、持有/滚仓建议，并优先标出红旗）；按需生成 Markdown 或 JSON 报告：红旗汇总、点差结构表、短腿风险、逐日盈亏预测、Top3滚仓候选表与横向对比、持有/滚仓/平仓建议",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 IBKR 本地连接；财报日期来自 Yahoo Finance",
+      "description_en": "Analyze PMCC (Poor Man's Covered Call / diagonal spread) positions from IB portfolio. For each diagonal spread, reports short leg risk (delta, IV, assignment probability), daily P&L projections, top-3 roll candidates, and a side-by-side comparison table. Requires TWS or IB Gateway running locally."
+    },
+    {
+      "name_zh": "当日到期价差",
+      "name": "ib_0dte",
+      "description_zh": "寻找并给出最优的当日到期信用价差交易方案。",
+      "func": "筛选并可选下单当日到期信用价差，自动附加止损止盈与时间退出",
+      "how": "帮我找今天到期、风险有限的纳指看涨价差，先别下单",
+      "input": "标的代码（如 SPX/NDX/RUT/VIX 或个股 ETF）、券商账户，预算可选，本地需运行 TWS 或 IB Gateway 并开通指数期权行情权限",
+      "output": "JSON：评分排序的候选价差（行权价、信用、盈利概率、最大盈亏、EV、距短腿距离）、预算来源、时序与事件提示；加 --execute 时下单一组 BAG 组合单并原子附加止盈/止损/时间退出 OCA 括号单，每次运行结果自动存 sandbox/",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "明确依赖 IBKR 的 TWS/IB Gateway 本地连接",
+      "description_en": "Find and place the best 0DTE (zero-days-to-expiration) credit spreads from Interactive Brokers. Default execution route is the EMA9/EMA21 + VIX/VXN regime strategy (ema_vix_0dte.py), which auto-selects bull_put or bear_call from a bare EMA cross and skips the trade when the vol index is elevated (VXN ≥ 35 for NDX/QQQ, VIX ≥ 20 otherwise). Optional --rr-gate and --time-gate add red→red and bar-timing confirmation. Supports cash-settled indices (SPX, NDX, RUT, VIX) and any optionable stock/ETF. Manual spread type override is available via zero_dte.py. Requires TWS or IB Gateway running locally."
+    },
+    {
+      "name_zh": "价差策略分析",
+      "name": "spread-analysis",
+      "description_zh": "分析垂直价差、铁鹰、跨式与宽跨等价差策略的盈亏。",
+      "func": "分析垂直价差、跨式、宽跨式、铁鹰等组合策略，算成本与盈亏",
+      "how": "帮我算一下苹果看涨垂直价差的最大盈利和盈亏平衡点",
+      "input": "标的代码、策略类型（vertical/straddle/strangle/iron-condor）、到期日、各腿行权价与看涨看跌类型",
+      "output": "JSON，含策略名与各腿、净成本/权利金、最大盈利、最大亏损、盈亏平衡价，以及基于 IV 的盈利概率估计，并解释该策略的风险收益与适用时机",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 yfinance 联网取得行情",
+      "description_en": "Analyze option spread strategies like vertical spreads, iron condors, straddles, strangles. Use when user asks about spreads, multi-leg strategies, vertical spread, iron condor, straddle, strangle, or strategy analysis."
+    },
+    {
+      "name_zh": "期权策略顾问",
+      "name": "trade-options",
+      "description_zh": "分析隐含波动率、预期波动与最大痛点，给出期权策略建议。",
+      "func": "模拟各期权策略的盈亏与希腊值，并给出风险管理与财报策略建议",
+      "how": "帮我分析一下在苹果上做备兑看涨的风险收益，顺便对比保护性看跌",
+      "input": "标的代码、策略类型、各腿行权价与到期日、合约数量；IV 可选（不提供则用历史波动率）；可选 FMP 数据源账号 拉现价与历史波动率",
+      "output": "一份 Markdown 策略分析报告：策略腿明细、净权利金、最大盈亏、盈亏平衡、ASCII 盈亏图、组合希腊值、风险评估、建仓/止盈/止损/调整规则、适用时机与备选策略对比表",
+      "need_net": "可选",
+      "need_python": "是",
+      "note": "有 数据源账号 可拉实时数据，无 key 时手动输入现价与波动率；仅支持单标的、单腿/多腿组合模拟",
+      "description_en": "Options Strategy Advisor — analyzes implied volatility, IV rank/percentile, expected moves, put/call ratios, max pain, unusual activity, and recommends specific options strategies with risk/reward profiles based on the trader's directional outlook."
+    }
+  ]
+}
