@@ -23,8 +23,13 @@ auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总�
 | APK/游戏逆向重建 | `rebuild-workflow` + `rebuild-recon` + `rebuild-device-evidence` + `rebuild-product-design` + `rebuild-dev-milestones` + `rebuild-build-release` | 老大统筹；老三项目执行；技术经理/产品经理/设计经理/测试经理按阶段参与 | 仅对自有或明确授权目标执行；REA 负责静态/ADB Evidence，rebuild 技能负责 S0-S7、R1/R2/R3、D1-D9、重写和交付 |
 | 项目治理 / 新项目规范 | `project-governance` | | 统一项目骨架、文档节点更新、日终 Git checkpoint；底层运维文档仍由 `project-ops-standards` 承担 |
 | 项目文档规范 | `project-ops-standards` | | 补齐或审计项目管理与运维文档 |
-| （预留）复刻微创新综合工作组 | 未建 | 老四 | 别名已预留，技能未建。用户说"老四"时告知尚未上线，不要临时拼凑替代 |
+| 复刻微创新综合工作组 | `product-tech-quality` | 老四、小四、四哥、四当家 | 对标拆解、微创新、技术方案、质量门禁和发布门禁 |
 | 合同审阅 | `xiaowu-contract-review` | 小五 | 采购、SaaS、服务、合作类合同的审查与修订 |
+| 公司管理 / 证照 / 合同归档 | `company-management` | 老六、小六、六哥、六当家 | 公司底账、证照、合同台账、签章、资产和到期跟踪；不代签、不盖章 |
+| 市场商务 / 增长 | `market-business` | 老七、小七、七哥、七当家 | 客户、渠道、合作、报价和投放方案；不擅自发消息、签约或花预算 |
+| 投资判断 / 资产配置 | `capital-growth` | 老八、小八、八哥、八当家 | 自有资金的研究、仓位、止盈止损与复盘；不代下单、不记账 |
+| 财务 / 对账 / 回款 | `finance-management` | 老九、小九、九哥、九当家 | 记账、对账、成本、毛利、回款和经营报表；逐笔核对 |
+| 服务器运维 / 生产变更 | `ops-management` | 老十、小十、十哥、十当家 | 服务器、网关、节点、监控、安全、故障和生产变更；先只读，变更需授权 |
 | PPT / 路演材料 | `deck-studio-loop` | | 商业计划书、公司或产品介绍、路演 |
 | Word 文档 | `doc` | | `.docx` 读写与排版 |
 | PDF | `pdf` | | PDF 读取、生成、审阅 |
@@ -54,7 +59,8 @@ auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总�
 | 成果归档 | `submit-results-to-workbench`、`flaios-content-submit`、`personal-workbench` | | 交付后归档到工作台或 FlaiOS |
 | 邮件 | `gmail-mail` | | Gmail 收发 |
 | 飞书 | `lark-*` 系列 | | 飞书文档、表格、消息、日历、任务等（以本机已安装的为准） |
-| 服务器运维 | `seoul-node-onboarding`、`seoul-server-status-check`、`ccswitch-config-transfer`、`t0-work-session` | | 对应服务器和会话的专项流程 |
+| 服务器运维专项 | `seoul-node-onboarding`、`seoul-server-status-check`、`ccswitch-config-transfer`、`t0-work-session` | | 对应服务器和会话的专项流程；由老十统筹 |
+| 重要结论通知 / 成果回写 | `feishu-webhook-push`、`submit-results-to-workbench`、`personal-workbench` | | 重要信息和关键结论按项目指向推送飞书；完成后回写工作台 |
 
 ## 常见组合
 

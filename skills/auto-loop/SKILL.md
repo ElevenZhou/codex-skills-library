@@ -5,7 +5,7 @@ description: Autonomous autopilot/cockpit execution system (aliases 老大 / 大
 
 # Auto Loop Autopilot（老大）
 
-Skill version: `2026.10.05`
+Skill version: `2026.11.08`
 
 别名：**老大**、大哥、老大哥、大当家、头儿。用户说"老大""大哥""让老大来""老大安排一下"等，等同于调用本技能。
 
@@ -144,7 +144,7 @@ Then derive task-specific roles by asking **what distinct ways this deliverable 
 - 设计经理：页面结构、交互、视觉差异化和真机对标。
 - 测试经理：Evidence coverage、P0 清单、ADB/真机验收和发布门禁。
 
-老四当前是预留的复刻微创新工作组，未建立对应技能；老五至老十在当前注册表没有可验证的别名/岗位映射，不能自动冒充已注册角色。需要这些编号时，先把正式角色卡和技能注册到 `project-employee-agents` / `skill-registry.md`，再接入调度。
+当前已注册角色映射：老四=`product-tech-quality`，小五=`xiaowu-contract-review`，老六=`company-management`，老七=`market-business`，老八=`capital-growth`，老九=`finance-management`，老十=`ops-management`。调度时必须按注册表加载对应技能，不得用临时角色卡替代。服务器专项技能由老十统筹；重要结论按项目指向推送默认飞书 webhook，交付完成后回写工作台。所有生产写入、发布、对外发送、花费预算、签署/盖章和删除动作仍以对应技能的明确授权门禁为准。
 
 Record the chosen roster and why it was sized that way. When actual subagent tools are unavailable or not allowed, run the same roles internally and record findings in the loop ledger.
 
