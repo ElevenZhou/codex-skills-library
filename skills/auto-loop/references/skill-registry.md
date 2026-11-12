@@ -20,7 +20,8 @@ auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总�
 | --- | --- | --- | --- |
 | 项目立项 / 可行性 | `project-inception-analysis-cockpit` | 小二、老二、二哥、二当家 | 判断项目该不该做：市场、竞品、开源选型、十角色评审、立项结论 |
 | 项目持续推进 | `project-employee-agents` | 小三、老三、三哥、三神、三当家 | 立项后的计划、执行、上线、运营；按岗位和阶段交付管理成果 |
-| APK/游戏逆向重建 | `rebuild-workflow` + `rebuild-recon` + `rebuild-device-evidence` + `rebuild-product-design` + `rebuild-dev-milestones` + `rebuild-build-release` | 老大统筹；老三项目执行；技术经理/产品经理/设计经理/测试经理按阶段参与 | 仅对自有或明确授权目标执行；REA 负责静态/ADB Evidence，rebuild 技能负责 S0-S7、R1/R2/R3、D1-D9、重写和交付 |
+| APK/游戏逆向重建 | `rebuild-workflow`（总控）+ `rebuild-recon` + `rebuild-asset-recovery` + `rebuild-device-evidence` + `rebuild-product-design` + `rebuild-dev-milestones` + `rebuild-build-release` | 老大统筹；老三项目执行；技术经理/产品经理/设计经理/测试经理按阶段参与 | 允许所有作品进入分析，正式发布必须人工确认所有权（G-PUBLISH）；REA 负责静态/ADB Evidence，rebuild 技能负责 A0、S0-S7、R1/R2/R3、D1-D9、重写和交付；独立发布仓库 github.com/ElevenZhou/apk-rebuild-skills |
+| 游戏开发（原创 / 按 GDD） | `game-dev-workflow`（总控）+ `game-design-economy` + `godot-game-dev` + `game-playtest-qa` | | 从立项到上线的 G0–G6 门禁、玩法数值、Godot 工程、试玩与埋点；逆向后的重做另叠加 rebuild-* |
 | 项目治理 / 新项目规范 | `project-governance` | | 统一项目骨架、文档节点更新、日终 Git checkpoint；底层运维文档仍由 `project-ops-standards` 承担 |
 | 项目文档规范 | `project-ops-standards` | | 补齐或审计项目管理与运维文档 |
 | 复刻微创新综合工作组 | `product-tech-quality` | 老四、小四、四哥、四当家 | 对标拆解、微创新、技术方案、质量门禁和发布门禁 |
@@ -43,6 +44,7 @@ auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总�
 | 视频算力对账 | `video-compute-reconciliation` | | 视频双站与渠道账单的只读对账（智算谷等）；先读其 site-profiles 锁定渠道和金额口径；可接 `video-channel-onboarding` 的新渠道 |
 | 前端实现 | `advanced-frontend-design` | | 设计方向已定，做生产级界面 |
 | 前端比稿 | `frontend-design-lab` | | 设计方向未定，先出多个方案对比 |
+| 前端二审 | `frontend-design-review` | | 现成页面/截图/代码的分级评审，默认不改代码 |
 | 落地页审美 | `taste-skill`（触发名 `design-taste-frontend`） | | 落地页、作品集、改版 |
 | 浏览器自动化 | `playwright` | | 网页操作、截图、UI 流程验证 |
 | 持续调试 | `playwright-interactive` | | 持久浏览器 / Electron 调试 |

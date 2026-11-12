@@ -79,7 +79,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 ## 技能目录
 
-共 48 个技能，按用途分 10 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
+共 60 个技能，按用途分 12 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
 
 ### 1. 自动驾驶与项目管理
 
@@ -107,14 +107,15 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 | 技能 | 版本 | 适合场景 | 推荐触发词 / 用法 |
 | --- | --- | --- | --- |
-| ★ `advanced-frontend-design` | `2026.07.24` | 生产级前端设计与实现，落地高辨识度界面、复杂状态和浏览器验证。 | `Use $advanced-frontend-design 做一个前端页面...` |
-| `frontend-design-lab` | `2026.07.24` | 多方案设计实验室：固定产品约束下产出并对比多个视觉方向，再选定精修。 | `Use $frontend-design-lab 做几个前端风格方案...` |
+| ★ `advanced-frontend-design` | `2026.11.12` | 生产级前端设计与实现，落地高辨识度界面、复杂状态和浏览器验证；自带 UI 词汇表、动效、状态/无障碍、中文产品界面参考和 `verify_frontend.py` 检查脚本。 | `Use $advanced-frontend-design 做一个前端页面...` |
+| `frontend-design-lab` | `2026.11.12` | 多方案设计实验室：固定产品约束下产出并对比多个视觉方向，再选定精修。 | `Use $frontend-design-lab 做几个前端风格方案...` |
+| `frontend-design-review` | `2026.11.12` | 前端设计二审：对现成页面/截图/代码做分级评审（P0/P1/P2）、0–5 评分和修复建议，默认不改代码。 | `Use $frontend-design-review 审一下这个页面...`、`看着像 AI 做的` |
 | `taste-skill` | `2026.07.25` | 面向 landing page、作品集和 redesign 的反模板化审美工作流，触发名为 `design-taste-frontend`。 | `Use $design-taste-frontend 重设计这个页面...` |
 | ★ `playwright` | `2026.07.25` | 命令行驱动真实浏览器：网页操作、截图、表单、UI 流程验证。 | `Use $playwright 自动测试这个页面...` |
 | `playwright-interactive` | `2026.07.25` | 持久浏览器/Electron 调试，适合连续 UI QA 和本地 Web/App 调试。 | `Use $playwright-interactive 调试这个本地应用...` |
 | `screenshot` | `2026.07.25` | 桌面/系统截图，适合浏览器工具拿不到的窗口、全屏、区域截图。 | `Use $screenshot 截取这个窗口...` |
 
-怎么选：方向已定直接做用 `advanced-frontend-design`；方向未定先比稿用 `frontend-design-lab`；落地页/作品集追求审美差异化用 `design-taste-frontend`。
+怎么选：方向已定直接做用 `advanced-frontend-design`；方向未定先比稿用 `frontend-design-lab`；落地页/作品集追求审美差异化用 `design-taste-frontend`；做完想挑毛病用 `frontend-design-review`。
 
 ### 4. 部署
 
@@ -188,6 +189,33 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | `ops-management`（老十） | `v1.0` | 运维管理：只读巡检、故障分层定位、生产变更（盘点→备份→canary→验证→放量）。写操作需授权。 | `老十，巡检一下服务器`、`老十，接口变慢了` |
 
 怎么选：做什么、做不做找老二；怎么做好、能不能上线找老四；排期推进找老三；上线后稳不稳找老十。钱的事：外部增长找老七，自有资金投资找老八，账和现金流找老九。合同：条款找老五，归档签章找老六。
+
+### 11. 逆向重建（APK / 游戏）
+
+| 技能 | 版本 | 适合场景 | 推荐触发词 / 用法 |
+| --- | --- | --- | --- |
+| ★ `rebuild-workflow` | `v1.5.0` | 总控：A0 原包获取 → S0–S7 八阶段 → 重建交付；管权属登记、决策门 D1–D9 和 G-PUBLISH 发布门禁；带项目模板、多项目看板、引擎笔记（Godot / Unity / RN / Cocos / Flutter / 原生等）。 | `逆向重建`、`解包这个 APK`、`Use $rebuild-workflow ...` |
+| `rebuild-recon` | `v1.4.0` | S1 侦察 + S2 静态分析：哈希基线、引擎/加固识别（`detect_engine.py`）、九篇基线文档。 | `解包`、`引擎识别`、`APK 分析` |
+| `rebuild-asset-recovery` | `v1.3.0` | S3 资源回导：贴图/音频/字体/动画/文案，样品先行，原件不动。 | `资源回导`、`提取素材` |
+| `rebuild-product-design` | `v1.3.0` | S4 产品定义：R1/R2/R3 路线、D1–D9 决策门、差异化与微创新。 | `重建方案`、`差异化` |
+| `rebuild-dev-milestones` | `v1.1.0` | S5 按 M0–M5 里程碑重写，附开发纪律与进展文档。 | `里程碑开发`、`待优化清单` |
+| `rebuild-device-evidence` | `v1.2.0` | 真机采证：ADB 截图/日志/录屏/抽帧，用于校准和验收。 | `真机测试`、`ADB 截图` |
+| `rebuild-build-release` | `v1.2.0` | S7 打包交付：Android 导出工具链、签名试玩包、交付清单。 | `打包 APK`、`签名`、`交付工程` |
+
+怎么选：整条链路找 `rebuild-workflow`，它按阶段调度其余六个；只做其中一步（只解包、只回导、只打包）可单独点名。权属、分析范围、正式发布永远由人把关，技能不得放宽。
+
+**上游仓库**：逆向技能的独立发布仓库是 [ElevenZhou/apk-rebuild-skills](https://github.com/ElevenZhou/apk-rebuild-skills)（含 `install/` 安装脚本、`tools/lint_skills.py`、`CHANGELOG.md`、`CONTRIBUTING.md`）。本库 `skills/rebuild-*` 是它的镜像加扩展，快照基线为上游 v1.4.3 工作区（2026-11-12），并额外带 v1.5.0 的引擎笔记和 `detect_engine.py` 扩展。**同步规则**：上游有新版时先合并上游再覆盖本库同名目录；本库新增的内容（`engines/cocos|unity-mono|flutter|native-android.md`、`detect_engine.py` 扩展）要回写到上游，避免两边分叉。
+
+### 12. 游戏开发（原创 / 按 GDD / 重写期）
+
+| 技能 | 版本 | 适合场景 | 推荐触发词 / 用法 |
+| --- | --- | --- | --- |
+| ★ `game-dev-workflow` | `2026.11.12` | 总控：G0 立项 → G6 上线运营七阶段，每阶段通过/不通过指标；引擎选型矩阵、GDD 一页纸、变现与合规清单。 | `做个小游戏`、`游戏立项`、`软启动` |
+| `game-design-economy` | `2026.11.12` | 玩法/数值/经济：核心循环、成长与难度曲线、广告与内购、抽卡概率；带经济模拟、概率计算、难度曲线三个脚本。 | `数值设计`、`抽卡概率`、`经济平衡` |
+| `godot-game-dev` | `2026.11.12` | Godot 4 开发实践与竖屏手游启动工程（**启动工程未在编辑器验证**，见其 `validation-status.md`）。 | `Godot`、`GDScript` |
+| `game-playtest-qa` | `2026.11.12` | 试玩与质量：冒烟、验收、性能预算、崩溃分诊、埋点规范、软启动指标；带包体预算和埋点校验脚本。 | `试玩`、`埋点`、`包体检查` |
+
+怎么选：从零做游戏用 `game-dev-workflow`，它转交其余三个；逆向分析之后的重做，权属和发布走 `rebuild-workflow`，玩法/数值/测试再叠加这里的技能。
 
 ## 别名与总调度
 
