@@ -1,0 +1,25 @@
+# Godot 4
+.godot/
+.import/
+*.translation
+
+# Exports and build output
+build/
+export/
+*.apk
+*.aab
+*.idsig
+
+# Signing material and local credentials: never commit
+*.keystore
+*.jks
+export_credentials.cfg
+CREDENTIALS.local.txt
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

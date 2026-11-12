@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Game Dev"
+  short_description: "Godot 4.x GDScript 工程实践、移动端适配、headless 测试与 starter"
+  default_prompt: "Use $godot-game-dev to structure a Godot 4.x GDScript mobile project (autoload event bus, data-driven JSON config, versioned saves, portrait UI scaling), run the headless smoke and tests_dev commands, and be explicit that the bundled starter is unverified until those commands have been run."

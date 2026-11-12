@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Dev Workflow"
+  short_description: "游戏开发总控：G0-G6 阶段门禁、引擎选型、交接点"
+  default_prompt: "Use $game-dev-workflow to locate the current stage (G0-G6) of this game project, define explicit pass/fail exit metrics for the next gate, choose or confirm the engine, and hand off to game-design-economy, godot-game-dev, game-playtest-qa and the rebuild-* skills where appropriate."

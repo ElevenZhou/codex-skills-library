@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Playtest & QA"
+  short_description: "试玩、验收、真机性能、埋点规范与软启动判读"
+  default_prompt: "Use $game-playtest-qa to define smoke and acceptance levels, run observed playtests, check device/performance/APK-size budgets with the bundled scripts, lint the telemetry spec, triage crashes and ANRs, and interpret soft-launch metrics with sample-size caveats."

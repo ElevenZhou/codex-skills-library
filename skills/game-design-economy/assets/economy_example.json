@@ -1,0 +1,37 @@
+{
+  "name": "casual-upgrade-loop (example, placeholder numbers)",
+  "players": 2000,
+  "days": 30,
+  "start_balance": 100,
+  "stall_patience_days": 3,
+  "stall_churn_per_day": 0.25,
+  "per_session_sources": [
+    {"id": "stage_clear", "amount": 120, "cv": 0.25, "scale_with_level": 0.06}
+  ],
+  "daily_sources": [
+    {"id": "daily_login", "amount": 200, "probability": 0.85}
+  ],
+  "ad_reward_amount": 150,
+  "per_session_sink": 20,
+  "ladder": {"base_cost": 150, "growth": 1.22, "max_level": 60},
+  "milestones": [
+    {"id": "chapter_1", "ladder_level": 5},
+    {"id": "chapter_2", "ladder_level": 12},
+    {"id": "chapter_3", "ladder_level": 20},
+    {"id": "endgame", "ladder_level": 35}
+  ],
+  "player_types": [
+    {
+      "name": "casual", "weight": 0.6, "sessions_per_day": 2.0, "ads_per_day": 1.0,
+      "retention": {"1": 0.38, "7": 0.12, "30": 0.04}
+    },
+    {
+      "name": "regular", "weight": 0.3, "sessions_per_day": 4.0, "ads_per_day": 3.0,
+      "retention": {"1": 0.48, "7": 0.22, "30": 0.09}
+    },
+    {
+      "name": "engaged", "weight": 0.1, "sessions_per_day": 7.0, "ads_per_day": 5.0,
+      "retention": {"1": 0.6, "7": 0.35, "30": 0.18}
+    }
+  ]
+}

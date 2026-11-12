@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Design & Economy"
+  short_description: "玩法数值经济设计，附经济模拟/掉率/难度曲线 Python 工具"
+  default_prompt: "Use $game-design-economy to define the core loop, resource sources and sinks, progression and difficulty curves, gacha drop rates and pity, ad-reward and IAP economy; write the numbers as JSON config and validate them with the bundled stdlib Python simulators before handing off."
