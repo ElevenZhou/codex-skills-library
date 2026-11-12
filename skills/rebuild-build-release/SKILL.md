@@ -1,0 +1,93 @@
+---
+name: rebuild-build-release
+description: 逆向重建 S7 打包交付：先过 G-PUBLISH 发布人工门禁（逐产品人工确认所有权、由人工执行发布），再配置 Android 导出工具链、生成签名试玩 APK、真机安装冒烟、整理交付工程与交付清单。内含 Godot 4.x 导出五坑（含"导出失败但零错误文案"的 ETC2 问题）。触发词：打包 APK、导出安卓、签名、keystore、试玩包、交付工程、发布、release。
+version: 1.2.0
+owner: ElevenZhou
+---
+
+# rebuild-build-release — 打包与交付（含发布门禁）
+
+## 何时用 / 何时不用
+- **用**：需要出试玩 APK（任一里程碑都可以出内测包）；项目最终交付；对外发布前的门禁检查。
+- **不用**：开发中的日常运行（headless/编辑器即可）。
+
+## 〇、G-PUBLISH 发布人工门禁（S7 第一道，先做）
+
+> v1.4.0 起流程允许所有作品进入分析与重建，但**能不能分析 ≠ 能不能发布**。本门禁是硬卡，Agent 不得跳过、不得代填、不得自动对外发布。
+
+| 步骤 | 谁做 | 要求 |
+|---|---|---|
+| 1. 区分包类型 | Agent | **内测/试玩包**（仅内部）不需要本门禁；**正式发布包**（对外分发 / 上架 / 交付给外部）必须过门禁 |
+| 2. 逐产品确认所有权 | **人工（发布责任人）** | 每个产品单独确认：我司完整所有 / 已获权利人书面授权（写明范围与期限）/ 其他；附书面凭证、确认人、日期，写进 `scope.md`「发布授权」段 |
+| 3. 合规复核 | **人工** | D2/D6 换皮完成、无第三方代码/素材违规引入、无第三方生产服务依赖、无反编译产物外发 |
+| 4. 执行发布 | **人工** | 上架、外发、对外分发动作由人执行；Agent 只准备交付物与清单 |
+| 5. 未确认时 | Agent | 交付物一律标 `仅内部`，交付清单勾「仅内部」，禁止对外分发；在交付清单写明未确认原因 |
+
+**Agent 禁止事项**：自动上架、自动外发、把 `仅内部` 包发到公开渠道、代填所有权确认、以「scope.md 已勾选拟对外发布」当作已授权（勾选只是意向，不是确认）。
+
+## 需要的输入
+- 工程源码、包名与品牌（来自 `rebuild-product-design` D3/D6）。
+- `scope.md` 的「发布授权」段（正式发布时必需）。
+- release keystore（新建或负责人提供）+ 密码，存放在**仓库之外**的本地文件。
+- 真机（安装冒烟）。
+
+## 一、工具链准备（全部放纯 ASCII 路径，如 `C:/android-sdk`、`C:/jdk21`、`C:/godot`）
+| 组件 | 要求 | 获取 |
+|---|---|---|
+| 引擎导出模板 | 版本与编辑器**完全一致** | 官方 release 页；大文件后台下载，失败换镜像 |
+| JDK | 17 或 21 | Temurin |
+| Android build-tools | ≥ 模板的 target SDK（Godot 4.6 → 35+） | `https://dl.google.com/android/repository/repository2-3.xml` 查真实文件名（新版是 `build-tools_r36_windows.zip`，没有次版本号） |
+| platform-tools | adb | 同上 |
+| SDK 目录结构 | `<sdk>/build-tools/<ver>/apksigner.bat`、`<sdk>/platform-tools/adb.exe` | 手动整理解压结果 |
+
+新建 keystore：
+```bash
+keytool -genkeypair -v -keystore C:/keystores/<app>-release.keystore -alias <app>_release \
+  -keyalg RSA -keysize 2048 -validity 10000
+```
+密码写进 `CREDENTIALS.local.txt`（gitignore），并交负责人托管。**丢了 keystore 就再也无法更新这个包名**——这正是项目 D 必须换包名的原因。
+
+## 二、Godot 4.x 导出（✅ 已验证）
+1. editor_settings 配 `java_sdk_path`、`android_sdk_path`、debug keystore（见 `rebuild-workflow/references/engines/godot.md`）。
+2. `project.godot` 的 `[rendering]` 段加 `textures/vram_compression/import_etc2_astc=true`。
+3. `export_presets.cfg`：参照 `references/export_presets.android.example.cfg`；keystore 三元组**要么全填要么全空**。
+4. 导出：
+   ```bash
+   Godot_console.exe --headless --path . --export-release "Android" C:/build/<app>.apk
+   ```
+5. 失败但没有错误文案 → 按顺序查：ETC2 → 三元组 → 中文路径 → build-tools 版本 → 模板目录名。还查不出就用"最小空项目 + 同一个 preset"判断是环境问题还是项目问题，最后读 `platform/android/export/export_plugin.cpp` 找 `valid = false`。
+
+其他引擎：⚠️ 待真实案例，照 `engines/_template.md` 记录。
+
+## 三、安装冒烟（必须做）
+```bash
+adb -s <SN> install -r C:/build/<app>.apk          # 报"无证书" = 没签上名
+adb -s <SN> shell monkey -p <包名> -c android.intent.category.LAUNCHER 1
+```
+用 `rebuild-device-evidence` 截图：启动页 → 首页 → 进一局 → 退出，确认无黑屏/崩溃/明显错位，截图存 `evidence/playtest/`。
+
+## 四、交付物与交付清单
+按 `references/delivery-checklist.md` 逐项打勾，交付目录：
+```
+release/<app>-v<版本>/
+  <app>-v<版本>-release.apk      签名试玩包（附 sha256）
+  <app>-src-v<版本>.zip          工程源码（不含 .godot/ 缓存、build/、密钥）
+  docs/                          产品文档、开发计划、M#-进展、待优化清单快照
+  交付清单.md                    含已知问题与下一步建议、发布授权状态
+  INTERNAL-ONLY.md               仅内部标记（所有权未确认时）
+```
+keystore 和密码**单独**交给负责人，不放进交付包，并且**双人双地备份**：keystore 与口令由两人分别保管、存两个物理位置（如 NAS + 离线介质），写交接记录（谁、何时、存哪、如何取回）。
+
+## 出口标准
+- **G-PUBLISH 已通过，或明确标记 `仅内部` 且未对外分发**；
+- 签名 APK 真机安装、启动、完成一局全部通过；
+- 交付清单全绿；已知问题全部列出；
+- **release keystore 已双人双地备份并有交接记录**。
+
+## 相关 skill
+上游 `rebuild-dev-milestones` → 调用 `rebuild-device-evidence` → 交付后回 `rebuild-workflow` 执行复盘与发布同步。
+
+## 变更记录
+- 1.2.0（2026-11-09）新增 **G-PUBLISH 发布人工门禁**：逐产品人工确认所有权、人工执行发布、Agent 禁止自动发布；区分内测包与正式发布包；出口标准与交付物加 `仅内部` 标记。
+- 1.1.0（2026-10-16）出口与交付清单加入 keystore 双人双地备份 + 交接记录（项目 C 复盘 C-13）。
+- 1.0.0（2026-10-01）项目 D PawStar 首个签名 APK（122MB）打通过程提炼。
