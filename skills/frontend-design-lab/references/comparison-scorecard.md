@@ -42,3 +42,7 @@ Record:
 - Prefer the direction that improves the primary job without creating new operational risk.
 - Explain why visually dramatic alternatives lost.
 - Keep the baseline in the report even when it does not win.
+
+## Related Rubric
+
+For a deeper single-page critique (P0/P1/P2 findings with evidence and fixes), use the 0-5 rubric in `frontend-design-review/references/review-rubric.md`; it extends this 1-5 scale with 0 for absent or broken. Weight criteria by operating context before comparing totals.

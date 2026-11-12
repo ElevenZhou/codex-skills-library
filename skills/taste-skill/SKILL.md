@@ -1,14 +1,24 @@
 ---
 name: design-taste-frontend
-description: Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check.
+description: Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check. Use when the user asks for a landing page, portfolio, marketing or brand site, or redesign, or says 去AI味, 别太模板, anti-slop, taste, awwwards-style. Not for dashboards or data-heavy product UI (use advanced-frontend-design).
 ---
 
 # tasteskill: Anti-Slop Frontend Skill
 
-Skill version: `2026.07.25`
+Skill version: `2026.11.12`
 
 > Landing pages, portfolios, and redesigns. Not dashboards, not data tables, not multi-step product UI.
 > Every rule below is **contextual**. None of it fires automatically. First read the brief, then pull only what fits.
+
+---
+
+## 与其他前端技能的分工
+
+- `design-taste-frontend` (this skill): aesthetic dials, AI-tell bans, redesign protocol for landing pages, portfolios, and brand sites.
+- `advanced-frontend-design`: product and tool UI, dashboards, states, accessibility, motion snippets, Chinese-product guidance, and the `verify_frontend.py` QA script. Use it for anything task-oriented; it also owns the browser quality gate.
+- `frontend-design-lab`: several mutually exclusive directions compared under one product contract.
+- `frontend-design-review`: critique-only second pass with P0/P1/P2 findings; Section 9 below is its cross-check list for generic-look findings.
+- `playwright` / `playwright-interactive`: browser automation for verification. `local-image-generator`: still images.
 
 ---
 
@@ -1206,3 +1216,9 @@ But that is **web glassmorphism / frosted-glass approximation**, not official Ap
 ---
 
 **End of appendices.** Install commands above are reality anchors. The Apple Liquid Glass skeleton is a labeled approximation, not an Apple-issued package. For canonical docs per design system, consult the system's official docs (links in Section 2 plus Appendix B).
+
+---
+
+## 变更记录 / Changelog
+
+- `2026.11.12`: added trigger phrases to the description and a sibling-skill division-of-labor section near the top; no rule changes.

@@ -23,17 +23,17 @@ The Nightline city safety dashboard is the first validated Interface Prism exper
 
 Local comparison entry:
 
-`Y:\Skills\frontend-design-ab-test\index.html`
+`/Volumes/05_PROJECTS/active/Skills/frontend-design-ab-test/index.html`
 
 Report:
 
-`Y:\Skills\frontend-design-ab-test\style-lab-report.md`
+`/Volumes/05_PROJECTS/active/Skills/frontend-design-ab-test/style-lab-report.md`
 
 Generated map source, optimized asset, and prompt:
 
-- `Y:\Skills\frontend-design-ab-test\assets\nightline-cartographic-map.png`
-- `Y:\Skills\frontend-design-ab-test\assets\nightline-cartographic-map.webp`
-- `Y:\Skills\frontend-design-ab-test\assets\nightline-cartographic-map.prompt.txt`
+- `/Volumes/05_PROJECTS/active/Skills/frontend-design-ab-test/assets/nightline-cartographic-map.png`
+- `/Volumes/05_PROJECTS/active/Skills/frontend-design-ab-test/assets/nightline-cartographic-map.webp`
+- `/Volumes/05_PROJECTS/active/Skills/frontend-design-ab-test/assets/nightline-cartographic-map.prompt.txt`
 
 ## Findings
 

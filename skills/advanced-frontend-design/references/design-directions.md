@@ -41,6 +41,19 @@ A signature moment should:
 
 Good examples include a live comparison surface, a tactile before/after control, a product-specific data reveal, an image sequence tied to the story, or a distinctive navigation mechanism. A generic glowing button, gradient headline, or floating card is not a signature moment.
 
+## Choose by Operating Context
+
+From the Nightline style lab (`frontend-design-ab-test/style-lab-report.md`): different directions win different contexts. Route by how the product is used, not by which screenshot is most dramatic.
+
+| Operating context | Start from | Watch for |
+| --- | --- | --- |
+| Long sessions, stable B2B or civic work | Quiet precision / ruled ledger | Anonymity: add a signature through type or one data moment |
+| Time-to-recognition and severity handling | Industrial utility | Alert color and density fatigue on routine work; reserve red for real urgency |
+| Spatial relationships are the job | Map or canvas as the primary surface | Image weight (optimize to WebP/AVIF) and overlay contrast |
+| No dominant specialist need | Balanced advanced default: status rail + work surface | Drifting back to hero + stat cards |
+
+Never merge directions into a hybrid. For multi-direction comparison, use `frontend-design-lab`.
+
 ## Anti-Repeat Check
 
 Before finalizing a direction, compare it with recent work when context is available. Change at least three of these if the work feels repetitive:

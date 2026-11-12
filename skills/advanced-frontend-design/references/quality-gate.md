@@ -47,6 +47,22 @@ Exercise the critical path and all visible controls that affect it:
 
 For canvas, WebGL, or 3D work, also inspect actual canvas pixels at desktop and mobile sizes, confirm the scene is nonblank and correctly framed, and verify interaction or animation over time.
 
+## Automated First Pass
+
+Run `python3 scripts/verify_frontend.py <file-or-url>` (path relative to this skill) before manual inspection. With python `playwright` installed it captures 1440x900 and 390x844 screenshots and reports console errors, horizontal overflow, images without alt, and unnamed controls. Without it, it falls back to a static HTML audit and says so; that fallback proves nothing about layout, overflow, or console health, so still use the browser tooling (`playwright` or `playwright-interactive` skills) for the visual and interaction checks below.
+
+## Composition Lessons from the A/B Tests
+
+Evidence: `frontend-design-ab-test/comparison-report.md` (same Nightline task, advanced vs standard skill). The standard output was polished and fully functional, yet scored lowest on anti-template quality (3.5 vs 5.0) because of its structure, not its styling.
+
+- **Default-structure anti-pattern:** top nav + hero + row of four equal stat cards + map card + list card. Check the page skeleton, not the palette. If you can describe the page with that sentence, recompose it.
+- **Work-surface first:** for operational and tool pages, the first viewport is the work surface (map, queue, status, primary action), not a hero. Delete the hero unless the page is brand-led. Test: in ten seconds, can an operator say what is at risk and what to do next?
+- **Metrics as a status strip or a side column, not four boxed cards.** Ruled rows, one shared baseline, tabular numerals. Cards are for objects users open.
+- **Status and action live in the same row** as the item they affect (severity, time, location, action). Do not make users hop between a summary and a detail card.
+- **Mobile is recomposed, not stacked.** Concrete moves seen in the winning version: the persistent side rail became a compact top rail, the map stayed first, four metrics became a 2x2 block, and alerts followed with their actions intact. For each page, write the one-line mobile order (what comes first, what collapses, what becomes a sheet) before coding.
+- **Score the structure separately from the finish.** A clean, coherent, familiar dashboard is a legitimate baseline; keep it in comparisons and do not sabotage it. It loses on structure and domain specificity, not on craft.
+- **State changes must be visible:** acknowledging, filtering, and dialog flows need an obvious before/after (status label, count, position change), verified in the browser rather than assumed from code.
+
 ## Evidence-Based Revision
 
 After the first screenshot pass:

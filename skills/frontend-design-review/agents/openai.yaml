@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Design Review"
+  short_description: "二审: scored P0/P1/P2 critique of a page, screenshot, or code (no rewrite)"
+  default_prompt: "Use $frontend-design-review to critique the given page, screenshot, or code. Run advanced-frontend-design/scripts/verify_frontend.py when code or a URL is available, score the ten rubric axes 0-5, and return prioritized P0/P1/P2 findings with evidence, fix, and effort. Do not change code unless asked."

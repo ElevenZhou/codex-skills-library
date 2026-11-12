@@ -1,13 +1,27 @@
 ---
 name: frontend-design-lab
-description: Create controlled frontend design experiments that hold one product contract constant while producing, implementing, and browser-testing multiple mutually exclusive visual directions. Use when the user asks for several frontend styles, an A/B or multi-variant design comparison, a design laboratory, aesthetic exploration before choosing a direction, comparison of minimalist/industrial/cartographic/editorial strategies, or evidence-based selection that avoids generic AI/Codex templates.
+description: Create controlled frontend design experiments that hold one product contract constant while producing, implementing, and browser-testing multiple mutually exclusive visual directions. Use when the user asks for several frontend styles, 多个风格方案, 风格对比, A/B or multi-variant design comparison, 设计实验室/界面棱镜, aesthetic exploration before choosing a direction, comparison of minimalist/industrial/cartographic/editorial strategies, or evidence-based selection that avoids generic AI/Codex templates. After a direction is chosen, hand off to advanced-frontend-design.
 ---
 
-# Interface Prism
+# Interface Prism (frontend-design-lab)
 
-Skill version: `2026.07.24`
+Skill version: `2026.11.12`
 
 Treat one product as a controlled design experiment. Keep its users, content, data, behavior, stack, and acceptance criteria fixed; vary only the design strategy, composition, material language, typography, and motion grammar.
+
+## 何时用 / 何时不用
+
+Use when the decision is "which direction", the cost of a wrong direction is high, or the user explicitly wants several variants side by side.
+
+Do not use when the direction is already known (use `advanced-frontend-design`), when the task is a quick page or component, or when the user only wants a critique of one page (use `frontend-design-review`). Do not run a lab to avoid making a design decision: three variants cost roughly three builds.
+
+## 相关 skill
+
+- `advanced-frontend-design`: product contract, anti-template audit, quality gate, `scripts/verify_frontend.py`; receives the winner (see [handoff-to-production.md](references/handoff-to-production.md)).
+- `frontend-design-review`: score or sanity-check each variant (or the production result) with the 0-5 rubric.
+- `design-taste-frontend`: aesthetic dials and AI-tell ban list for landing, portfolio, redesign variants.
+- `playwright` / `playwright-interactive`: screenshots and interaction checks for the comparison.
+- `local-image-generator`: the only still-image generator; use for a direction that truly needs a bitmap.
 
 ## Core Rule
 
@@ -22,8 +36,8 @@ When available, combine:
 - `advanced-frontend-design` for the product contract, anti-template audit, implementation, and browser quality gate
 - `frontend-design` for visual authorship and memorable composition
 - `ui-ux-pro-max` for states, accessibility, information architecture, and UX critique
-- `imagegen` or `local-image-generator` only when a bitmap asset materially improves one direction
-- Playwright or available browser tooling for the controlled comparison
+- `local-image-generator` (the library's single still-image skill) only when a bitmap asset materially improves one direction
+- `playwright` or available browser tooling for the controlled comparison, and `advanced-frontend-design/scripts/verify_frontend.py` for the per-variant technical pass
 
 Remain free-first. Do not depend on paid builders, premium templates, or paid component tiers. Do not trigger a quota-consuming image API unless the user requested generated imagery or has authorized that local tool workflow.
 
@@ -75,7 +89,7 @@ Signature moment: one product-specific visual or interaction idea.
 Main risk: what could make this direction less usable.
 ```
 
-Change at least four of the six design dimensions between variants. Avoid presenting near-duplicates as separate directions.
+The six design dimensions are: page silhouette, type voice, color behavior, material language, motion grammar, and signature moment. Any two variants must differ in at least four. Avoid presenting near-duplicates as separate directions.
 
 ### 4. Implement Controlled Variants
 
@@ -118,7 +132,7 @@ Read [comparison-scorecard.md](references/comparison-scorecard.md). Verify each 
 For every variant:
 
 - capture desktop around 1440 x 900 and mobile around 390 x 844
-- check console errors, failed resources, and horizontal overflow
+- check console errors, failed resources, and horizontal overflow (run `verify_frontend.py` per variant; if python `playwright` is missing it only does a static audit, so use the `playwright` skill for the rendered checks)
 - exercise the same critical interactions
 - verify focus, keyboard, dialog, filter, selection, acknowledgement, and recovery states where relevant
 - confirm generated assets are nonblank, correctly cropped, optimized, and readable behind overlays
@@ -131,6 +145,10 @@ Do not select a winner from a single desktop screenshot.
 Name the strongest direction for the product's actual operating context, not the most visually dramatic screenshot. It is valid for different directions to win different categories such as long-session use, emergency response, spatial reasoning, brand memorability, or delivery speed.
 
 Read [nightline-case-study.md](references/nightline-case-study.md) when a concrete worked example would help.
+
+### 9. Hand Off the Winner
+
+Once the user picks a direction, read [handoff-to-production.md](references/handoff-to-production.md): deliver tokens, type scale, component inventory, layout recipes, asset manifest, and rejected-direction notes to `advanced-frontend-design`. The lab does not build the production page and does not ship the comparison harness.
 
 ## Guardrails
 
@@ -152,3 +170,8 @@ Report:
 - generated asset paths, prompts, and optimized versions when used
 - browser sizes and interactions verified
 - recommendation by operating context, including why other directions lost
+
+## 变更记录 / Changelog
+
+- `2026.11.12`: added when-to-use and related-skill sections, Chinese trigger phrases, the explicit list of six design dimensions, a handoff step and `references/handoff-to-production.md`; replaced the stale `imagegen` reference with `local-image-generator`; replaced Windows `Y:\` paths in the case study with this machine's paths; pointed per-variant technical checks at `verify_frontend.py`.
+- `2026.07.24`: initial version.
