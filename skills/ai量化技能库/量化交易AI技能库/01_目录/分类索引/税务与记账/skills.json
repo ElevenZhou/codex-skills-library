@@ -1,0 +1,71 @@
+{
+  "category": "税务与记账",
+  "count": 5,
+  "skills": [
+    {
+      "name_zh": "股息税务与账户配置",
+      "name": "kanchi-dividend-us-tax-accounting",
+      "description_zh": "处理合格股息与普通股息的税务与账户放置问题。",
+      "func": "给股息持仓做美国股息税务分类与账户配置建议，输出年度规划备忘",
+      "how": "帮我整理下股息收入的税务分类，看看哪些该放退休账户",
+      "input": "持仓层输入 JSON（ticker、instrument_type、account_type、hold_days_in_window），可跑脚本生成税务规划表",
+      "output": "持仓层分配分类表、账户配置建议表（含理由）、未决税务假设的风险清单，以及可选的税务规划表产物（输出到 reports 目录）",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "仅作规划支持，非税务建议，最终申报需交税务专业人士；脚本为 build_tax_planning_sheet.py",
+      "description_en": "Provide US dividend tax and account-location workflow for Kanchi-style income portfolios. Use when users ask about qualified vs ordinary dividends, 1099-DIV interpretation, REIT/BDC distribution treatment, holding-period checks, or taxable-vs-IRA account placement decisions for dividend assets."
+    },
+    {
+      "name_zh": "成本基础计算",
+      "name": "cost-basis-engine",
+      "description_zh": "用先进先出、后进先出等多种方法计算持仓成本基础。",
+      "func": "用FIFO/LIFO/HIFO/指定批次/平均成本五种方法算成本基础并对比税负",
+      "how": "帮我算算这些币的成本基础，看看用哪种方法计税更省",
+      "input": "交易历史（date、action、资产代号、quantity、price_usd、fee_usd 的 dict 列表或 CSV）",
+      "output": "五种方法的已实现收益与估算税负对比表，含部分卖出处理，以及空投、质押奖励、代币拆分/迁移、LP进出、多跳兑换等特殊事件的处理结果",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "仅提供计算工具，非税务建议；Python 3.10+，标准库实现",
+      "description_en": "Multi-method cost basis computation including specific identification, FIFO, LIFO, HIFO, and proportional average cost with partial sell handling"
+    },
+    {
+      "name_zh": "税收亏损收割",
+      "name": "tax-loss-harvesting",
+      "description_zh": "识别、评分并规划税收亏损收割机会，含洗售合规跟踪。",
+      "func": "识别并评分加密持仓的税收亏损收割机会，规划合规与结转亏损",
+      "how": "年底了，帮我看看哪些亏损仓位可以收割抵税，怎么避开洗售",
+      "input": "组合持仓数据（每批次的成本基础、买入日期、当前市值），税务参数（边际税率、申报身份、往年结转亏损）",
+      "output": "机会四维评分排序、净收益分析（税额节省减交易成本）、61天窗口洗售合规标记、年度结转亏损计算，以及含卖出指令与再入场日期的收割计划",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "仅提供分析工具，非税务建议；核心计算用标准库完成",
+      "description_en": "Tax-loss harvesting opportunity identification, scoring, and planning with wash sale compliance and annual carryforward tracking"
+    },
+    {
+      "name_zh": "交易复式记账",
+      "name": "trade-accounting",
+      "description_zh": "为交易操作做复式记账：总账、损益表与现金流报表。",
+      "func": "用复式记账记录加密交易流水，生成损益表、资产负债表与现金流",
+      "how": "帮我用复式记账把这两个月的加密交易整理成损益表和资产负债表",
+      "input": "交易记录（出资、买卖、部分平仓、币币兑换、质押、空投、LP费用、各类手续费），或直接调用 Ledger 接口逐笔记账；脚本支持 --demo",
+      "output": "损益表、资产负债表（资产=负债+权益并自动平衡校验）、现金流量表；纯标准库 Python 实现，可导出报告",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "仅提供记账结构与计算，非税务/法律建议；Python 3.10+，无外部依赖",
+      "description_en": "Double-entry bookkeeping for trading operations with ledger management, P&L statements, balance sheets, and cash flow reporting"
+    },
+    {
+      "name_zh": "洗售检测",
+      "name": "wash-sale-detection",
+      "description_zh": "按洗售规则做窗口监控、亏损剔除跟踪与安全再入场倒计时。",
+      "func": "按2025美国加密洗售规则扫描交易，标记61天窗口与不准扣除的亏损",
+      "how": "帮我查查今年的交易有没有触发洗售，哪些亏损不能抵税",
+      "input": "交易历史（date、action、资产代号、quantity、price、proceeds、cost basis），多账户需自行汇总；脚本支持 --demo",
+      "output": "洗售违规清单、每笔不准扣除亏损金额、替代持仓的调整后成本基础、安全再入场倒计时；并标记DCA/跟单等自动交易隐患",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "对加密洗售规则的简化解读，非税务建议；不覆盖期权期货等衍生品，多账户需手动汇总",
+      "description_en": "Wash sale detection under 2025 US crypto rules with 61-day window monitoring, disallowed loss tracking, and safe re-entry countdown"
+    }
+  ]
+}

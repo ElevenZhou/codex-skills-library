@@ -1,0 +1,11 @@
+技能名称：机构资金流向跟踪（institutional-flow-tracker）
+分类：交易方法与择时
+能做什么：用13F数据跟踪机构持仓变化识别聪明钱吸筹或派发
+你提供什么：FMP 数据源账号、Python 3.9+、requests；筛选参数（--top、--min-change-percent、--sector、--min-market-cap 等）或单个股票代码深度分析
+你会得到什么：结构化Markdown报告 institutional_flow_analysis_<TICKER/THEME>_<DATE>.md：执行摘要、机构持仓趋势、Top持有者与变动、新增买家vs卖家、集中度分析、解读与建议、数据来源与时间戳；并给出基于覆盖度的 A/B/C 数据可靠度评级（C级被筛除）
+触发说法示例：「帮我看看聪明钱最近在加仓还是减仓哪些股票」
+依赖条件：需要联网取数；需本机运行技能自带脚本
+备注：13F有45天申报滞后；原文标注 track_institution_portfolio.py 尚未实现，机构级组合跟踪需借助外部资源
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

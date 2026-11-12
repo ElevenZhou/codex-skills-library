@@ -1,0 +1,11 @@
+技能名称：历史行情（price-history）
+分类：交易数据与工具
+能做什么：抓取指定股票的历史OHLCV行情，归纳高低点与趋势
+你提供什么：股票代码；可选时间区间（默认1mo）与数据间隔（默认1d）
+你会得到什么：JSON：symbol、period、interval，以及 data 数组，每条含 date、open、high、low、close、volume
+触发说法示例：「给我特斯拉过去一年的日线价格数据」
+依赖条件：需要联网取数；需本机运行技能自带脚本
+备注：数据来自 Yahoo Finance；时间戳按纽约时区
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

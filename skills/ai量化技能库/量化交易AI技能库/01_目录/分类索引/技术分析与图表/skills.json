@@ -1,0 +1,84 @@
+{
+  "category": "技术分析与图表",
+  "count": 6,
+  "skills": [
+    {
+      "name_zh": "周线技术分析",
+      "name": "technical-analyst",
+      "description_zh": "分析股票、指数与外汇的周线价格图表，定位中长期趋势与关键价位。",
+      "func": "对用户提供的周线图做纯技术分析并给出概率化情景",
+      "how": "帮我分析这张周线图，看趋势、支撑阻力和后市几种走法。",
+      "input": "用户上传一张或多张周线行情图（股票、指数、加密货币或外汇）",
+      "output": "每张图一份 Markdown 报告：趋势、支撑阻力、均线、成交量、形态与价格行为、当前评估、2-4 个带概率与失效位的场景及结论",
+      "need_net": "否",
+      "need_python": "否",
+      "note": "只依据图中可见数据，排除新闻与基本面；多图时逐张分析并分别保存",
+      "description_en": "This skill should be used when analyzing weekly price charts for stocks, stock indices, cryptocurrencies, or forex pairs. Use this skill when the user provides chart images and requests technical analysis, trend identification, support/resistance levels, scenario planning, or probability assessments based purely on chart data without consideration of news or fundamental factors."
+    },
+    {
+      "name_zh": "技术指标库",
+      "name": "pandas-ta",
+      "description_zh": "用 pandas-ta 计算上百种技术指标。",
+      "func": "用 pandas-ta 在行情数据上批量计算 130+ 技术指标",
+      "how": "帮我在行情数据上算一批技术指标，再组几个策略信号。",
+      "input": "需要用户提供小写列名（open/high/low/close/volume）且带时间索引的 OHLCV 数据表；本机需 Python 与 pandas-ta",
+      "output": "追加了指标列的 DataFrame（趋势/动量/波动率/量能）、可用 Strategy 一次性算出多组指标；配套脚本可输出标准指标集与信号摘要、多策略信号一致性打分",
+      "need_net": "可选",
+      "need_python": "是",
+      "note": "技能面向加密市场说明参数调整；核心计算离线，配套脚本会联网抓取 OHLCV",
+      "description_en": "Technical analysis with 130+ indicators using pandas-ta for crypto market data"
+    },
+    {
+      "name_zh": "技术分析函数库",
+      "name": "ta-lib",
+      "description_zh": "用 TA-Lib 计算上百种技术指标与六十余种 K 线形态。",
+      "func": "用 TA-Lib 计算 150+ 技术指标与 61 种K线形态",
+      "how": "我要用 TA-Lib 批量算 RSI、MACD，并把所有 K 线形态扫一遍。",
+      "input": "需先在系统安装 TA-Lib 底层 C 库及 Python 依赖；用户提供 OHLCV 数据（float64 的 NumPy 数组）",
+      "output": "各类 NumPy 指标数组（均线/动量/量能/波动率/周期等）、K 线形态识别结果（+100 看涨、-100 看跌、0 无形态），脚本还能输出指标对比与全形态扫描结果",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "需先装底层 C 库否则 import 失败；技能脚本内附带无 TA-Lib 时的回退逻辑",
+      "description_en": "C-optimized technical analysis with 150+ functions and 61 candlestick pattern recognition functions via TA-Lib"
+    },
+    {
+      "name_zh": "交易图表可视化",
+      "name": "trading-visualization",
+      "description_zh": "绘制专业交易图表：K 线、净值曲线、回撤与相关性热力图。",
+      "func": "用代码绘制K线、净值曲线、回撤、相关性热力图等交易图表",
+      "how": "帮我把这段策略的资金曲线和回撤画成图，用深色主题。",
+      "input": "需要用户提供 OHLCV、净值、收益或成交等数据；本机需 Python 及 mplfinance、matplotlib、plotly 等绘图库",
+      "output": "各类图表：K线（可叠加均线与指标）、净值曲线与回撤、收益分布（含正态拟合与 VaR）、相关性热力图、成交标记、持仓时间线等，可存为 PNG/SVG 或交互式 HTML",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "本质是绘图代码配方与深色主题样式规范，需本地 Python 环境与数据配合使用",
+      "description_en": "Professional trading charts including candlesticks, equity curves, drawdowns, correlation heatmaps, and return distributions"
+    },
+    {
+      "name_zh": "技术指标计算",
+      "name": "technical-analysis",
+      "description_zh": "计算个股的相对强弱、MACD、布林带与均线等技术指标。",
+      "func": "算个股技术指标、风险指标与买卖信号，并能算多标的相关性",
+      "how": "帮我算下这只股票的 RSI、MACD 和均线，再看看有没有买卖信号。",
+      "input": "用户给出股票代码（支持逗号分隔多个），可选周期、指标列表、是否含财报；本机需 Python 及 pandas-ta、yfinance",
+      "output": "JSON：现价与涨跌、各指标数值、风险指标（年化波动率、夏普比率）、金叉死叉与买卖信号，加 --earnings 时附财报；另有独立脚本输出多标的相关性矩阵",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 trading-skills；时间戳统一使用纽约时区，输出含生成时间与数据延迟字段",
+      "description_en": "Compute technical indicators like RSI, MACD, Bollinger Bands, SMA, EMA for a stock. Use when user asks about technical analysis, indicators, RSI, MACD, moving averages, overbought/oversold, or chart analysis."
+    },
+    {
+      "name_zh": "技术分析",
+      "name": "trade-technical",
+      "description_zh": "分析价格行为、指标、图表形态与支撑阻力。",
+      "func": "对指定标的做多维技术分析并给出 0-100 技术评分",
+      "how": "帮我全面技术分析一下这只股票，给个评分和买卖价位。",
+      "input": "用户给出股票代码（如输入 /trade technical 加标的代码）；数据全靠联网搜索采集",
+      "output": "Markdown 文件：技术评分（趋势/动量/量能/形态/相对强弱 5 项各 20 分）、趋势、支撑阻力、动量指标、量能、形态、布林带、相对强弱，以及关键价位表与交易设置（进场/止损/目标/盈亏比）",
+      "need_net": "是",
+      "need_python": "否",
+      "note": "通过 /trade technical 命令触发；指标数值缺失时不臆造，并会保守打分",
+      "description_en": "Technical Analysis Agent — price action, indicators, chart patterns, support/resistance, and momentum analysis with Technical Score (0-100)"
+    }
+  ]
+}

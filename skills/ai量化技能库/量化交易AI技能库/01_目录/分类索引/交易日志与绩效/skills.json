@@ -1,0 +1,97 @@
+{
+  "category": "交易日志与绩效",
+  "count": 7,
+  "skills": [
+    {
+      "name_zh": "交易命题库",
+      "name": "trader-memory-core",
+      "description_zh": "跟踪投资命题从筛选想法到平仓复盘的完整生命周期。",
+      "func": "跨会话跟踪投资命题全生命周期，从想法到持仓到复盘并算MAE/MFE",
+      "how": "帮我把这个筛选出来的特斯拉想法登记进命题库，并推进到待建仓状态",
+      "input": "筛选器输出的 JSON，或手动填写的 JSON（代码、命题陈述、命题类型等）；存放命题的状态目录；Python 3.10+ 与 pyyaml、jsonschema",
+      "output": "每个命题一份 YAML（身份/分类/生命周期/进出场/持仓/监控/来源/结果），一份索引 JSON，复盘 Markdown 日志；可查列表、复核到期命题、生成复盘与胜率等汇总统计",
+      "need_net": "可选",
+      "need_python": "是",
+      "note": "仅复盘算 MAE/MFE 时需 FMP 数据源账号；其余纯本地；第一阶段仅支持单标的命题",
+      "description_en": "Track investment theses across their lifecycle — from screening idea to closed position with postmortem. Register theses from screener outputs, manage state transitions, attach position sizing, review due dates, and generate postmortem reports with P&L and MAE/MFE analysis. Trigger when user says \"register thesis\", \"track this idea\", \"thesis status\", \"review due\", \"close position\", \"postmortem\", or \"trading journal\"."
+    },
+    {
+      "name_zh": "周度绩效摘要",
+      "name": "weekly-performance-digest",
+      "description_zh": "按已平仓命题生成周度绩效摘要：胜率、盈亏比与盈亏模式。",
+      "func": "汇总一周平仓命题，算胜率、期望、盈亏比、R倍数与模式归因",
+      "how": "帮我把这周平掉的持仓做个绩效周报",
+      "input": "命题库的状态目录；周起止日期可选（默认最近7天）；Python 3.9+ 与 PyYAML",
+      "output": "JSON 与 Markdown 周报：总交易数/胜率/期望/盈亏比/已实现盈亏、平均盈损与最大盈损、持有天数、R 倍数、MAE/MFE，按来源技能/退出原因/命题类型/板块/机制标签分组，及最大赢家/输家与教训",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "纯本地计算，无需 数据源账号；无数据的一周也会生成零值报告",
+      "description_en": "Generate a weekly performance summary from closed trader-memory-core theses — win rate, expectancy, profit factor, R-multiple, MAE/MFE, and win/loss pattern analysis by source skill, exit reason, thesis type, sector, and mechanism. No API required; pure local calculation."
+    },
+    {
+      "name_zh": "组合绩效分析",
+      "name": "portfolio-analytics",
+      "description_zh": "做组合层面的收益、风险与风险调整指标测算。",
+      "func": "从净值曲线算收益、风险指标、风险调整比率与回撤，出HTML报告",
+      "how": "帮我算一下这个策略的夏普比率、最大回撤，并出一份 HTML 绩效报告",
+      "input": "净值曲线（时间索引的序列）；可选基准收益序列与成交盈亏序列；Python 依赖 pandas、numpy、quantstats",
+      "output": "收益指标（总收益/CAGR/日均/累计）、风险指标（年化波动、VaR、CVaR、最大回撤、水下时间）、风险调整比率（夏普/索提诺/卡玛/Omega/信息比率）、滚动分析、成交级统计、月度年度收益表、基准对比，并可生成 quantstats HTML 报告",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "本地纯计算；仅基准对比时需用户自行提供基准收益序列",
+      "description_en": "Portfolio-level performance measurement including return metrics, risk metrics, risk-adjusted ratios, rolling analysis, and HTML reports"
+    },
+    {
+      "name_zh": "交易日志",
+      "name": "trade-journal",
+      "description_zh": "结构化记录交易并进行绩效复盘、行为模式识别与策略归因。",
+      "func": "结构化记录每笔交易，复盘绩效、检测行为偏差并按策略归因",
+      "how": "帮我记一笔数字货币的做多交易，然后看看我这周有没有报复性操作",
+      "input": "每笔交易的字段：代码、方向、进出场时间与价格、数量、策略标签、建仓理由、结果、教训等",
+      "output": "JSON 结构化日志与 CSV 导出；分析统计：按策略胜率、分时段盈亏、按标的盈亏比、行为模式检测（报复性操作/追高/截断盈利扛亏损/情绪失控）、日/周/月复盘清单",
+      "need_net": "否",
+      "need_python": "是",
+      "note": "脚本仅用 Python 标准库，无需联网或安装依赖；示例以加密货币标的为主",
+      "description_en": "Structured trade logging, performance review, behavioral pattern detection, and strategy attribution for systematic improvement"
+    },
+    {
+      "name_zh": "成交汇总报告",
+      "name": "ib-create-consolidated-report",
+      "description_zh": "把多份成交明细合并成按标的与期权的汇总报告。",
+      "func": "把目录内的券商成交CSV汇总成分组报告，输出Markdown与CSV",
+      "how": "把这个文件夹里的成交记录合并成一份汇总报告",
+      "input": "存放券商成交 CSV 文件的目录路径；可选券商端口与输出目录",
+      "output": "两份文件（Markdown 与 CSV）：按标的代码/期权全代码/成交日/行权价/看涨看跌/买卖/开平分组的成交汇总表，含数量、现金流、佣金、已实现盈亏合计，并新增持仓方向列（做空/做多/平空/平多）",
+      "need_net": "可选",
+      "need_python": "是",
+      "note": "以本地解析 CSV 为主，可选连接券商拉取未实现盈亏时需联网",
+      "description_en": "Consolidate IBRK trade CSV files from a directory into a summary report. Groups trades by symbol, underlying, date, strike, buy/sell, and open/close. Outputs both markdown and CSV."
+    },
+    {
+      "name_zh": "持仓行动报告",
+      "name": "ib-portfolio-action-report",
+      "description_zh": "生成含财报日期与风险评估的组合行动报告。",
+      "func": "分析多账户持仓并用红黄绿信号输出临期与财报行动清单",
+      "how": "帮我做一份持仓体检报告，标出本周有财报和快到期的仓位",
+      "input": "本地需运行 TWS 或 IB Gateway；可选账户与端口",
+      "output": "JSON 与 Markdown 报告：按风险等级统计、立即需处理（2日内到期）、一周内到期、本周财报预警、下周财报、两周内到期、长期持仓价差分析、优先行动项、账户持仓规模汇总、未来30天财报日历、各标的技术分析摘要",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "依赖 IBKR 本地连接；技术指标依赖 pandas-ta 与 yfinance",
+      "description_en": "Generate a comprehensive portfolio action report with earnings dates and risk assessment. Use when user asks for portfolio review, action items, earnings risk, or position management across IB accounts. Requires TWS or IB Gateway running locally."
+    },
+    {
+      "name_zh": "个股分析报告",
+      "name": "report-stock",
+      "description_zh": "生成含趋势、期权与基本面分析的综合个股报告。",
+      "func": "为个股生成趋势、PMCC可行性与基本面综合分析报告（Markdown/PDF）",
+      "how": "帮我出一份特斯拉的分析报告，要 PDF",
+      "input": "股票代码（单个，或多个空格分隔）",
+      "output": "Markdown 或 PDF 报告：买入/持有/回避推荐与优劣势、公司概况、趋势分析、基本面、Piotroski F 分数、内部人交易、PMCC 可行性、期权价差策略、投资总结，报告存 sandbox/",
+      "need_net": "是",
+      "need_python": "是",
+      "note": "数据聚合自 scanner-bullish、scanner-pmcc、fundamentals 等技能，PDF 需调用 markdown-to-pdf 技能",
+      "description_en": "Generate comprehensive stock analysis report (PDF or markdown) with trend, PMCC, and fundamental analysis"
+    }
+  ]
+}

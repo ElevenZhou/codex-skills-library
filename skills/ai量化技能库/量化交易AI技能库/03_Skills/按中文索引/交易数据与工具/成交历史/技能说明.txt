@@ -1,0 +1,11 @@
+技能名称：成交历史（ib-trades-history）
+分类：交易数据与工具
+能做什么：从盈透证券拉取成交记录，支持配对垂直价差并计算盈亏
+你提供什么：本地运行 TWS 或 IB Gateway，或用 FlexReport 凭据 加查询ID，或直接给本地 FlexReport XML 文件；可选账号、日期区间、品种、--group-spreads
+你会得到什么：JSON：executions 成交明细、summary 按品种的买入/卖出/佣金/已实现盈亏；加 --group-spreads 后额外输出 legs 与 spreads（类型、行权价、宽度、权利金、最大风险、收益率等）
+触发说法示例：「导一下我在盈透最近的成交明细，顺便把价差单也整理出来」
+依赖条件：需要联网取数；需本机运行技能自带脚本
+备注：需本地 TWS/Gateway 或 Flex Web 服务；本地 XML 文件可离线使用；实时接口只返回当前会话
+
+本目录下 SKILL.md 取自原作者原文；
+为兼容技能装载器，个别缺失加载头的技能已补齐 YAML 加载头（name / description）；中文名称与说明为本包整理，仅用于检索与使用便利。

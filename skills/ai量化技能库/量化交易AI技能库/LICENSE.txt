@@ -1,0 +1,176 @@
+第三方技能许可说明
+========================================
+
+本包收录的第三方 AI 技能，其原作者的许可说明如下。
+
+- 每个技能正文（SKILL.md）取自原作者原文，未改用途；
+- 中文名称、分类与使用说明为本包整理，仅用于检索与使用便利；
+- 本包不含任何账号、登录信息、程序调用凭据或网络配置。
+
+一、逐项许可
+----------------------------------------
+
+  市场宽度图表分析：MIT
+  财报日历：MIT
+  经济数据日历：MIT
+  市场环境分析：MIT
+  市场新闻驱动分析：MIT
+  板块轮动分析：MIT
+  德鲁肯米勒式宏观交易：MIT
+  周线技术分析：MIT
+  美股泡沫探测器：MIT
+  美股综合分析：MIT
+  策略回测专家：MIT
+  突破交易计划：MIT
+  CANSLIM 成长股筛选：MIT
+  逆向机会闸门：MIT
+  持仓报告逆向探测：MIT
+  股息成长回调筛选：MIT
+  下跌持续期分析：MIT
+  回撤熔断规则：MIT
+  财报后交易分析：MIT
+  交易优势候选挖掘：MIT
+  交易优势概念综合：MIT
+  交易优势线索提取：MIT
+  交易优势流水线编排：MIT
+  交易信号聚合排序：MIT
+  交易策略设计：MIT
+  交易策略审查：MIT
+  仓位暴露教练：MIT
+  Finviz 选股筛选器：MIT
+  跟随日底部确认：MIT
+  期货头寸规模计算：MIT
+  宏观数据日历：MIT
+  派发日监控：MIT
+  机构资金流向跟踪：MIT
+  股息组合复查监控：MIT
+  股息投资操作流程：MIT
+  股息税务与账户配置：MIT
+  宏观周期探测器：MIT
+  声明式策略回测：MIT
+  市场宽度分析：MIT
+  市场顶部探测器：MIT
+  MT5 交易机器人测试：MIT
+  新闻反应失效分析：MIT
+  期权策略顾问：MIT
+  配对交易筛选：MIT
+  抛物线做空计划：MIT
+  财报漂移筛选：MIT
+  组合管理分析：MIT
+  头寸规模计算：MIT
+  盘前纪律闸门：MIT
+  残余超额收益分析：MIT
+  信号复盘：MIT
+  大涨大跌研究：MIT
+  事件驱动转折分析：MIT
+  衰竭锤子线筛选：MIT
+  动量爆发筛选：MIT
+  形态熟练度训练：MIT
+  策略转向设计：MIT
+  主题趋势探测：MIT
+  交易假设生成：MIT
+  交易绩效教练：MIT
+  交易命题库：MIT
+  交易技能导航：MIT
+  上升趋势分析：MIT
+  低估成长股筛选：MIT
+  价值股息筛选：MIT
+  VCP 波动收缩筛选：MIT
+  周度绩效摘要：MIT
+  事件驱动回测框架：MIT
+  协整分析：MIT
+  相关性分析：MIT
+  成本基础计算：MIT
+  出场策略：MIT
+  特征工程：MIT
+  凯利公式：MIT
+  市场微观结构：MIT
+  均值回归：MIT
+  行情数据清洗：MIT
+  技术指标库：MIT
+  组合绩效分析：MIT
+  头寸规模方法：MIT
+  市场状态识别：MIT
+  组合风险管理：MIT
+  市场情绪分析：MIT
+  信号分类模型：MIT
+  滑点建模：MIT
+  策略模板框架：MIT
+  技术分析函数库：MIT
+  税收亏损收割：MIT
+  交易复式记账：MIT
+  交易日志：MIT
+  交易图表可视化：MIT
+  向量化回测框架：MIT
+  波动率建模：MIT
+  滚动前向验证：MIT
+  洗售检测：MIT
+  基本面数据：MIT
+  期权希腊值：MIT
+  账户概览：MIT
+  领口策略报告：MIT
+  成交汇总报告：MIT
+  空头滚仓查询：MIT
+  期权链数据：MIT
+  长期期权备兑顾问：MIT
+  组合持仓查询：MIT
+  持仓行动报告：MIT
+  德尔塔调整敞口报告：MIT
+  止损管理：MIT
+  成交历史：MIT
+  移动止损：MIT
+  当日到期价差：MIT
+  内部人交易：MIT
+  新闻情绪：MIT
+  历史行情：MIT
+  个股分析报告：MIT
+  风险评估：MIT
+  看涨趋势扫描：MIT
+  长期备兑筛选：MIT
+  价差策略分析：MIT
+  实时报价：MIT
+  技术指标计算：MIT
+  期权大单追踪：MIT
+  综合分析总控：MIT
+  个股对比分析：MIT
+  基本面分析：MIT
+  期权策略顾问：MIT
+  60 秒个股速览：MIT
+  风险评估与头寸规模：MIT
+  板块轮动分析：MIT
+  情绪动量分析：MIT
+  技术分析：MIT
+  投资论点生成：MIT
+
+许可类型汇总：MIT × 131
+
+二、许可原文
+----------------------------------------
+
+【MIT License】
+
+MIT License
+
+Copyright (c) 保留所有权利，归各技能原作者所有。
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+对于标注「未标注」的技能，请按原作者在其发布页面给出的条款使用；
+本包不对这些技能的授权状态作额外声明。
