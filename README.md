@@ -79,7 +79,7 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 ## 技能目录
 
-共 60 个技能，按用途分 12 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
+共 61 个技能，按用途分 12 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
 
 ### 1. 自动驾驶与项目管理
 
@@ -109,13 +109,14 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 | --- | --- | --- | --- |
 | ★ `advanced-frontend-design` | `2026.11.12` | 生产级前端设计与实现，落地高辨识度界面、复杂状态和浏览器验证；自带 UI 词汇表、动效、状态/无障碍、中文产品界面参考和 `verify_frontend.py` 检查脚本。 | `Use $advanced-frontend-design 做一个前端页面...` |
 | `frontend-design-lab` | `2026.11.12` | 多方案设计实验室：固定产品约束下产出并对比多个视觉方向，再选定精修。 | `Use $frontend-design-lab 做几个前端风格方案...` |
+| ★ `design-pitch` | `2026.11.13` | 设计比稿：用真实数据和同一套交互，并行做 3 个互斥的高水准视觉方向（默认多色彩、高饱和、梦幻、科技动感、带动效），真实浏览器验收 + 每版改一轮 + 并排对照台 + 按使用场景推荐；附风格提示词、方向库、验收脚本和模板。 | `比稿：给 XX 出 3 个方向`、`设计比稿`、`出三版` |
 | `frontend-design-review` | `2026.11.12` | 前端设计二审：对现成页面/截图/代码做分级评审（P0/P1/P2）、0–5 评分和修复建议，默认不改代码。 | `Use $frontend-design-review 审一下这个页面...`、`看着像 AI 做的` |
 | `taste-skill` | `2026.07.25` | 面向 landing page、作品集和 redesign 的反模板化审美工作流，触发名为 `design-taste-frontend`。 | `Use $design-taste-frontend 重设计这个页面...` |
 | ★ `playwright` | `2026.07.25` | 命令行驱动真实浏览器：网页操作、截图、表单、UI 流程验证。 | `Use $playwright 自动测试这个页面...` |
 | `playwright-interactive` | `2026.07.25` | 持久浏览器/Electron 调试，适合连续 UI QA 和本地 Web/App 调试。 | `Use $playwright-interactive 调试这个本地应用...` |
 | `screenshot` | `2026.07.25` | 桌面/系统截图，适合浏览器工具拿不到的窗口、全屏、区域截图。 | `Use $screenshot 截取这个窗口...` |
 
-怎么选：方向已定直接做用 `advanced-frontend-design`；方向未定先比稿用 `frontend-design-lab`；落地页/作品集追求审美差异化用 `design-taste-frontend`；做完想挑毛病用 `frontend-design-review`。
+怎么选：方向已定直接做用 `advanced-frontend-design`；方向未定先比稿用 `design-pitch`（一条龙：并行出三版、浏览器验收、对照台、推荐；方法论来自 `frontend-design-lab`）；落地页/作品集追求审美差异化用 `design-taste-frontend`；做完想挑毛病用 `frontend-design-review`。
 
 ### 4. 部署
 
@@ -308,7 +309,7 @@ done
 适合网页、管理后台、产品 Demo、UI QA：
 
 ```bash
-./scripts/install-skills.sh auto-loop playwright playwright-interactive screenshot
+./scripts/install-skills.sh auto-loop advanced-frontend-design frontend-design-lab design-pitch playwright playwright-interactive screenshot
 ```
 
 ### 工具与自动化组合

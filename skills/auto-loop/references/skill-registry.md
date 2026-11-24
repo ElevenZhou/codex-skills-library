@@ -44,6 +44,7 @@ auto-loop（别名：老大、大哥、老大哥、大当家、头儿）是总�
 | 视频算力对账 | `video-compute-reconciliation` | | 视频双站与渠道账单的只读对账（智算谷等）；先读其 site-profiles 锁定渠道和金额口径；可接 `video-channel-onboarding` 的新渠道 |
 | 前端实现 | `advanced-frontend-design` | | 设计方向已定，做生产级界面 |
 | 前端比稿 | `frontend-design-lab` | | 设计方向未定，先出多个方案对比 |
+| 设计比稿（高水准多方向） | `design-pitch` | 比稿、设计比稿、出三版 | 用真实数据并行做 3 个互斥视觉方向，浏览器验收 + 改一轮 + 对照台 + 按场景推荐；默认审美多色彩高饱和梦幻科技动感 |
 | 前端二审 | `frontend-design-review` | | 现成页面/截图/代码的分级评审，默认不改代码 |
 | 落地页审美 | `taste-skill`（触发名 `design-taste-frontend`） | | 落地页、作品集、改版 |
 | 浏览器自动化 | `playwright` | | 网页操作、截图、UI 流程验证 |

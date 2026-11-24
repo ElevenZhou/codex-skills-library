@@ -1,0 +1,4 @@
+interface:
+  display_name: "设计比稿 Design Pitch"
+  short_description: "同一真实数据并行做 3 个互斥高水准视觉方向，浏览器验收、对照台、按场景推荐"
+  default_prompt: "Use $design-pitch to produce three mutually exclusive, high-quality visual directions (default taste: colourful, high-saturation, dreamy, tech-dynamic with motion) for the same product contract and real data, verify each in a real browser at desktop and mobile, refine once, and deliver a comparison page with a scored, context-based recommendation."

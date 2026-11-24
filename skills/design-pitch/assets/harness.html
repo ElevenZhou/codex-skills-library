@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【对象】 · 比稿对照台</title>
+<style>
+  :root { color-scheme: dark; --bg:#0f1116; --panel:#171a21; --line:#2a2f3a; --text:#e8eaf0; --dim:#9aa1b2; --acc:#7cf7d4; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:14px/1.5 -apple-system,"PingFang SC","Noto Sans SC",sans-serif; }
+  header { display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; padding:14px 20px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; }
+  h1 { font-size:16px; margin:0 12px 0 0; font-weight:600; }
+  label { color:var(--dim); font-size:12px; display:flex; gap:6px; align-items:center; }
+  select, button { background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:6px 10px; font:inherit; cursor:pointer; }
+  button[aria-pressed="true"] { border-color:var(--acc); color:var(--acc); }
+  button:focus-visible, select:focus-visible, a:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+  .grp { display:flex; gap:6px; flex-wrap:wrap; }
+  main { padding:16px 20px 40px; }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .side { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px; min-width:0; }
+  .side h2 { font-size:15px; margin:0 0 4px; display:flex; justify-content:space-between; gap:8px; }
+  .side h2 a { color:var(--acc); font-size:12px; font-weight:400; }
+  .meta { color:var(--dim); font-size:12px; margin:0 0 10px; }
+  .meta b { color:var(--text); font-weight:500; }
+  .frame { position:relative; overflow:hidden; border-radius:8px; border:1px solid var(--line); background:#000; margin:0 auto; }
+  .frame iframe { border:0; transform-origin:0 0; position:absolute; left:0; top:0; }
+  .matrix { margin-top:24px; overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; min-width:900px; font-size:13px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--panel); color:var(--dim); font-weight:500; }
+  .note { color:var(--dim); font-size:12px; margin-top:10px; }
+  @media (max-width: 900px) { .pair { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>【对象】 · 比稿对照台</h1>
+  <label>左 <select id="left"></select></label>
+  <label>右 <select id="right"></select></label>
+  <div class="grp" role="group" aria-label="视口">
+    <button data-vp="desktop" aria-pressed="true">桌面 1440×900</button>
+    <button data-vp="mobile" aria-pressed="false">手机 390×844</button>
+  </div>
+  <div class="grp" role="group" aria-label="状态">
+    <button data-st="" aria-pressed="true">正常</button>
+    <button data-st="state=loading" aria-pressed="false">加载</button>
+    <button data-st="state=empty" aria-pressed="false">空</button>
+    <button data-st="state=offline" aria-pressed="false">断线</button>
+    <button data-st="state=error" aria-pressed="false">出错</button>
+    <button data-st="motion=reduced" aria-pressed="false">减少动态</button>
+  </div>
+</header>
+<main>
+  <div class="pair">
+    <section class="side" id="sideL"></section>
+    <section class="side" id="sideR"></section>
+  </div>
+  <div class="matrix">
+    <table>
+      <thead><tr><th>方向</th><th>页面骨架</th><th>字体</th><th>底色</th><th>材质</th><th>动效</th><th>标志时刻</th><th>主要风险</th><th>最适合</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="note">所有方向用同一份真实数据和同一套行为（shared/core.js）。动态部分为真实记录的<b>演示回放</b>。操作按钮在比稿阶段不连接后端。</p>
+  </div>
+</main>
+<script>
+// 改这里：每个方向一项。id = 目录名。
+const DIRS = [
+  { id:"a-xxx", name:"A 【方向名】", thesis:"【一句话论点】", risk:"【主要风险】", silhouette:"【骨架】",
+    type:"【字体】", base:"【底色】", material:"【材质】", motion:"【动效】", signature:"【标志时刻】", best:"【最适合的场景】" },
+  { id:"b-yyy", name:"B 【方向名】", thesis:"", risk:"", silhouette:"", type:"", base:"", material:"", motion:"", signature:"", best:"" },
+  { id:"c-zzz", name:"C 【方向名】", thesis:"", risk:"", silhouette:"", type:"", base:"", material:"", motion:"", signature:"", best:"" },
+];
+const VP = { desktop:[1440,900], mobile:[390,844] };
+let vp = "desktop", st = "";
+const L = document.getElementById("left"), R = document.getElementById("right");
+DIRS.forEach((d, i) => { [L, R].forEach((s) => s.add(new Option(d.name, d.id))); });
+L.value = DIRS[0].id; R.value = DIRS[1].id;
+document.getElementById("rows").innerHTML = DIRS.map((d) =>
+  `<tr><td><b>${d.name}</b></td><td>${d.silhouette}</td><td>${d.type}</td><td>${d.base}</td><td>${d.material}</td><td>${d.motion}</td><td>${d.signature}</td><td>${d.risk}</td><td>${d.best}</td></tr>`).join("");
+
+function render(side, id) {
+  const d = DIRS.find((x) => x.id === id), el = document.getElementById(side);
+  const url = `${d.id}/index.html${st ? "?" + st : ""}`;
+  el.innerHTML = `<h2>${d.name}<a href="${url}" target="_blank" rel="noopener">全尺寸打开 ↗</a></h2>
+    <p class="meta"><b>论点</b>：${d.thesis}<br><b>风险</b>：${d.risk}</p>
+    <div class="frame"><iframe title="${d.name}" src="${url}" loading="lazy"></iframe></div>`;
+  fit(el);
+}
+function fit(el) {
+  const [w, h] = VP[vp], fr = el.querySelector(".frame"), ifr = el.querySelector("iframe");
+  const avail = el.clientWidth - 24, scale = Math.min(1, avail / w);
+  ifr.style.width = w + "px"; ifr.style.height = h + "px"; ifr.style.transform = `scale(${scale})`;
+  fr.style.width = w * scale + "px"; fr.style.height = h * scale + "px";
+}
+function all() { render("sideL", L.value); render("sideR", R.value); }
+L.onchange = R.onchange = all;
+document.querySelectorAll("[data-vp]").forEach((b) => b.onclick = () => {
+  vp = b.dataset.vp; document.querySelectorAll("[data-vp]").forEach((x) => x.setAttribute("aria-pressed", x === b)); all(); });
+document.querySelectorAll("[data-st]").forEach((b) => b.onclick = () => {
+  st = b.dataset.st; document.querySelectorAll("[data-st]").forEach((x) => x.setAttribute("aria-pressed", x === b)); all(); });
+addEventListener("resize", () => document.querySelectorAll(".side").forEach(fit));
+all();
+</script>
+</body>
+</html>
