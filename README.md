@@ -218,6 +218,10 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 怎么选：从零做游戏用 `game-dev-workflow`，它转交其余三个；逆向分析之后的重做，权属和发布走 `rebuild-workflow`，玩法/数值/测试再叠加这里的技能。
 
+### 第三方技能镜像
+
+`third-party-skills/` 存放本机装的第三方技能（飞书 `lark-*` / `feishu-*`、Remotion、Hyperframes、`ui-ux-pro-max` 等 88 个），清单见 [`third-party-skills/INDEX.md`](third-party-skills/INDEX.md)。它们没有随包 LICENSE，**仅作本机备份，不进上面的技能目录，也不受 lint 和安装脚本约束**；使用时按需手动复制到对应 AI 的技能目录。
+
 ## 别名与总调度
 
 常用技能可以直接用中文别名点名，说别名和说技能名效果一样：
