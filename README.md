@@ -24,6 +24,8 @@
 | [`docs/usage-examples.md`](docs/usage-examples.md) | 调用案例：一句话、带上下文、组合调用、会停下来问你的情况 |
 | [`docs/install-prompt.md`](docs/install-prompt.md) | 给本机各 AI 的安装提示词和技能目录路径 |
 | [`skills/auto-loop/references/skill-registry.md`](skills/auto-loop/references/skill-registry.md) | 老大的技能表：能调用哪些技能、别名、组合 |
+| [`third-party-skills/INDEX.md`](third-party-skills/INDEX.md) | 第三方技能镜像清单（88 个，本机备份，无 LICENSE，不随技能目录安装） |
+| [`skills/rebuild-workflow/docs/`](skills/rebuild-workflow/docs/) | 逆向重建 SOP、架构图和项目案例 |
 
 仓库地址：
 
@@ -75,11 +77,11 @@ ${CODEX_HOME:-$HOME/.codex}/skills
 
 每个技能的 `SKILL.md` 标题下都有 `Skill version` 标记，README 的技能目录也同步记录同一版本号。不同设备安装或同步后，可以直接对比这两个位置确认技能版本是否一致。
 
-当前技能库基线版本：`v1.0`（2026.10.17，十席位技能）；其余技能各自保留自己的版本号
+当前技能库基线版本：`v1.0`（2026.10.17，十席位技能）；其余技能各自保留自己的版本号。2026-11-12 起新增：逆向重建 `rebuild-*`（`rebuild-workflow` v1.5.0）、游戏开发四件套、`frontend-design-review`，版本均写在技能目录表中。
 
 ## 技能目录
 
-共 61 个技能，按用途分 12 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
+共 61 个技能（另有 1 个量化技能合集目录 `ai量化技能库`），按用途分 12 类。★ 表示该类首选；同类技能有重叠时，表下的「怎么选」说明分工。
 
 ### 1. 自动驾驶与项目管理
 
@@ -313,7 +315,7 @@ done
 适合网页、管理后台、产品 Demo、UI QA：
 
 ```bash
-./scripts/install-skills.sh auto-loop advanced-frontend-design frontend-design-lab design-pitch playwright playwright-interactive screenshot
+./scripts/install-skills.sh auto-loop advanced-frontend-design frontend-design-lab design-pitch frontend-design-review playwright playwright-interactive screenshot
 ```
 
 ### 工具与自动化组合
@@ -322,6 +324,22 @@ done
 
 ```bash
 ./scripts/install-skills.sh auto-loop cli-creator playwright
+```
+
+### 逆向重建组合
+
+适合对授权 / 待确认权属的 APK 做解包、分析、重建和交付（正式发布由人工把关）：
+
+```bash
+./scripts/install-skills.sh auto-loop rebuild-workflow rebuild-recon rebuild-asset-recovery rebuild-product-design rebuild-dev-milestones rebuild-device-evidence rebuild-build-release
+```
+
+### 游戏开发组合
+
+适合从零做游戏、按 GDD 开发，或逆向分析后的重做阶段：
+
+```bash
+./scripts/install-skills.sh auto-loop game-dev-workflow game-design-economy godot-game-dev game-playtest-qa local-image-generator
 ```
 
 ### 部署组合
@@ -401,6 +419,7 @@ skill-name/
 - 复杂技能不要只写单文件，尽量拆出 `references/` 和必要脚本。
 - 涉及交付质量的技能要有 QA / loop / 自审机制。
 - 不要提交 API key、客户资料、`.env`、本地运行日志、缓存目录。
+- 提交前跑 `python3 scripts/lint-skills.py [技能名]`：检查 frontmatter、name 与目录名一致、章节（何时用 / 相关 skill / 变更记录）、SKILL.md 超 200 行告警和密钥模式。错误会返回非 0，警告不阻断。
 
 ## 安全检查
 
@@ -408,9 +427,12 @@ skill-name/
 
 ```bash
 ./scripts/check-no-secrets.sh
+python3 scripts/lint-skills.py
 ```
 
-这个脚本只能做明显密钥扫描，不能替代人工检查。提交前仍建议看一遍：
+全库 lint 目前有 4 个历史遗留错误（`cloudflare-deploy` 文档中 3 处疑似密钥的示例串、`ai量化技能库` 无 `SKILL.md`），新增技能请单独指定名字检查。`third-party-skills/` 不在 lint 范围内。
+
+`check-no-secrets.sh` 这个脚本只能做明显密钥扫描，不能替代人工检查。提交前仍建议看一遍：
 
 ```bash
 git diff --cached
@@ -421,3 +443,4 @@ git diff --cached
 - 不包含 `~/.codex/skills/.system` 系统技能。
 - 不包含插件缓存、运行时缓存、API key、客户资料。
 - 不包含每台机器自己的 Codex / Claude / WorkBuddy / Trae / OpenCode 配置文件。
+- 不包含 `autoglm-browser-agent`（约 160MB，含依赖与构建产物）；`third-party-skills/` 只是本机第三方技能的备份镜像，授权依据不明，公开前需逐个确认。
